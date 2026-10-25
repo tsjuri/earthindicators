@@ -19,6 +19,7 @@ Run from the repo root: python scripts/build_chart_cards.py
   --libs DIR   serve the cdnjs chart libraries from local copies in DIR (only for testing without internet)
   --pages LIST only these pages, comma-separated (e.g. ch4.html,co2.html); other pages' share files are left alone
 """
+import hashlib
 import functools, html, io, itertools, json, os, re, sys, threading, time
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from PIL import Image, ImageDraw, ImageFont
@@ -78,9 +79,11 @@ def card(png):
     return img
 
 
-def share_page(name, title, desc, target):
+def share_page(name, title, desc, target, ver):
+    # ?v=<fingerprint of the image>: a new address whenever the picture changes, so X, WhatsApp, Facebook etc.
+    # fetch the new preview instead of showing the one they cached the first time the link was shared
     e = lambda x: html.escape(x, quote=True)
-    url, img = f"{SITE}/s/{name}.html", f"{SITE}/og/s/{name}.jpg"
+    url, img = f"{SITE}/s/{name}.html?v={ver}", f"{SITE}/og/s/{name}.jpg?v={ver}"
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -116,7 +119,7 @@ def main():
         sys.exit(f"none of these are chart pages: {', '.join(sorted(only))}")
     port = serve()
     os.makedirs("s", exist_ok=True); os.makedirs("og/s", exist_ok=True)
-    made, variants = set(), set()
+    made, variants, versions = set(), set(), {}
     with sync_playwright() as p:
         br = p.chromium.launch()
         ctx = br.new_context(viewport={"width": 1100, "height": 900}, device_scale_factor=1.25)
@@ -186,9 +189,10 @@ def main():
                 el.scroll_into_view_if_needed(); pg.wait_for_timeout(150)
                 title = pg.evaluate(f"() => (document.querySelectorAll('main .box')[{b['i']}].querySelector('h2') || {{}}).textContent || ''").strip()
                 card(el.screenshot()).save(f"og/s/{name}.jpg", quality=85, optimize=True, progressive=True)
+                versions[name] = hashlib.sha1(open(f"og/s/{name}.jpg", "rb").read()).hexdigest()[:8]
                 anchor = b["id"] or "ch-" + b["cid"]
                 with open(f"s/{name}.html", "w", encoding="utf-8") as fh:
-                    fh.write(share_page(name, title or b["title"], desc, f"{f}#{anchor}" + ("" if name == f"{stem}-{b['cid']}" else f"~{code}")))
+                    fh.write(share_page(name, title or b["title"], desc, f"{f}#{anchor}" + ("" if name == f"{stem}-{b['cid']}" else f"~{code}"), versions[name]))
                 made.add(name)
                 if name != f"{stem}-{b['cid']}":
                     variants.add(name)
@@ -232,6 +236,12 @@ def main():
         keep = [v for v in json.load(open(vf)) if v.rsplit("-", 1)[0].split("_")[0] + ".html" not in todo]
     with open(vf, "w") as fh:
         json.dump(sorted(set(keep) | variants), fh, separators=(",", ":"))
+    # image fingerprint per share link, read by site.js to put ?v=... on the copied link (kept for pages not redrawn)
+    hf, old = "s/versions.json", {}
+    if only and os.path.exists(hf):
+        old = {k: v for k, v in json.load(open(hf)).items() if k.rsplit("-", 1)[0] + ".html" not in todo}
+    with open(hf, "w") as fh:
+        json.dump(dict(sorted({**old, **versions}.items())), fh, separators=(",", ":"))
     print(f"{len(made)} chart share links ({len(variants)} of them for other switch settings)")
 
 

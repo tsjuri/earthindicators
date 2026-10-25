@@ -644,9 +644,13 @@
     }
   }
   // share pages made for other switch settings (s/<page>-<chart>_<code>.html, with their own preview image)
-  let variants = new Set();
-  if (nav && !['index.html', 'claims.html', 'methods.html'].includes(page))
+  let variants = new Set(), versions = {};
+  if (nav && !['index.html', 'claims.html', 'methods.html'].includes(page)) {
     fetch('s/variants.json').then(r => r.ok ? r.json() : []).then(l => { variants = new Set(l); }).catch(() => {});
+    // fingerprint of each preview image: put on the link as ?v=..., so a newly drawn preview gets a new address
+    // and X, WhatsApp etc. fetch it instead of reusing the picture they cached for the link earlier
+    fetch('s/versions.json').then(r => r.ok ? r.json() : {}).then(o => { versions = o || {}; }).catch(() => {});
+  }
   // ---- "Data through" stamp under a chart: how recent its data is and where it comes from, from the same shared
   //      numbers as the In short boxes (indicators.js). Charts not listed get no stamp: static records, yearly
   //      charts whose title already says the last year, maps that name their own date, and charts with a switch
@@ -766,10 +770,11 @@
       if (!box.id) box.id = 'ch-' + cv.id;
       // the link carries the switches as set now, unless they are still as the page opened (the preview image
       // always shows that default version; opening the link restores the reader's settings)
+      const link = n => location.origin + '/s/' + n + '.html' + (versions[n] ? '?v=' + versions[n] : '');
       const urlNow = () => { const c = segCode(box), d = segDefault ? segDefault.get(box) : c, base = stem + '-' + cv.id;
-        if (!c || c === d || /-1/.test(c)) return location.origin + '/s/' + base + '.html';
+        if (!c || c === d || /-1/.test(c)) return link(base);
         // a variant with its own preview if there is one; otherwise the default preview, and the page restores the settings
-        return variants.has(base + '_' + c) ? location.origin + '/s/' + base + '_' + c + '.html' : location.origin + '/s/' + base + '.html#' + c; };
+        return variants.has(base + '_' + c) ? link(base + '_' + c) : link(base) + '#' + c; };
       const bar = document.createElement('div'); bar.className = 'cbar';
       const b = document.createElement('button'); b.type = 'button'; b.className = 'nb'; b.textContent = 'Copy link to this chart';
       b.onclick = () => {
