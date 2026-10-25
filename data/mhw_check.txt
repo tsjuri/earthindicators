@@ -1,1 +1,11 @@
-ok 2026-10-24: 2026-10-23,34.19,18.73,10.83,3.50,1.13
+failed 2026-10-25: could not open 2026
+Traceback (most recent call last):
+  File "/home/runner/work/earthindicators/earthindicators/scripts/build_mhw.py", line 198, in <module>
+    main()
+  File "/home/runner/work/earthindicators/earthindicators/scripts/build_mhw.py", line 177, in main
+    ds, arr, _ = fetch(y, since=start if y == start.year else None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/earthindicators/earthindicators/scripts/build_mhw.py", line 50, in fetch
+    raise RuntimeError(f"could not open {year}")
+RuntimeError: could not open 2026
+
