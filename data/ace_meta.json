@@ -4,7 +4,7 @@
   "EP": "https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.EP.list.v04r01.csv"
  },
  "latest": {
-  "NA": "2026-10-22 00:00",
-  "EP": "2026-10-22 00:00"
+  "NA": "2026-10-22 18:00",
+  "EP": "2026-10-25 00:00"
  }
 }
