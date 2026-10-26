@@ -93,12 +93,12 @@
   ],
   "sparkLabel": "yearly, 1940–2025",
   "source": "Copernicus ERA5",
-  "through": "Oct 21, 2026"
+  "through": "Oct 24, 2026"
  },
  "sst": {
   "title": "Sea surface temperature",
-  "big": "+0.82 °C",
-  "label": "vs 1991–2020 average on Oct 21",
+  "big": "+0.83 °C",
+  "label": "vs 1991–2020 average on Oct 24",
   "spark": [
    -0.2998904109589043,
    -0.21846849315068484,
@@ -147,16 +147,13 @@
   ],
   "sparkLabel": "yearly, 1982–2025",
   "source": "NOAA OISST",
-  "through": "Oct 21, 2026"
+  "through": "Oct 24, 2026"
  },
  "nino": {
   "title": "El Niño and La Niña (Niño 3.4)",
-  "big": "+3.34 °C",
-  "label": "central Pacific vs 1991–2020, Oct 21",
+  "big": "+3.46 °C",
+  "label": "central Pacific vs 1991–2020, Oct 24",
   "spark": [
-   -0.5700000000000003,
-   -0.5980000000000025,
-   -0.6129999999999995,
    -0.6280000000000001,
    -0.6310000000000002,
    -0.6449999999999996,
@@ -505,9 +502,9 @@
    3.3290000000000006,
    3.317,
    3.3299999999999983,
-   3.276,
-   3.257999999999999,
-   3.304000000000002,
+   3.2880000000000003,
+   3.2439999999999998,
+   3.2349999999999994,
    3.206999999999997,
    3.2489999999999988,
    3.3049999999999997,
@@ -518,11 +515,14 @@
    3.471,
    3.341000000000001,
    3.3270000000000017,
-   3.338000000000001
+   3.338000000000001,
+   3.3999999999999986,
+   3.4279999999999973,
+   3.4559999999999995
   ],
   "sparkLabel": "last 12 months",
   "source": "NOAA OISST",
-  "through": "Oct 21, 2026"
+  "through": "Oct 24, 2026"
  },
  "land-ice": {
   "title": "Land ice: glaciers and ice sheets",
@@ -2298,8 +2298,9 @@
    97.78585,
    99.66565,
    102.64284,
-   107.24933,
-   112.23236
+   107.25096,
+   112.59318999999999,
+   115.10037
   ],
   "sparkLabel": "1993–2026",
   "source": "NASA",
@@ -2365,8 +2366,8 @@
  },
  "co2": {
   "title": "Carbon dioxide (CO₂)",
-  "big": "426.4 ppm",
-  "label": "30-day average to Oct 21",
+  "big": "426.5 ppm",
+  "label": "30-day average to Oct 24",
   "spark": [
    331.40379999999993,
    332.01328947368427,
@@ -2421,7 +2422,7 @@
   ],
   "sparkLabel": "yearly, 1975–2025",
   "source": "NOAA Mauna Loa",
-  "through": "Oct 21, 2026"
+  "through": "Oct 24, 2026"
  },
  "ch4": {
   "title": "Methane",
@@ -4397,8 +4398,8 @@
  },
  "corals": {
   "title": "Coral reefs under heat stress",
-  "big": "19%",
-  "label": "of the world's reef regions under bleaching-level heat stress, Oct 20 2026",
+  "big": "18%",
+  "label": "of the world's reef regions under bleaching-level heat stress, Oct 24 2026",
   "spark": [
    0.2829343233900907,
    0.8820893611573415,
@@ -4444,7 +4445,7 @@
   ],
   "sparkLabel": "yearly average, 1985–2025",
   "source": "NOAA Coral Reef Watch",
-  "through": "Oct 20, 2026"
+  "through": "Oct 24, 2026"
  },
  "slow": {
   "title": "Slow signals",
