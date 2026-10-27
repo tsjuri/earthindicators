@@ -68,6 +68,8 @@ window.CLAIMS = {
   'era5-model':        '"ERA5 is a model, it can\'t be trusted"',
   'climate-optimum':   '"We\'re enjoying a climate optimum"',
   'already-15':        '"1.5 °C was already passed"',
+  'heatwaves-always':  '"Heat waves have always happened"',
+  'scenarios-fantasy': '"Climate scenarios rely on fantasy technology"',
 };
 
 window.IN_SHORT = {
@@ -77,7 +79,7 @@ window.IN_SHORT = {
       'The average temperature of the air near the surface, across the whole planet. It is the warming people feel, and the measure the Paris Agreement limits of 1.5 °C and 2 °C refer to.',
       'Right now: {air.vd}, {air.now} compared with the 1991–2020 average for {air.date}. Over the last 12 months the planet was about {air.pre12} warmer than before industrialization (1850–1900).',
     ],
-    claims: ['stopped-1998', 'cooling', 'weather-blame', 'natural-cycles', 'records-short', 'urban-heat', 'data-manipulated', 'us-adjustments', 'era5-model', 'already-15'],
+    claims: ['stopped-1998', 'cooling', 'weather-blame', 'natural-cycles', 'records-short', 'urban-heat', 'data-manipulated', 'us-adjustments', 'era5-model', 'already-15', 'heatwaves-always'],
   },
   'nino.html': {
     units: 'The Niño 3.4 region is a strip of the equatorial Pacific about 5,500 km long and 1,100 km wide, roughly three-quarters the size of the lower 48 US states. An El Niño is declared when it stays at least 0.5 °C above average for several months; above about 1.5 °C counts as strong.',
@@ -120,7 +122,7 @@ window.IN_SHORT = {
       'Scientists have published warming projections since 1970, so they can be checked. A 2020 study of 17 projections from 1970 to 2007 found that 10 matched the warming that followed, and 14 once the real rise in greenhouse gases is taken into account. Most misses came from guessing future emissions, not from the physics.',
       'Today\'s climate models also track the measurements. What comes next depends on emissions: with today\'s policies, about 2.8 °C by 2100 (UNEP estimate). Staying under 1.5 °C leaves about 130 billion metric tons of CO₂ from the start of 2026, roughly three years of current emissions.',
     ],
-    claims: ['predictions-fail', 'models-unreliable', 'ice-age-1970s', 'too-late'],
+    claims: ['predictions-fail', 'models-unreliable', 'ice-age-1970s', 'scenarios-fantasy', 'too-late'],
   },
   'pdo.html': {
     units: "The PDO index has no unit: it measures how strongly the North Pacific matches the PDO's typical pattern. Zero is neutral, beyond +1 or −1 is a strong phase, and one phase can last from a few years to a few decades.",
