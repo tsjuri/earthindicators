@@ -46,7 +46,7 @@
 </div>
 <script>
 const $=id=>document.getElementById(id);
-const zl=t=>({id:'zl',afterDatasetsDraw(ch){if(!ch.isDatasetVisible(2))return;const{ctx,chartArea:a,scales:{y}}=ch;ctx.save();ctx.font='bold 13px system-ui,sans-serif';ctx.fillStyle='#d9822b';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText(t,(a.left+a.right)/2,y.getPixelForValue(0)-5);ctx.restore()}}); // label on the zero line
+const zl=t=>({id:'zl',afterDatasetsDraw(ch){if(!ch.isDatasetVisible(2))return;const{ctx,chartArea:a,scales:{y}}=ch;ctx.save();ctx.font='bold 13px system-ui,sans-serif';ctx.fillStyle='#c2610f';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText(t,(a.left+a.right)/2,y.getPixelForValue(0)-5);ctx.restore()}}); // label on the zero line
 
 const MS=[0,31,59,90,120,151,181,212,243,273,304,334],ML=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],NN=365,PRE=280,charts=[];
 const fmtDate=i=>{let m=11;while(MS[m]>i)m--;return ML[m]+' '+(i-MS[m]+1)};
@@ -167,10 +167,10 @@ function ddraw(){
  dc=new Chart($('c5'),{type:'line',plugins:[zl('NET ZERO')],data:{datasets:[
    {label:'Gain per 10 years (10-year average vs the 10 years before)',data:P,borderColor:'#4f81b0',backgroundColor:THEME.band2,fill:'origin',borderWidth:1.6,pointRadius:0},
    {label:`${lab(L.k)}: +${L.y.toFixed(1)} ppm`,data:[{x:L.x,y:L.y}],borderColor:'#d00000',backgroundColor:'#d00000',pointRadius:5,showLine:false},
-   {label:'Net zero: CO₂ stops rising',data:[{x:y0,y:0},{x:ly+1,y:0}],borderColor:'#d9822b',borderDash:[6,4],borderWidth:2.2,pointRadius:0}]},
+   {label:'Net zero: CO₂ stops rising',data:[{x:y0,y:0},{x:ly+1,y:0}],borderColor:'#c2610f',borderDash:[8,4],borderWidth:3,pointRadius:0,clip:false}]},
   options:{animation:false,maintainAspectRatio:false,parsing:false,interaction:{mode:'nearest',axis:'x',intersect:false},
    plugins:{tooltip:{filter:i=>i.datasetIndex===0,callbacks:{title:t=>{const p=P[t[0].dataIndex];return '10 years to '+lab(p.k)+' vs the 10 years before'},label:c=>'+'+c.parsed.y.toFixed(2)+' ppm in 10 years'}}},
-   scales:{x:{type:'linear',min:y0,max:ly+1,ticks:{stepSize:5,callback:v=>String(v)},grid:{display:false}},y:{min:0,title:{display:true,text:'ppm per 10 years'},grid}}}});
+   scales:{x:{type:'linear',min:y0,max:ly+1,ticks:{stepSize:5,callback:v=>String(v)},grid:{display:false}},y:{min:-2,ticks:{callback:v=>v<0?'':v},title:{display:true,text:'ppm per 10 years'},grid}}}});
  $('dbox').classList.remove('hide');
 }
 // NOAA monthly file: year month decimal average deseasonalized ndays sdev unc
