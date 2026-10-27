@@ -1,34 +1,34 @@
 {
  "gmaine_daily_sst.csv": {
-  "built": "2026-10-27T09:38:18Z",
-  "latest": "2026-10-25"
+  "built": "2026-10-27T21:34:28Z",
+  "latest": "2026-10-26"
  },
  "gmex_daily_sst.csv": {
-  "built": "2026-10-27T09:38:29Z",
-  "latest": "2026-10-25"
+  "built": "2026-10-27T21:34:38Z",
+  "latest": "2026-10-26"
  },
  "mdr_daily_sst.csv": {
-  "built": "2026-10-27T09:38:50Z",
-  "latest": "2026-10-25"
+  "built": "2026-10-27T21:35:00Z",
+  "latest": "2026-10-26"
  },
  "natl_daily_sst.csv": {
-  "built": "2026-10-27T09:39:01Z",
-  "latest": "2026-10-25"
+  "built": "2026-10-27T21:35:10Z",
+  "latest": "2026-10-26"
  },
  "nino34_daily_sst.csv": {
-  "built": "2026-10-27T09:37:57Z",
-  "latest": "2026-10-25"
+  "built": "2026-10-27T21:34:07Z",
+  "latest": "2026-10-26"
  },
  "npac_daily_sst.csv": {
-  "built": "2026-10-27T09:39:11Z",
-  "latest": "2026-10-25"
+  "built": "2026-10-27T21:35:21Z",
+  "latest": "2026-10-26"
  },
  "spna_daily_sst.csv": {
-  "built": "2026-10-27T09:38:39Z",
-  "latest": "2026-10-25"
+  "built": "2026-10-27T21:34:50Z",
+  "latest": "2026-10-26"
  },
  "world_daily_sst.csv": {
-  "built": "2026-10-27T09:38:08Z",
-  "latest": "2026-10-25"
+  "built": "2026-10-27T21:34:18Z",
+  "latest": "2026-10-26"
  }
 }
