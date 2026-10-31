@@ -1,6 +1,32 @@
 // Shared script for every tracker page: navigation, export button placement, back-to-top button, chart legends,
 // small-screen axis labels and JPG export. Load it right after <nav class="nav" id="nav">.
 // To add a page: add one line to PAGES. Nothing else needs to change.
+// ---- copying a link. iPhones are the hard case: the clipboard API can be refused (often inside the X or other
+//      apps' built-in browsers, which also block prompt() boxes, so the old fallback showed nothing at all).
+//      So: try the old copy command at once (it must run inside the tap), and the clipboard API next to it;
+//      if neither works, show the link right under the button, selected, for a long-press "Copy".
+window.eiCopy = function (btn, text, label) {
+  let ok = false;
+  const done = () => { if (ok) return; ok = true; const f = btn.parentNode && btn.parentNode.querySelector('.cpbox'); if (f) f.remove();
+    btn.textContent = /code/i.test(label) ? 'Code copied' : 'Link copied'; setTimeout(() => btn.textContent = label, 2000); };
+  try {
+    const ta = document.createElement('textarea'); ta.value = text; ta.readOnly = true; ta.setAttribute('aria-hidden', 'true');
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px';
+    document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+    if (document.execCommand && document.execCommand('copy')) done();
+    ta.remove(); btn.focus && btn.focus({ preventScroll: true });
+  } catch (e) {}
+  const show = () => { if (ok || !btn.parentNode) return;
+    let f = btn.parentNode.querySelector('.cpbox');
+    if (!f) { f = document.createElement('input'); f.type = 'text'; f.readOnly = true; f.className = 'cpbox';
+      f.style.cssText = 'display:block;width:100%;flex-basis:100%;box-sizing:border-box;margin-top:6px;font:inherit;font-size:16px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)';
+      f.addEventListener('focus', () => { f.select(); f.setSelectionRange(0, f.value.length); });
+      btn.insertAdjacentElement('afterend', f); }
+    f.value = text; btn.textContent = 'Press and hold the link to copy it'; f.focus(); f.select(); f.setSelectionRange(0, text.length); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, () => setTimeout(show, 0));
+  else setTimeout(show, 0);
+};
+
 (function () {
   // ---- fresh data: every page draws its charts from files in data/, which the browser would otherwise keep for up to
   //      10 minutes (GitHub Pages' cache time) after an update. 'no-cache' makes it ask the server each time; an
@@ -702,8 +728,7 @@
     p.querySelector('.views').addEventListener('click', e => { const b = e.target.closest('[data-t]'); if (!b) return;
       theme = b.dataset.t; p.querySelectorAll('[data-t]').forEach(x => x.classList.toggle('on', x === b)); upd(); });
     p.querySelector('.ecopy').onclick = e => { const b = e.target; upd();
-      const done = () => { b.textContent = 'Code copied'; setTimeout(() => b.textContent = 'Copy code', 2000); };
-      if (navigator.clipboard) navigator.clipboard.writeText(ta.value).then(done, () => { ta.select(); }); else ta.select();
+      eiCopy(b, ta.value, 'Copy code');
       gcEvent('chart-embed/' + stem + '-' + cv.id, (box.querySelector('h2') || {}).textContent || stem); };
     ta.addEventListener('focus', () => ta.select());
     // the code follows the switches while the panel is open (the chart's own, and page-wide ones like the region)
@@ -778,8 +803,7 @@
       const bar = document.createElement('div'); bar.className = 'cbar';
       const b = document.createElement('button'); b.type = 'button'; b.className = 'nb'; b.textContent = 'Copy link to this chart';
       b.onclick = () => {
-        const url = urlNow(), done = () => { b.textContent = 'Link copied'; setTimeout(() => b.textContent = 'Copy link to this chart', 2000); };
-        if (navigator.clipboard) navigator.clipboard.writeText(url).then(done, () => prompt('Copy this link:', url)); else prompt('Copy this link:', url);
+        eiCopy(b, urlNow(), 'Copy link to this chart');
         gcEvent('chart-copy/' + stem + '-' + cv.id, (box.querySelector('h2') || {}).textContent || stem);
       };
       if (!EMBED) bar.appendChild(b);
