@@ -19,6 +19,13 @@ claim can't be answered without them. Covered claims get extra search words (dat
   years (coal mostly Carboniferous, ~300+ million years ago); we're returning it in about two centuries. The sun was a
   few percent dimmer back then, so the same CO2 now warms more. Last time CO2 was ~425 ppm was ~3 million years ago
   (Pliocene), sea level many meters higher (estimate; check range before building). Link plant-food.
+- 2026-11-01, from X: "Show me repeatable experimental proof that doubling CO2 raises air temperature 2.7 °F (1.5 °C)."
+  Extend no-experiment with a climate-sensitivity bullet (+ search words: doubling double co2 climate sensitivity 2.7 F
+  how much warming per doubling repeatable). Measured part: forcing per doubling ~3.9 W/m2 (AR6, from lab spectra);
+  without feedbacks that alone gives ~1.2 °C (basic radiation physics). Estimated part (label as estimate): with
+  feedbacks AR6 best estimate 3 °C, likely 2.5-4 °C, from three independent lines (physics of feedbacks, the measured
+  record since 1850, past climates). The planet can't go in a lab; the "repeat" is old predictions checked against
+  what happened (link models.html past predictions).
 
 ## Built
 
