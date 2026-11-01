@@ -54,6 +54,13 @@ claim can't be answered without them. Covered claims get extra search words (dat
   CO2 clearly leads: its rise is from fossil fuels (link co2-not-ours) and preceded the warming. "150 years" is wrong:
   the lag was found in ice cores ~1999-2003; what's been known since 1859-1896 (Tyndall, Arrhenius) is that CO2 warms.
   Analogy: credit card interest — debt causes interest, interest adds debt.
+- 2026-11-01, from X (Andy May's "Makassar Strait and Greenland, 10,000 BC to present" chart): "7000 years ago it was
+  warmer; we're coming out of a little ice age." Bullet for climate-optimum: both curves are regional, not global —
+  Greenland ice core (Vinther et al. 2009) and Indonesian water at 500 m depth (Rosenthal et al. 2013), not surface
+  air; one site swings far more than the global average (the chart's 3.6 °C is Greenland only). Neither shows the
+  recent decades at full strength (check each series' end date before building). Global reconstructions put the
+  Holocene peak at ~0.2-1 °C above 1850-1900; the last decade is above that (IPCC AR6). The downward slope on the
+  chart is the orbital cooling; today's rise goes against it (link land-ice.html#greenland-4000).
 
 ## Built
 
