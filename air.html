@@ -47,6 +47,7 @@
 <div class="box" id="b7" hidden data-nav="Warming level over time"><h2 id="t7"></h2><div class="wrap"><canvas id="c7"></canvas></div><p class="sub" id="n7" style="margin:8px 0 0"></p><div id="m7"></div></div>
 <div class="box" id="b9" hidden data-nav="Warming speeding up"><h2 id="t9"></h2><div class="wrap"><canvas id="c9"></canvas></div><p class="sub" id="n9" style="margin:8px 0 0"></p></div>
 <div class="box" id="b10" hidden data-nav="Five records"><h2 id="t10"></h2><div class="seg" id="v10">Show: <button class="nb on" type="button" data-v="y">Yearly</button><button class="nb" type="button" data-v="m">Monthly, since 1979</button></div><div class="wrap s"><canvas id="c10"></canvas></div><div id="r10" style="font-size:14px;margin:10px 0 0"></div><p class="sub" id="n10" style="margin:8px 0 0"></p></div>
+<div class="box" id="holocene" hidden data-nav="12,000 years"><h2 id="t11"></h2><div class="wrap"><canvas id="c11"></canvas></div><ul id="r11" style="font-size:15px;margin:10px 0 0"></ul><p class="sub" id="n11" style="margin:8px 0 0"></p></div>
 <div class="box" id="b5" hidden><h2 id="t5"></h2><div class="wrap s"><canvas id="c5"></canvas></div><p class="sub" id="n5" style="margin:8px 0 0"></p></div>
 <div class="box" id="b6" hidden><h2 id="t6"></h2>
 <div class="seg" id="mmode"><button class="nb on" type="button" data-m="trend">Warming since 1979</button><button class="nb" type="button" data-m="year">One year vs 1951–1980</button>
@@ -445,6 +446,55 @@ load('world').catch(()=>{document.getElementById('err').textContent='Could not l
   let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(draw,150)});
   document.getElementById('b6').hidden=false;draw();
  }).catch(e=>console.error('map:',e));
+})();
+</script>
+<script>
+// ---- global temperature over 12,000 years: the Temp12k reconstruction (Kaufman et al. 2020; data/temp12k_global.csv, made
+//      once by scripts/build_holocene.py; degC vs 1800-1900) with the measured record on top (HadCRUT5 from
+//      data/temp_records_monthly.csv, put on 1850-1900 by subtracting its own 1850-1900 mean)
+(function(){
+ const get=f=>fetch('data/'+f).then(r=>{if(!r.ok)throw 0;return r.text()});
+ const mean=a=>a.reduce((s,x)=>s+x,0)/a.length,
+  slope=P=>{const mx=mean(P.map(p=>p.x)),my=mean(P.map(p=>p.y));let a=0,b=0;P.forEach(p=>{a+=(p.x-mx)*(p.y-my);b+=(p.x-mx)**2});return a/b},
+  yr=y=>y<0?Math.abs(y).toLocaleString('en-US')+' BCE':String(y),f1=v=>(v<0?'−':'+')+Math.abs(v).toFixed(1),f2=v=>(v<0?'−':'+')+Math.abs(v).toFixed(2);
+ Promise.all([get('temp12k_global.csv'),get('temp_records_monthly.csv')]).then(([k,t])=>{
+  const KL=k.trim().split(/\r?\n/),KH=KL[0].split(','),K=KL.slice(1).map(l=>l.split(',').map(Number)).map(p=>({x:p[0],lo:p[1],y:p[2],hi:p[3]})).sort((a,b)=>a.x-b.x);
+  const T=t.trim().split(/\r?\n/),TH=T[0].split(','),hi=TH.indexOf('hadcrut');
+  if(K.length<50||hi<0)throw new Error('holocene data incomplete');
+  const Y={};T.slice(1).forEach(l=>{const p=l.split(',');if(p[hi]==='')return;const y=+p[0].slice(0,4);(Y[y]??=[]).push(+p[hi])});
+  const yrs=Object.keys(Y).map(Number).filter(y=>Y[y].length===12).sort((a,b)=>a-b);
+  const base=mean(yrs.filter(y=>y<=1900).map(y=>mean(Y[y])));
+  const M=yrs.map(y=>({x:y,y:mean(Y[y])-base})),M10=M.slice(9).map((p,i)=>({x:p.x,y:mean(M.slice(i,i+10).map(q=>q.y))}));
+  const L=M[M.length-1],cur=M10[M10.length-1].y,y0=L.x-9;
+  const pk=K.reduce((a,b)=>b.y>a.y?b:a),bin=Math.round(mean(K.slice(1).map((p,i)=>p.x-K[i].x)));
+  const first=K[0],warmR=(pk.y-first.y)/(pk.x-first.x)*100,M30=M.filter(p=>p.x>L.x-30),nowR=slope(M30)*100;
+  const after=K.filter(p=>p.x>pk.x&&p.x<1850),coolR=slope(after)*1000;
+  const XMIN=Math.floor((first.x-bin/2)/1000)*1000,XMAX=Math.ceil((L.x+5)/100)*100;
+  document.getElementById('t11').textContent=`World temperature over 12,000 years: reconstruction and measurements, to ${L.x} (°C above the 1800s)`;
+  document.getElementById('holocene').dataset.through=`${L.x} (HadCRUT5); reconstruction: Kaufman et al. 2020`;
+  document.getElementById('r11').innerHTML=[
+   `The warmest centuries in the reconstruction are around ${yr(pk.x)}: ${f1(pk.y)} °C (90% range ${f1(pk.lo)} to ${f1(pk.hi)} °C). The last ten years, ${y0}–${L.x}, averaged ${f1(cur)} °C: ${cur>pk.hi?'above even the top of that range':cur>pk.y?'above the middle estimate':'not yet above the middle estimate'}.`,
+   `After that peak, Earth's orbit slowly cooled the world by about ${Math.abs(coolR).toFixed(2)} °C per thousand years, into the Little Ice Age. The measured warming runs the other way.`,
+   `Speed: in the last part of the climb out of the ice age (from the start of this record to its peak), the world warmed by about ${warmR.toFixed(2)} °C per century. Over the last 30 years it warmed by ${nowR.toFixed(1)} °C per century, about ${Math.round(nowR/warmR)} times as fast.`,
+   `The reconstruction is smoothed: each value is the average of a ${bin}-year step, so it can't show single hot decades in the past. That is why this page compares it with 10-year averages, not single years.`
+  ].map(x=>`<li>${x}</li>`).join('');
+  document.getElementById('n11').innerHTML=`Shaded: the global average reconstructed by Kaufman et al. (2020, the "Temp12k" database) from about 1,300 records at 679 sites (lake and sea-floor sediments, ice, peat, cave deposits, pollen), combined with five statistical methods; the band holds the middle 90% of 2,500 versions (500 per method), the blue line is the middle one. Each value is the average of a ${bin}-year step, plotted at its center, relative to 1800–1900. Red: measured world temperature (HadCRUT5, Met Office), relative to its own 1850–1900 average; dots are single years, the line a 10-year average. The two baselines (1800–1900 and 1850–1900) differ by a few hundredths of a degree. Some studies argue the early peak in reconstructions like this one is partly a summer bias and that the world warmed slowly all through the last 10,000 years (the "Holocene temperature conundrum"); either way, the last decade is warmer than the middle estimate for any century in it. Data: <a href="https://doi.org/10.1038/s41597-020-0530-7" target="_blank" rel="noopener">Kaufman et al. 2020, Scientific Data</a> (via NOAA NCEI), <a href="https://www.metoffice.gov.uk/hadobs/hadcrut5/" target="_blank" rel="noopener">HadCRUT5</a>. IPCC AR6 (SPM A.2.2) puts the warmest centuries of the last 10,000 years at 0.2–1 °C above 1850–1900 and finds the decade 2011–2020 warmer.`;
+  const STEPS=[50,100,200,250,500,1000,2000];
+  const tipT={title:t=>yr(Math.round(t[0].parsed.x))};
+  window.c11=new Chart(document.getElementById('c11'),{type:'line',data:{datasets:[
+    {label:'Measured, 10-year average',data:M10,borderColor:'#d00000',borderWidth:3,pointRadius:0,order:0},
+    {label:'Measured, single years',data:M,showLine:false,pointRadius:1.8,pointBackgroundColor:'rgba(208,0,0,.4)',borderColor:'rgba(208,0,0,.4)',order:1},
+    {label:'Reconstruction (middle)',data:K.map(p=>({x:p.x,y:p.y})),borderColor:THEME.deep2,borderWidth:2,pointRadius:0,order:2},
+    {label:`Level of the last 10 years (${f1(cur)} °C)`,data:[{x:XMIN,y:cur},{x:XMAX,y:cur}],borderColor:'#d00000',borderWidth:1,borderDash:[5,4],pointRadius:0,order:3},
+    {label:'Reconstruction, middle 90%',data:K.map(p=>({x:p.x,y:p.hi})),borderWidth:0,pointRadius:0,backgroundColor:THEME.band1,fill:'+1',order:4},
+    {label:'_lo',data:K.map(p=>({x:p.x,y:p.lo})),borderWidth:0,pointRadius:0,fill:false,order:4}]},
+   options:{animation:false,maintainAspectRatio:false,parsing:false,interaction:{mode:'nearest',axis:'x',intersect:false},
+    plugins:{legend:{labels:{filter:i=>!i.text.startsWith('_')}},tooltip:{filter:c=>c.datasetIndex<=2,callbacks:{...tipT,label:c=>c.dataset.label+': '+f2(c.parsed.y)+' °C'}}},
+    scales:{x:{type:'linear',min:XMIN,max:XMAX,ticks:{autoSkip:false,maxRotation:0,callback:v=>v===0?'0':yr(v)},
+      afterBuildTicks:ax=>{const st=STEPS.find(s=>(ax.max-ax.min)/s<=(innerWidth<600?5:8))||2000,r=[];for(let v=Math.ceil(ax.min/st)*st;v<=ax.max;v+=st)r.push({value:v});ax.ticks=r},grid:{display:false}},
+     y:{title:{display:true,text:'°C above the 1800s'},grid:{color:THEME.grid}}}}});
+  document.getElementById('holocene').hidden=false;
+ }).catch(e=>console.error('holocene:',e));
 })();
 </script>
 </main></body></html>
