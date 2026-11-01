@@ -26,6 +26,14 @@ claim can't be answered without them. Covered claims get extra search words (dat
   feedbacks AR6 best estimate 3 °C, likely 2.5-4 °C, from three independent lines (physics of feedbacks, the measured
   record since 1850, past climates). The planet can't go in a lab; the "repeat" is old predictions checked against
   what happened (link models.html past predictions).
+- 2026-11-01, from X (on a 130,000-year GHG forcing chart): "A splice of dodgy proxies with modern direct
+  measurements." New entry, e.g. id proxy-splice (search words: splice spliced proxies proxy dodgy ice core bubbles
+  hockey stick grafted mike's nature trick apples and oranges). Points: gas concentrations from ice cores are not a
+  proxy, they are samples of ancient air trapped in bubbles, measured the same way as modern air. Law Dome cores
+  overlap Mauna Loa (1958 onward) and agree within a few ppm (Etheridge et al. 1996; MacFarling Meure et al. 2006);
+  firn air bridges the gap. Caveat to state honestly: older/slow-snowfall cores smooth out short swings (decades to
+  centuries), but a rise as big as today's would still show. Temperature proxies are a different question: link
+  medieval-warm. Link co2.html#hbox.
 
 ## Built
 
