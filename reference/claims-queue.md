@@ -34,6 +34,12 @@ claim can't be answered without them. Covered claims get extra search words (dat
   firn air bridges the gap. Caveat to state honestly: older/slow-snowfall cores smooth out short swings (decades to
   centuries), but a rise as big as today's would still show. Temperature proxies are a different question: link
   medieval-warm. Link co2.html#hbox.
+- 2026-11-01, from X: "Then why isn't it 10 degrees hotter? The temperature data doesn't support the forcing."
+  Bullet for how-much-human (+ search words: why not hotter 10 degrees forcing doesn't match temperature too little
+  warming pipeline ocean lag). Rough check (label as such): GHG forcing ~4.2 W/m2 minus aerosol cooling -> net ~3.1
+  W/m2 (IGCC 2025); ~1.1 W/m2 of that is still going into the ocean (EEI), so ~2 W/m2 has been 'answered' by
+  warming; at ~0.77 °C per W/m2 (ECS 3 °C / 3.9 W/m2, estimate) that is ~1.5 °C, close to the observed 1.37 °C
+  human-induced. Nobody projected 10 °C; that would need roughly 13 W/m2. Link eei.html, too-late.
 
 ## Built
 
