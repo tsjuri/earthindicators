@@ -23,9 +23,13 @@ jobs:
           python-version: "3.12"
       - name: Download and check
         run: python -u scripts/build_temp_records.py
+      # global temperature over 12,000 years (Kaufman et al. 2020): a finished study, downloaded only once
+      - name: Temp12k reconstruction (only if missing)
+        continue-on-error: true
+        run: python -u scripts/build_holocene.py
       - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add data/temp_records_monthly.csv data/temp_records_source.txt
+          git add data/temp_records_monthly.csv data/temp_records_source.txt data/temp12k_*.csv
           git diff --cached --quiet || (git commit -m "Update temperature records" && git pull --rebase && git push)
