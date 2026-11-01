@@ -34,6 +34,11 @@ claim can't be answered without them. Covered claims get extra search words (dat
   firn air bridges the gap. Caveat to state honestly: older/slow-snowfall cores smooth out short swings (decades to
   centuries), but a rise as big as today's would still show. Temperature proxies are a different question: link
   medieval-warm. Link co2.html#hbox.
+  Also (2026-11-01, X): "Invented data, impossible to know W/m2 a century ago." Forcing isn't measured in the past;
+  it's calculated from measured gas concentrations with lab-measured absorption physics, the same calculation
+  confirmed today by direct measurements (Feldman et al. 2015, surface CO2 forcing rising ~0.2 W/m2 per decade at two
+  US sites; Harries et al. 2001, satellite spectra). Search words: invented impossible to know watts per square meter
+  forcing 100 years ago calculated.
 - 2026-11-01, from X: "Then why isn't it 10 degrees hotter? The temperature data doesn't support the forcing."
   Bullet for how-much-human (+ search words: why not hotter 10 degrees forcing doesn't match temperature too little
   warming pipeline ocean lag). Rough check (label as such): GHG forcing ~4.2 W/m2 minus aerosol cooling -> net ~3.1
