@@ -13,6 +13,12 @@ claim can't be answered without them. Covered claims get extra search words (dat
   Holocene peak (link land-ice.html#greenland-4000), negligible over 150 years vs about 4 W/m2 of GHG forcing. Don't
   repeat "continues down for 1,000 years" unless checked against Berger & Loutre insolation tables.
   Search words: milankovitch insolation more than 100% greenhouse gases aerosols masking orbital cooling.
+- 2026-11-01, from X: "The red bit should be green: we're returning CO2 to the atmosphere where it originally came from,
+  like topping up a fuel tank." Extend dinosaurs (+ search words: originally came from returning carbon fossil carbon
+  put back where it came from fuel tank co2 starved). Points: fossil carbon was buried over hundreds of millions of
+  years (coal mostly Carboniferous, ~300+ million years ago); we're returning it in about two centuries. The sun was a
+  few percent dimmer back then, so the same CO2 now warms more. Last time CO2 was ~425 ppm was ~3 million years ago
+  (Pliocene), sea level many meters higher (estimate; check range before building). Link plant-food.
 
 ## Built
 
