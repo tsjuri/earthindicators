@@ -40,6 +40,15 @@ claim can't be answered without them. Covered claims get extra search words (dat
   W/m2 (IGCC 2025); ~1.1 W/m2 of that is still going into the ocean (EEI), so ~2 W/m2 has been 'answered' by
   warming; at ~0.77 °C per W/m2 (ECS 3 °C / 3.9 W/m2, estimate) that is ~1.5 °C, close to the observed 1.37 °C
   human-induced. Nobody projected 10 °C; that would need roughly 13 W/m2. Link eei.html, too-late.
+- 2026-11-01, from X: "Temperature leads, CO2 follows. Known among scientists for 150 years." New entry, e.g. id
+  co2-lags (search words: lag lags leads follows temperature first 800 years ice core vostok co2 follows temperature
+  chicken egg). Points: in ice ages, an orbital nudge started the warming, the warming ocean released CO2, and CO2
+  then amplified and spread the warming worldwide — both cause and effect (feedback). Antarctic lag at the end of ice
+  ages: ~800 years in early studies (Caillon et al. 2003), near-synchronous within a few centuries in better-dated ones
+  (Parrenin et al. 2013); for global temperature, CO2 came first at the last deglaciation (Shakun et al. 2012). Today
+  CO2 clearly leads: its rise is from fossil fuels (link co2-not-ours) and preceded the warming. "150 years" is wrong:
+  the lag was found in ice cores ~1999-2003; what's been known since 1859-1896 (Tyndall, Arrhenius) is that CO2 warms.
+  Analogy: credit card interest — debt causes interest, interest adds debt.
 
 ## Built
 
