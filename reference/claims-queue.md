@@ -6,7 +6,13 @@ claim can't be answered without them. Covered claims get extra search words (dat
 
 ## To build
 
-(empty)
+- 2026-11-01, from X: "Milankovitch insolation is trending down, so greenhouse gases account for more than 100% of the
+  warming." Extend natural-cycles (and maybe how-much-human): IPCC AR6 SPM A.1.3, 1850-1900 to 2010-2019: observed about
+  1.1 °C; well-mixed GHGs +1.0 to 2.0 °C; aerosols and other human drivers 0.0 to -0.8 °C; natural (sun, volcanoes)
+  -0.1 to +0.1 °C. So GHGs alone caused more warming than observed. Orbital forcing: points toward slow cooling since the
+  Holocene peak (link land-ice.html#greenland-4000), negligible over 150 years vs about 4 W/m2 of GHG forcing. Don't
+  repeat "continues down for 1,000 years" unless checked against Berger & Loutre insolation tables.
+  Search words: milankovitch insolation more than 100% greenhouse gases aerosols masking orbital cooling.
 
 ## Built
 
