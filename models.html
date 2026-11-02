@@ -170,6 +170,15 @@ h2.sec{font-size:20px;margin:28px 0 6px}
 <p class="sub">Measured: yearly averages of NASA's satellite global mean sea level (NASA-SSH, PO.DAAC; seasonal cycle removed, as on the <a href="sea-level.html">sea level page</a>), relative to their 1995–2014 average. "If the speed-up continued": the same quadratic fit the sea level page uses, through the whole satellite record, simply carried on to 2100. It is a curve, not a model of the ocean or the ice sheets. IPCC: AR6 Working Group I, Summary for Policymakers, B.5.3 (<a href="https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/" target="_blank" rel="noopener">ipcc.ch</a>), median and likely range (two chances in three) of global mean sea level rise in 2050 and 2100 relative to 1995–2014, for the five scenarios (drawn side by side around each year). The IPCC's low-confidence high case, which includes ice-sheet processes that are poorly understood, is given in the text.</p>
 </section>
 
+<section id="ye-s" class="hide">
+<h2 class="sec">This year and next year</h2>
+<p class="st"><span class="ptag p">Projection from measurements: chances, not certainties</span></p>
+<div class="cards" id="ye-cards"></div>
+<div class="box"><h2 id="t13"></h2><div class="wrap"><canvas id="c13"></canvas></div></div>
+<ul id="ye-read"></ul>
+<p class="sub" id="ye-sub"></p>
+</section>
+
 <section id="wmo-s" class="hide">
 <h2 class="sec">The next five years (WMO)</h2>
 <p class="st"><span class="ptag p">Forecast: chances, not certainties</span></p>
@@ -556,6 +565,37 @@ function budget(D){
    scales:{x:{grid:{display:false}},y:{min:0,max:1200,title:{display:true,text:'Billion metric tons of CO₂'},grid:{color:THEME.grid}},
     y2:{position:'right',min:0,max:1200/E,title:{display:true,text:'Years at the 2024 rate'},grid:{display:false},ticks:{stepSize:5}}}}}))}
 
+// ---- 6b. where this year and next year are likely to finish (scripts/build_yearend.py)
+function yearEnd(Y){
+ const T=Y.this,N=Y.next,y=Y.year,ML=['January','February','March','April','May','June','July','August','September','October','November','December'];
+ const pct=p=>p>=.99?'more than 99%':p<=.01?'less than 1%':Math.round(p*100)+'%';
+ cards('ye-cards',[[f2(T.median)+' °C',`${y} projected (90% range ${f2(T.lo)}–${f2(T.hi)})`],[pct(T.p_record),`chance ${y} beats ${Y.record[0]} (${f2(Y.record[1])} °C), the warmest year so far`],
+  [f2(N.median)+' °C',`${y+1} projected (90% range ${f2(N.lo)}–${f2(N.hi)})`],[pct(N.p_record),`chance ${y+1} becomes the warmest year so far`]]);
+ $('t13').textContent=`World air temperature each year, with projections for ${y} and ${y+1} (°C above 1850–1900, ERA5)`;
+ const ch=Y.check,E=Y.enso;
+ list('ye-read',[
+  `January to ${ML[Y.through_month-1]} ${y} averaged ${f2(Y.ytd)} °C above 1850–1900 (measured). The latest ENSO reading (${E.season}, ${E.source} ${E.value>0?'+':''}${f2(E.value)} °C) ${E.value>=.5?'shows El Niño, which keeps the rest of the year warm':E.value<=-.5?'shows La Niña, which cools the rest of the year':'is neutral'}: ${y} is projected to finish at ${f2(T.median)} °C. The chance it finishes second, behind ${Y.record[0]}, is ${pct(T.p_second)}.`,
+  `El Niño and La Niña act on world temperature with a delay of a few months, so much of today's ENSO effect lands in ${y+1}: projected ${f2(N.median)} °C, with a 90% range of ${f2(N.lo)} to ${f2(N.hi)} °C.`,
+  `Checked: re-run for each past year with that year left out, the outcome fell inside the 90% range in ${Math.round(ch.this.inside90*100)}% of ${ch.this.years} years for the year in progress (typical miss ${f2(ch.this.median_miss)} °C), and ${Math.round(ch.next.inside90*100)}% of ${ch.next.years} years for the year after (typical miss ${f2(ch.next.median_miss)} °C).`,
+  `A single year above 1.5 °C does not mean the Paris limit has been passed; that limit is about the long-term level (see the <a href="air.html">air temperature page</a>).`]);
+ $('ye-sub').innerHTML=`Measured: Copernicus ERA5 world air temperature, complete months to ${ML[Y.through_month-1]} ${y}; each month against its 1991–2020 average, yearly values plus ${f2(Y.offset)} °C (Copernicus's offset to 1850–1900). Projection: a statistical fit on every earlier year since 1950, using the year so far and the ENSO state in the same season (NOAA CPC's Relative Oceanic Niño Index, which corrects Niño 3.4 for the warming of the whole tropics); the next-year fit also includes the long-term trend. Ranges are the fit's 90% prediction intervals; chances are simulated from them. This uses the latest <i>measured</i> El Niño state, not model forecasts of where El Niño goes next, so it cannot see an El Niño that strengthens or fades faster than usual. The approach follows Zeke Hausfather's year-end estimates (<a href="https://www.theclimatebrink.com/" target="_blank" rel="noopener">The Climate Brink</a>), which use ENSO model forecasts instead. Updated monthly.`;
+ show('ye-s');
+ const A=Y.annual,labels=[...A.map(a=>a[0]),y,y+1],rec=Y.record[0],PC='#c4622d';
+ const meas=A.map(a=>a[1]).concat([null,null]),proj=labels.map(l=>l===y?T.median:l===y+1?N.median:null);
+ const eb={id:'yeEB',afterDatasetsDraw(c){const{ctx,scales:{x,y:sy}}=c;ctx.save();ctx.strokeStyle=THEME.axis;ctx.lineWidth=1.5;
+   [[y,T],[y+1,N]].forEach(([l,p])=>{const px=x.getPixelForValue(labels.indexOf(l)),a=sy.getPixelForValue(p.lo),b=sy.getPixelForValue(p.hi);
+    ctx.beginPath();ctx.moveTo(px,a);ctx.lineTo(px,b);ctx.moveTo(px-4,a);ctx.lineTo(px+4,a);ctx.moveTo(px-4,b);ctx.lineTo(px+4,b);ctx.stroke()});
+   const py=sy.getPixelForValue(1.5);ctx.strokeStyle=PARIS;ctx.setLineDash([6,4]);ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(x.left,py);ctx.lineTo(x.right,py);ctx.stroke();
+   ctx.setLineDash([]);ctx.fillStyle=PARIS;ctx.font='12px system-ui,sans-serif';ctx.fillText('1.5 °C',x.left+6,py-5);ctx.restore()}};
+ ready('ye',new Chart($('c13'),{type:'bar',plugins:[eb],data:{labels,datasets:[
+   {label:'Measured',data:meas,backgroundColor:labels.map(l=>l===rec?PC:THEME.deep1),borderWidth:0,grouped:false,order:1},
+   {label:'Projected (median, with 90% range)',data:proj,backgroundColor:hatch(PC,.25),borderColor:PC,borderWidth:1.5,grouped:false,order:0}]},
+  options:{animation:false,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+   plugins:{tooltip:{filter:i=>i.raw!=null,callbacks:{label:c=>{const l=labels[c.dataIndex],p=l===y?T:l===y+1?N:null;
+     return p?`Projected: ${f2(p.median)} °C (90% range ${f2(p.lo)}–${f2(p.hi)})`:`Measured: ${f2(c.parsed.y)} °C${l===rec?' (warmest so far)':''}`}}}},
+   scales:{x:{grid:{display:false},ticks:{autoSkip:false,maxRotation:0,callback:(v,i)=>labels[i]%10===0?labels[i]:''}},
+    y:{min:0,max:2.1,title:{display:true,text:'°C above 1850–1900'},grid:{color:THEME.grid}}}}}))}
+
 // ---- 6. WMO 5-year outlook (cards only: these are chances)
 function wmo(D){
  const W=D.wmo;
@@ -675,10 +715,11 @@ function cdr(X,E){
 
 Promise.allSettled([
  Promise.all([get('NASA_SSH_GMSL_INDICATOR.txt'),get('models_outlook.json').then(JSON.parse)]).then(([t,D])=>seaLevel(t,D)).catch(e=>console.error(e)),
+ get('models_yearend.json').then(JSON.parse).then(yearEnd).catch(e=>console.error(e)),
  Promise.all([get('models_march_sie_fu2026.csv'),get('N_seaice_extent_daily_v4.0.csv')]).then(([M,N])=>seaIce(M,N)).catch(e=>console.error(e)),
  Promise.all([get('models_old.json').then(JSON.parse),get('era5_t2_regions_monthly.csv').then(era5),get('models_cmip6.csv'),get('models_outlook.json').then(JSON.parse),get('models_hansen_temp.csv'),get('models_whatittakes.json').then(JSON.parse),get('fossil_co2_global.csv'),get('models_ar6_cdr.json').then(JSON.parse)])
   .then(([O,E,M,D,HT,W,FC,X])=>{const parts=[()=>oldModels(O,E),()=>hansen(O,E),()=>hansen25(E,HT,D),()=>cmip(M,E),()=>{E.Lm=ar6Lines(D,E);ar6(D,E)},()=>cdr(X,E),()=>ghgPaths(D,W),()=>whatItTakes(D,W,FC),()=>budget(D),()=>wmo(D)],bad=[];
    parts.forEach((f,i)=>{try{f()}catch(e){console.error(e);bad.push(i)}});if(bad.length)throw bad})
-]).then(r=>{if(r[2].status==='rejected'){console.error(r[2].reason);$('err').textContent='Could not load all of the data. Please try again later.'}});
-$('exp').onclick=()=>{const L=[[C.o,'t1',0],[C.h,'t2',0],[C.n,'t7',0],[C.m,'t3',0],[C.l,'t6',0],[C.a,'t4',0],[C.r,'t12',0],[C.g,'t8',0],[C.w,'t9',0],[C.b,'t5',0],[C.si,'t10',0],[C.sl,'t11',0]].filter(x=>x[0]);if(L.length)siteExport(L,'climate-models.jpg')};
+]).then(r=>{if(r[3].status==='rejected'){console.error(r[3].reason);$('err').textContent='Could not load all of the data. Please try again later.'}});
+$('exp').onclick=()=>{const L=[[C.o,'t1',0],[C.h,'t2',0],[C.n,'t7',0],[C.m,'t3',0],[C.l,'t6',0],[C.a,'t4',0],[C.r,'t12',0],[C.g,'t8',0],[C.w,'t9',0],[C.b,'t5',0],[C.si,'t10',0],[C.sl,'t11',0],[C.ye,'t13',0]].filter(x=>x[0]);if(L.length)siteExport(L,'climate-models.jpg')};
 </script></main></body></html>

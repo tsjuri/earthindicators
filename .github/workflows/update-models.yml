@@ -23,6 +23,8 @@ jobs:
       - run: pip install netCDF4 openpyxl
       - name: Download, check and build
         run: python -u scripts/build_models.py
+      - name: Year-end projection (this year and next; needs last month's ERA5 days, which update-era5 has by the 3rd)
+        run: python -u scripts/build_yearend.py
       - name: Commit changes
         run: |
           git config user.name "github-actions"
