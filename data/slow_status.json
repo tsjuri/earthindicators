@@ -29,12 +29,12 @@
   "through": "2024"
  },
  "fossil": {
-  "file": "GCB2025v15_MtCO2_flat.csv",
+  "file": "GCB2026v11_MtCO2_flat.csv",
   "first": "1750",
-  "new_data": "2026-10-07",
-  "source": "https://doi.org/10.5281/zenodo.17417124",
-  "through": "2024",
-  "version": "2025v15"
+  "new_data": "2026-11-02",
+  "source": "https://doi.org/10.5281/zenodo.23667912",
+  "through": "2025",
+  "version": "2026v11"
  },
  "permos": {
   "new_data": "2026-10-22",
