@@ -83,6 +83,7 @@ h2.sec{font-size:20px;margin:28px 0 6px}
 <div class="cards" id="h25-cards"></div>
 <div class="box"><h2 id="t7"></h2><div class="wrap"><canvas id="c7"></canvas></div></div>
 <div class="box" id="score-b" hidden data-nav="Hansen's predictions"><h2>Hansen's recent predictions, scored against NASA's measurements</h2><table class="score"><tbody id="score"></tbody></table><p class="sub" id="score-n" style="margin:8px 0 0"></p></div>
+<div class="box" id="race-b" hidden data-nav="2026 vs the record"><h2 id="t14"></h2><div class="wrap s"><canvas id="c14"></canvas></div><p class="sub" id="race-n" style="margin:8px 0 0"></p></div>
 <ul id="h25-read"></ul>
 <p class="sub">Hansen, Kharecha, Sato and 15 co-authors, many of them at NASA's Goddard Institute for Space Studies (GISS), 2025: <i>Global warming has accelerated: are the United Nations and the public well-informed?</i> Environment: Science and Policy for Sustainable Development 67(1), 6–44 (<a href="https://doi.org/10.1080/00139157.2025.2434494" target="_blank" rel="noopener">doi:10.1080/00139157.2025.2434494</a>), published February 2025. Measured in the paper's own terms: NASA GISTEMP v4 (<a href="https://data.giss.nasa.gov/gistemp/" target="_blank" rel="noopener">data.giss.nasa.gov/gistemp</a>, built from NOAA's GHCN station and ERSST sea surface data), each month taken relative to that month's 1880–1920 average, as in the table Hansen's group keeps at <a href="https://www.columbia.edu/~jeh1/Data/Temperature/new_tables/landocean_1880_full.txt" target="_blank" rel="noopener">columbia.edu/~jeh1</a> (this site's version matches it to within 0.004 °C), then averaged over 12 months. The grey line is ERA5 above 1850–1900, as used elsewhere on this site, for comparison. The hatched box is the projection in Hansen's monthly chart <a href="https://www.columbia.edu/~jeh1/Data/Temperature/" target="_blank" rel="noopener">Global Surface Temperature (Base Period 1880–1920)</a>, version with data through September 2026, read off the chart image with its axes calibrated on the gridlines (to within 0.01 °C).</p>
 </section>
@@ -348,7 +349,35 @@ function score(G,M,L,D,ml){
  $('score').innerHTML=T.map(t=>{const [st,meas]=(S[t.id]||(()=>[B('open','Open'),'']))(),src=SRC[t.src];
   return `<tr><td>${t.text}<span class="m">Made ${t.made}: <a href="${src.url}" target="_blank" rel="noopener">${src.title}</a></span>${meas?`<span class="r">${meas}</span>`:''}</td><td class="st">${st}</td></tr>`}).join('');
  $('score-n').textContent=`All in Hansen's own measure: NASA GISTEMP, °C above 1880–1920, updated each month. "Right" and "Wrong" are given only when the outcome is settled and the prediction gives a clear line; "Running" marks wording without a fixed threshold ("much"). For "barely", this site counts up to 0.05 °C, less than the 12-month average often moves within three months.`;
- $('score-b').hidden=false}
+ $('score-b').hidden=false;
+ race(G)}
+
+// ---- the "2026 beats 2024" test, month by month: running average of 2026 vs the record year, in GISTEMP (1880-1920).
+//      Kept after the year ends, as the record of how the test was decided.
+function race(G){
+ const Y=2026,by={};G.forEach(r=>by[r.m]=r.a);const mm=(y,k)=>`${y}-${String(k).padStart(2,'0')}`;
+ const ML=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ const full=y=>[...Array(12).keys()].every(k=>by[mm(y,k+1)]!=null),ann=y=>mean([...Array(12).keys()].map(k=>by[mm(y,k+1)]));
+ const prior=[...new Set(G.map(r=>r.y))].filter(y=>y<Y&&full(y)),ry=prior.reduce((b,y)=>ann(y)>ann(b)?y:b),R=ann(ry);
+ const run=y=>{let s=0;return [...Array(12).keys()].map(k=>{const v=by[mm(y,k+1)];if(v==null)return null;s+=v;return s/(k+1)})};
+ const cur=run(Y),n=cur.filter(v=>v!=null).length;if(!n)return;
+ const need=n<12?(R*12-cur[n-1]*n)/(12-n):null;
+ const path=need==null?[]:[...Array(12).keys()].map(k=>k<n-1?null:k===n-1?cur[n-1]:(cur[n-1]*n+need*(k+1-n))/(k+1));
+ const done=n===12,won=done&&cur[11]>R;
+ $('t14').textContent=done?`${Y} ${won?'beat':'did not beat'} ${ry} in NASA's record: average so far, month by month (°C above 1880–1920)`
+  :`Can ${Y} beat ${ry}? Average so far, month by month, in NASA's record (°C above 1880–1920)`;
+ $('race-n').innerHTML=done?`${Y}: ${f2(cur[11])} °C, against ${f2(R)} °C for ${ry}.`
+  :`Measured to ${ML[n-1]}: ${f2(cur[n-1])} °C. To finish above ${ry} (${f2(R)} °C), ${ML[n]}${n<11?'–Dec':''} must average <b>${f2(need)} °C</b>`+
+   ` (the same months of ${ry} averaged ${f2(mean([...Array(12-n).keys()].map(k=>by[mm(ry,n+k+1)])))} °C). The dashed line is that path. Each month's value counts equally, as in NASA's yearly figure. NASA publishes a month's value around the middle of the next month.`;
+ $('race-b').hidden=false;
+ const RC='#8a96a3';
+ ready('race',new Chart($('c14'),{type:'line',plugins:[hlines([[R,`${ry}: ${f2(R)} °C (record to beat)`,RC,true]])],data:{labels:ML,datasets:[
+   {label:String(Y),data:cur,borderColor:PARIS,backgroundColor:PARIS,borderWidth:3,pointRadius:3,order:0},
+   {label:'Needed to beat '+ry,data:path,borderColor:PARIS,borderDash:[6,5],borderWidth:2,pointRadius:0,order:1,hidden:done},
+   {label:String(ry),data:run(ry),borderColor:RC,backgroundColor:RC,borderWidth:2,pointRadius:2,order:2}]},
+  options:{animation:false,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+   plugins:{tooltip:{filter:i=>i.raw!=null,callbacks:{label:c=>`${c.dataset.label}: ${f2(c.parsed.y)} °C`}}},
+   scales:{x:{grid:{display:false}},y:{title:{display:true,text:'°C above 1880–1920'},grid:{color:THEME.grid}}}}}))}
 
 // ---- 3. CMIP6 against ERA5
 function cmip(t,E){
@@ -721,5 +750,5 @@ Promise.allSettled([
   .then(([O,E,M,D,HT,W,FC,X])=>{const parts=[()=>oldModels(O,E),()=>hansen(O,E),()=>hansen25(E,HT,D),()=>cmip(M,E),()=>{E.Lm=ar6Lines(D,E);ar6(D,E)},()=>cdr(X,E),()=>ghgPaths(D,W),()=>whatItTakes(D,W,FC),()=>budget(D),()=>wmo(D)],bad=[];
    parts.forEach((f,i)=>{try{f()}catch(e){console.error(e);bad.push(i)}});if(bad.length)throw bad})
 ]).then(r=>{if(r[3].status==='rejected'){console.error(r[3].reason);$('err').textContent='Could not load all of the data. Please try again later.'}});
-$('exp').onclick=()=>{const L=[[C.o,'t1',0],[C.h,'t2',0],[C.n,'t7',0],[C.m,'t3',0],[C.l,'t6',0],[C.a,'t4',0],[C.r,'t12',0],[C.g,'t8',0],[C.w,'t9',0],[C.b,'t5',0],[C.si,'t10',0],[C.sl,'t11',0],[C.ye,'t13',0]].filter(x=>x[0]);if(L.length)siteExport(L,'climate-models.jpg')};
+$('exp').onclick=()=>{const L=[[C.o,'t1',0],[C.h,'t2',0],[C.n,'t7',0],[C.m,'t3',0],[C.l,'t6',0],[C.a,'t4',0],[C.r,'t12',0],[C.g,'t8',0],[C.w,'t9',0],[C.b,'t5',0],[C.si,'t10',0],[C.sl,'t11',0],[C.ye,'t13',0],[C.race,'t14',0]].filter(x=>x[0]);if(L.length)siteExport(L,'climate-models.jpg')};
 </script></main></body></html>
