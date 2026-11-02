@@ -283,7 +283,7 @@ load('world').catch(()=>{document.getElementById('err').textContent='Could not l
   const dim=(y,m)=>new Date(Date.UTC(y,m,0)).getUTCDate(),M=[];
   Object.keys(S).sort().forEach(k=>{const y=+k.slice(0,4),m=+k.slice(5,7);if(S[k][1]===dim(y,m))M.push({y,m,x:y+(m-.5)/12,v:S[k][0]/S[k][1]})});
   const clim=Array(13).fill(0);for(let m=1;m<=12;m++){const a=M.filter(p=>p.m===m&&p.y>=1991&&p.y<=2020);clim[m]=a.reduce((s,p)=>s+p.v,0)/a.length}
-  M.forEach(p=>p.a=p.v-clim[p.m]+0.88);                               // °C above 1850–1900 (Copernicus's yearly offset)
+  M.forEach(p=>p.a=p.v-clim[p.m]+PIMON[p.m-1]);                      // °C above 1850–1900 (Copernicus's offset for that month)
   const end=M[M.length-1].x,SEG=[[1940,1970,'#8a96a3'],[1970,2010,'#e0a03c'],[2010,end+.01,'#d00000']];
   const fit=(a,b)=>{const P=M.filter(p=>p.x>=a&&p.x<b),n=P.length,mx=P.reduce((s,p)=>s+p.x,0)/n,my=P.reduce((s,p)=>s+p.a,0)/n;let u=0,q=0;
    P.forEach(p=>{u+=(p.x-mx)*(p.a-my);q+=(p.x-mx)**2});const sl=u/q;return{P,sl,line:[{x:P[0].x,y:my+sl*(P[0].x-mx)},{x:P[n-1].x,y:my+sl*(P[n-1].x-mx)}]}};
