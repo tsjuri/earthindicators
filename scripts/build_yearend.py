@@ -8,8 +8,8 @@ Method (in the spirit of Zeke Hausfather's year-end estimates, kept to measured 
     for the latest 3-month season available this year. El Niño warms the world with a lag of a few months, so the
     latest season tells a lot about the next 12 months.
   * This year:  year total  = a + b * (year so far) + c * ENSO                 fitted on every earlier year from 1950
-  * Next year:  next year   = a + b * (year so far) + c * ENSO + d * year      fitted on every earlier pair of years
-    using the same months and the same ENSO season in every year.
+  * Next year:  next year   = a + b * (last 3 months) + c * ENSO + d * (ENSO change over 3 months) + e * year
+    fitted on every earlier pair of years, using the same months and the same ENSO seasons in every year.
   * 90% range = regression prediction interval (t distribution). Chances by simulation from those ranges.
   * Check: the same method re-run for each past year with that year left out (how often the outcome fell in the range).
 Zeke uses ENSO model forecasts (a 14-model plume); those are no longer published as data (IRI stopped; NMME gives only
@@ -158,9 +158,14 @@ def main():
     X1 = [[ytd[y], E[(y, si)]] for y in yrs]; Y1 = [ann[y] for y in yrs]
     mu1, se1, df1 = predict(X1, Y1, [ytd[Y], E[(Y, si)]])
     # next year
-    yrs2 = [y for y in yrs if y + 1 in ann]
-    X2 = [[ytd[y], E[(y, si)], y] for y in yrs2]; Y2 = [ann[y + 1] for y in yrs2]
-    mu2, se2, df2 = predict(X2, Y2, [ytd[Y], E[(Y, si)], Y])
+    # next year: the last 3 complete months (closer to the coming year than the whole year so far), the ENSO state, its
+    # change over the 3 months before (strengthening or fading), and the long-term trend. Chosen over "year so far + ENSO +
+    # trend" because it misses less in the left-out check.
+    lm = max(m - 2, 1)
+    feat = lambda y: [wmean(A, y, lm, m), E[(y, si)]] + ([E[(y, si)] - E[(y, si - 3)]] if si >= 3 else []) + [y]
+    yrs2 = [y for y in yrs if y + 1 in ann and wmean(A, y, lm, m) is not None and (si < 3 or (y, si - 3) in E)]
+    X2 = [feat(y) for y in yrs2]; Y2 = [ann[y + 1] for y in yrs2]
+    mu2, se2, df2 = predict(X2, Y2, feat(Y))
 
     # check: leave each past year out, count outcomes inside the 90% range
     def loo(X, Yv, q):
