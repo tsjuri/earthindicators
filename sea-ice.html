@@ -32,9 +32,9 @@
 <div id="out" class="hide">
 <div class="cards" id="cards"></div>
 <p class="sub hint">Tip: click any legend entry to hide or show that series. The anomaly chart starts with Global only; click Arctic or Antarctic to add them.</p>
-<div class="box"><h2 id="t1"></h2><div class="wrap"><canvas id="c1"></canvas></div></div>
-<div class="box"><h2 id="t2"></h2><div class="wrap"><canvas id="c2"></canvas></div></div>
-<div class="box"><h2 id="t3"></h2><div class="wrap"><canvas id="c3"></canvas></div></div>
+<div class="box"><h2 id="t1"></h2>
+ <div class="seg" id="eh">Region: <button class="nb on" type="button" data-e="0">Arctic</button><button class="nb" type="button" data-e="1">Antarctic</button><button class="nb" type="button" data-e="2">Global</button></div>
+ <div class="wrap"><canvas id="c1"></canvas></div></div>
 <div class="box"><h2 id="t4"></h2><div class="wrap s"><canvas id="c4"></canvas></div></div>
 <div class="box"><h2 id="t7"></h2>
  <div class="seg" id="rh">Region: <button class="nb" type="button" data-r="2">Global</button><button class="nb" type="button" data-r="0">Arctic</button><button class="nb" type="button" data-r="1">Antarctic</button></div>
@@ -113,9 +113,9 @@ function env(id,R){
   {label:`${REF[0]}–${REF[1]} average`,data:R.cl,borderColor:THEME.clim,borderDash:[5,4],borderWidth:1.3,pointRadius:0}];
  hl.forEach(([y,c])=>ds.push({label:y+(y==R.low[0]?` (lowest on ${fmtDate(R.L)})`:''),data:R.by[y],borderColor:c,borderWidth:1.4,pointRadius:0}));
  ds.push({label:String(R.cur),data:R.by[R.cur].map((v,i)=>i<=R.L?v:null),borderColor:'#d00000',borderWidth:3,pointRadius:0});
- charts.push(freeze(new Chart($(id),{type:'line',plugins:[band],data:{labels:[...Array(NN).keys()],datasets:ds},options:{animation:false,maintainAspectRatio:false,spanGaps:true,interaction:{mode:'index',intersect:false},
+ return freeze(new Chart($(id),{type:'line',plugins:[band],data:{labels:[...Array(NN).keys()],datasets:ds},options:{animation:false,maintainAspectRatio:false,spanGaps:true,interaction:{mode:'index',intersect:false},
   plugins:{legend:{labels:{filter:i=>!['min','p10'].includes(i.text)}},tooltip:{filter:i=>!hid.includes(i.dataset.label),callbacks:{title:t=>fmtDate(t[0].dataIndex),label:c=>c.dataset.label+': '+(c.parsed.y==null?'–':c.parsed.y.toFixed(2)+' M km²')}}},
-  scales:{x:{ticks:{maxRotation:0,autoSkip:false,callback:dayTick},grid:{display:false}},y:{title:{display:true,text:'Million km²'},grid:{color:THEME.grid}}}}})))}
+  scales:{x:{ticks:{maxRotation:0,autoSkip:false,callback:dayTick},grid:{display:false}},y:{title:{display:true,text:'Million km²'},grid:{color:THEME.grid}}}}}))}
 function anom(id,Rs){
  const ds=Rs.map(R=>{const d=[];R.ys.forEach(y=>R.by[y].forEach((v,i)=>{if(v!=null&&R.cl[i]!=null)d.push({x:y+(i+.5)/NN,y:v-R.cl[i]})}));return{label:R.name,data:d,borderColor:COL[R.key],borderWidth:1,pointRadius:0}});
  charts.push(freeze(new Chart($(id),{type:'line',data:{datasets:ds},options:{animation:false,maintainAspectRatio:false,parsing:false,normalized:true,interaction:{mode:'nearest',axis:'x',intersect:false},
@@ -154,9 +154,9 @@ function zchart(){
  document.querySelectorAll('#zs .nb').forEach(b=>b.classList.toggle('on',b.dataset.s===zs));
  document.querySelectorAll('#zh .nb').forEach(b=>b.classList.toggle('on',+b.dataset.h===zh));
  document.querySelectorAll('#zb .nb').forEach(b=>b.classList.toggle('on',+b.dataset.b===zb));
- if(charts[4])charts[4].destroy();
+ if(charts[2])charts[2].destroy();
  const all=[...mn,...mx,...ds.slice(4).flatMap(d=>d.data.map(p=>p.y))].filter(v=>v!=null),ymin=Math.min(-4,2*Math.floor(Math.min(...all)/2)),ymax=Math.max(4,2*Math.ceil(Math.max(...all)/2));   // even numbers, so the ticks every 2 SD end on the edges
- charts[4]=new Chart($('c5'),{type:'line',plugins:[band],data:{datasets:ds},options:{animation:false,maintainAspectRatio:false,parsing:false,spanGaps:false,interaction:{mode:'nearest',axis:'x',intersect:false},
+ charts[2]=new Chart($('c5'),{type:'line',plugins:[band],data:{datasets:ds},options:{animation:false,maintainAspectRatio:false,parsing:false,spanGaps:false,interaction:{mode:'nearest',axis:'x',intersect:false},
   plugins:{legend:{labels:{filter:i=>!['min','p10'].includes(i.text)}},tooltip:{filter:i=>i.datasetIndex>=4,callbacks:{title:t=>fmtDate(Math.round(t[0].parsed.x)),label:c=>c.dataset.label+': '+(c.parsed.y>=0?'+':'−')+Math.abs(c.parsed.y).toFixed(2)+' SD'}}},
   scales:{x:{type:'linear',min:0,max:NN-1,afterBuildTicks:dayTicks,ticks:{maxRotation:0,callback:dayTick},grid:{display:false}},
    y:{min:ymin,max:ymax,title:{display:true,text:'Standard deviations'},grid:{color:c=>c.tick.value==0?THEME.zero:THEME.grid}}}}})}
@@ -164,7 +164,15 @@ document.querySelectorAll('#zh .nb').forEach(b=>b.onclick=()=>{zh=+b.dataset.h;z
 document.querySelectorAll('#zb .nb').forEach(b=>b.onclick=()=>{zb=+b.dataset.b;zchart()});
 document.querySelectorAll('#zs .nb').forEach(b=>b.onclick=()=>{zs=b.dataset.s;zchart()});
 // ---- 12-month average: the mean of the last 365 days, every day, so the seasonal cycle drops out
-let RR=null,rr=2,rc=null;
+let RR=null,rr=2,rc=null,er=0;
+// ---- daily extent, one region at a time (Arctic, Antarctic, Global), every prior year as the background
+function echart(){
+ if(!RR)return;const R=RR[er];
+ document.querySelectorAll('#eh .nb').forEach(b=>b.classList.toggle('on',+b.dataset.e===er));
+ $('t1').textContent=`${R.name} sea-ice extent: ${R.cur} vs every prior year (${R.ys[0]}–${R.cur-1})`;
+ if(charts[0])charts[0].destroy();
+ charts[0]=env('c1',R)}
+document.querySelectorAll('#eh .nb').forEach(b=>b.onclick=()=>{er=+b.dataset.e;echart()});
 function roll12(R){
  const by=R.by,ys=R.ys,k0=ys[0]*NN,a=[];ys.forEach(y=>by[y].forEach((v,i)=>a[y*NN+i-k0]=v));
  const pts=[];let sum=0,n=0;
@@ -191,7 +199,6 @@ document.querySelectorAll('#rh .nb').forEach(b=>b.onclick=()=>{rr=+b.dataset.r;r
 function run(nt,st){
  const N=parse(nt),S=parse(st),R=[region(N,'n','Arctic'),region(S,'s','Antarctic'),region(comb(N,S),'g','Global')];
  $('cards').innerHTML=R.map(r=>`<div class="card"><div class="v">${r.v.toFixed(2)} M km²</div><div class="l">${r.name} extent, ${fmtDate(r.L)}, ${r.cur}<br>${sg(r.anom)} vs average · ${r.rank==1?'':ord(r.rank)+' '}lowest of ${r.n}</div></div>`).join('');
- R.forEach((r,k)=>$('t'+(k+1)).textContent=`${r.name} sea-ice extent: ${r.cur} vs every prior year (${r.ys[0]}–${r.cur-1})`);
  $('t4').textContent=`Daily extent anomaly vs ${REF[0]}–${REF[1]} average, ${R[0].ys[0]}–${R[0].cur}`;
  const sent=r=>`${r.name} extent on ${fmtDate(r.L)} is ${r.v.toFixed(2)} million km², ${Math.abs(r.anom).toFixed(2)} million km² (${Math.abs(r.pct).toFixed(1)}%) ${r.anom<0?'below':'above'} the ${REF[0]}–${REF[1]} average for this date. ${r.rank===1?`This is the lowest value for this date in the record (previous low: ${r.low[1].toFixed(2)}, ${r.low[0]}).`:`It ranks ${r.rank==1?'':ord(r.rank)+' '}lowest of ${r.n} years; the record low for this date is ${r.low[1].toFixed(2)} million km² (${r.low[0]}).`}`;
  EXT_LI=[...R.map(sent),'Extent counts every grid cell with at least 15% ice, so it overstates the area actually covered by ice. It is a consistent index for comparing years, not a measure of ice volume or thickness.','Seasonal cycles dominate the extent charts; the anomaly chart removes them, so long-term trends and unusual years stand out more clearly.',
@@ -199,7 +206,7 @@ function run(nt,st){
  expName=`sea-ice-${R[0].cur}-${fmtDate(R[0].L).replace(' ','')}.jpg`;
  $('out').classList.remove('hide');
  charts.splice(0).forEach(c=>c.destroy());
- env('c1',R[0]);env('c2',R[1]);env('c3',R[2]);anom('c4',R);ZR.nsidc=R;zchart();RR=R;rchart();
+ RR=R;charts[0]=null;echart();anom('c4',R);ZR.nsidc=R;zchart();rchart();
  Promise.all(['n','s'].map(h=>fetch(`data/vishop_extent_${h}.csv`).then(r=>{if(!r.ok)throw 0;return r.text()})))
   .then(([n,s])=>{const N=parseVishop(n),S=parseVishop(s);ZR.jaxa=[region(N,'n','Arctic'),region(S,'s','Antarctic')];$('zs').classList.remove('hide');zchart()})
   .catch(()=>{});
@@ -268,7 +275,7 @@ document.querySelectorAll('#vh .nb').forEach(b=>b.onclick=()=>{vp=b.dataset.p;vc
 Promise.all(['glorys','cs2smos'].map(k=>fetch(`data/seaice_volume_${k}.csv`).then(r=>{if(!r.ok)throw 0;return r.text()})))
  .then(([g,s])=>{VD={g:csvRows(g),s:csvRows(s)};vchart();vtext()}).catch(e=>console.error('volume data',e));
 ['beforeprint','afterprint'].forEach(e=>window.addEventListener(e,()=>[...charts,vc,rc].forEach(c=>c&&c.resize())));
-$('exp').onclick=()=>{if(charts.length<5)return;siteExport([...[1,2,3,4].map(k=>[charts[k-1],'t'+k,0]),...(rc?[[rc,'t7',0]]:[]),[charts[4],'t5',0],...(vc?[[vc,'t6',0]]:[]),...(window.snowCharts?snowCharts():[])],expName)};
+$('exp').onclick=()=>{if(charts.length<3)return;siteExport([[charts[0],'t1',0],[charts[1],'t4',0],...(rc?[[rc,'t7',0]]:[]),[charts[2],'t5',0],...(vc?[[vc,'t6',0]]:[]),...(window.snowCharts?snowCharts():[])],expName)};
 Promise.all(['N','S'].map(h=>fetch(`data/${h}_seaice_extent_daily_v4.0.csv`).then(r=>{if(!r.ok)throw 0;return r.text()}))).then(([n,s])=>run(n,s))
  .catch(e=>{console.error(e);$('err').textContent='Could not load the sea ice data. Please try again later.'});
 </script>

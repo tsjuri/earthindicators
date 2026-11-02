@@ -893,6 +893,7 @@ window.eiCopy = function (btn, text, label) {
       });
       add(document.querySelector('.how'), 'Data and method');
       found.sort((a, b) => a.target.compareDocumentPosition(b.target) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
+      for (let i = found.length - 1; i > 0; i--) if (found[i].label === found[i - 1].label) found.splice(i, 1);   // a section heading and its first chart with the same label: list it once
       const key = found.map(f => f.label).join('|');
       if (key === side.dataset.key) return;
       side.dataset.key = key; items = found;
