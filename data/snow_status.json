@@ -1,6 +1,6 @@
 {
- "file": "nhsce_v01r01_19661004_20261005.nc",
- "through": "2026-10-05",
- "read": "2026-10-22",
- "source": "https://www.ncei.noaa.gov/thredds/fileServer/cdr/snowcover/nhsce_v01r01_19661004_20261005.nc"
+ "file": "nhsce_v01r01_19661004_20261102.nc",
+ "through": "2026-11-02",
+ "read": "2026-11-04",
+ "source": "https://www.ncei.noaa.gov/thredds/fileServer/cdr/snowcover/nhsce_v01r01_19661004_20261102.nc"
 }
