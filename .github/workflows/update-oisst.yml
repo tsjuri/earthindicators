@@ -68,7 +68,7 @@ jobs:
         id: nino12
         continue-on-error: true
         if: ${{ !inputs.only || inputs.only == 'nino12' || inputs.only == 'nino-regions' }}
-        timeout-minutes: 60
+        timeout-minutes: 90
         run: python -u scripts/build_nino34.py --lat -10 0 --lon 270 280 --out data/oisst2.1_nino12_sst_day.json --cache data/nino12_daily_sst.csv
 
       # Global: 60S-60N, every 4th grid point (1 degree)
