@@ -19,6 +19,14 @@
   "built": "2026-11-05T09:59:08Z",
   "latest": "2026-11-03"
  },
+ "nino3_daily_sst.csv": {
+  "built": "2026-11-05T13:01:48Z",
+  "latest": "2026-11-03"
+ },
+ "nino4_daily_sst.csv": {
+  "built": "2026-11-05T14:24:37Z",
+  "latest": "2026-11-03"
+ },
  "npac_daily_sst.csv": {
   "built": "2026-11-05T10:00:22Z",
   "latest": "2026-11-03"
