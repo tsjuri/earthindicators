@@ -15,6 +15,10 @@
   "built": "2026-11-05T10:00:11Z",
   "latest": "2026-11-03"
  },
+ "nino12_daily_sst.csv": {
+  "built": "2026-11-05T15:48:49Z",
+  "latest": "2026-11-04"
+ },
  "nino34_daily_sst.csv": {
   "built": "2026-11-05T09:59:08Z",
   "latest": "2026-11-03"
