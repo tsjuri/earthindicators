@@ -91,7 +91,11 @@
   }
 
   // ---- boxes drawn on the map: [label, lat south, lat north, lon west °E, lon east °E]
+  //      optional 6th item: {dash, lw, below} (dash pattern, line width, label under the box instead of above it)
   const NINO34 = ['Niño 3.4', -5, 5, 190, 240];
+  const NINO4 = ['Niño 4', -5, 5, 160, 210, { dash: [2, 3], lw: 1.2, below: true }];
+  const NINO3 = ['Niño 3', -5, 5, 210, 270, { dash: [2, 3], lw: 1.2, below: true }];
+  const NINO12 = ['Niño 1+2', -10, 0, 270, 280, { dash: [2, 3], lw: 1.2, below: true }];
 
   function chart(id, o) {
     o = o || {};
@@ -155,10 +159,12 @@
         ctx.setLineDash([]); ctx.strokeStyle = THEME.mut; ctx.lineWidth = 1;
         line(ctx, sx, sy, [...meridian(LON0 - 179.999), ...meridian(LON0 + 179.999).reverse()]); ctx.closePath(); ctx.stroke();
         // boxes (dashed), e.g. Niño 3.4
-        (o.boxes || []).forEach(([n, s, nn, w, e]) => {
-          ctx.strokeStyle = THEME.ink; ctx.lineWidth = 1.5; ctx.setLineDash([5, 3]);
+        (o.boxes || []).forEach(([n, s, nn, w, e, bo]) => {
+          bo = bo || {};
+          ctx.strokeStyle = THEME.ink; ctx.lineWidth = bo.lw || 1.5; ctx.setLineDash(bo.dash || [5, 3]);
           line(ctx, sx, sy, [...parallel(s, w, e, 20), ...parallel(nn, w, e, 20).reverse()]); ctx.closePath(); ctx.stroke(); ctx.setLineDash([]);
-          const [X, Y] = proj(w, nn); ctx.font = '600 11px system-ui,sans-serif'; ctx.fillStyle = THEME.ink; ctx.textBaseline = 'bottom'; ctx.fillText(n, sx.getPixelForValue(X) + 3, sy.getPixelForValue(Y) - 2);
+          const [X, Y] = proj(w, bo.below ? s : nn); ctx.font = (bo.below ? '600 10px' : '600 11px') + ' system-ui,sans-serif'; ctx.fillStyle = THEME.ink;
+          ctx.textBaseline = bo.below ? 'top' : 'bottom'; ctx.fillText(n, sx.getPixelForValue(X) + 3, sy.getPixelForValue(Y) + (bo.below ? 2 : -2));
         });
         // labels: latitudes on the left edge, longitudes along the bottom edge (inside the map)
         ctx.font = '10px system-ui,sans-serif'; ctx.fillStyle = THEME.mut;
@@ -254,5 +260,5 @@
     bs.forEach(b => b.onclick = () => { const v = views[b.dataset.v]; mapView(charts[0], v ? planeBox(v) : FULL); mark(b.dataset.v); });
   }
 
-  window.SSTMap = { chart, link, makeMap, json, NINO34, planeBox };
+  window.SSTMap = { chart, link, makeMap, json, NINO34, NINO4, NINO3, NINO12, planeBox };
 })();

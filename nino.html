@@ -32,42 +32,56 @@
 <nav class="nav" id="nav"><button id="exp" class="nb" type="button" disabled>Export charts as JPG</button></nav><script src="site.js"></script><script src="sstmap.js"></script>
 <p id="err"></p>
 <div id="out" class="hide">
+<div class="seg switch" id="region" role="group" aria-label="Region"><span class="lbl">Box:</span> <button class="nb" type="button" data-r="nino4">Niño 4 (west)</button><button class="nb on" type="button" data-r="nino34">Niño 3.4</button><button class="nb" type="button" data-r="nino3">Niño 3 (east)</button><button class="nb" type="button" data-r="nino12">Niño 1+2 (coast)</button></div>
+<p class="sub" id="regsub" style="margin:-8px 0 12px"></p>
 <div class="cards" id="cards"></div>
 <div class="box" data-nav="Compared with normal"><h2 id="t1"></h2><div class="sub bandkey" style="margin:0 0 6px"><button type="button" class="bk" data-band="1" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band1);border:1px solid var(--swatch)"></span> Range of prior years (min–max)</button> &nbsp; <button type="button" class="bk" data-band="2" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band2)"></span> Middle 80% of prior years</button></div><div class="wrap"><canvas id="c1"></canvas></div></div>
 <div class="box" data-nav="Latest day, every year"><h2 id="t2"></h2><div class="wrap s"><canvas id="c2"></canvas></div></div>
 <div class="box" id="b3" data-nav="Actual temperature"><h2 id="t3"></h2><div class="sub bandkey" style="margin:0 0 6px"><button type="button" class="bk" data-band="1" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band1);border:1px solid var(--swatch)"></span> Range of prior years (min–max)</button> &nbsp; <button type="button" class="bk" data-band="2" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band2)"></span> Middle 80% of prior years</button></div><div class="wrap"><canvas id="c3"></canvas></div></div>
 <h2 style="font-size:16px">Interpretation</h2><ul id="read"></ul>
-<p class="sub">Anomaly = daily SST minus the 1991–2020 daily mean. Recent values are preliminary and may be revised by NOAA. Not the relative index NOAA uses to classify El Niño strength. Data: NOAA OISST v2.1, provided by the NOAA PSL, Boulder, Colorado, USA, from their website at <a href="https://psl.noaa.gov" target="_blank" rel="noopener">psl.noaa.gov</a>.</p>
+<p class="sub">Anomaly = daily SST minus the 1991–2020 daily mean. Boxes as NOAA defines them: Niño 4 = 5°S–5°N, 160°E–150°W; Niño 3.4 = 5°S–5°N, 170°W–120°W (the box used to declare El Niño and La Niña); Niño 3 = 5°S–5°N, 150°W–90°W; Niño 1+2 = 0–10°S, 90°W–80°W, off Ecuador and Peru. Recent values are preliminary and may be revised by NOAA. Not the relative index NOAA uses to classify El Niño strength. Data: NOAA OISST v2.1, provided by the NOAA PSL, Boulder, Colorado, USA, from their website at <a href="https://psl.noaa.gov" target="_blank" rel="noopener">psl.noaa.gov</a>.</p>
+</div>
+<div id="warm" class="hide">
+<h2 style="font-size:18px;margin:26px 0 6px">Where is the warmth? The four Niño boxes together</h2>
+<p style="margin:0 0 12px">NOAA watches four boxes along the equator. From west to east: <b>Niño 4</b> (160°E–150°W, around the date line), <b>Niño 3.4</b> (170°W–120°W, overlapping Niño 4 and Niño 3; the box used to declare El Niño), <b>Niño 3</b> (150°W–90°W) and <b>Niño 1+2</b> (off Ecuador and Peru). Side by side they show where along the equator the warmth sits and how it moves. In some El Niños the eastern boxes warm most; in others (central-Pacific El Niños) the warmth stays near the date line, and the effects on weather elsewhere differ. The dotted boxes on the maps below show where each one lies.</p>
+<div class="box" data-own-switches data-nav="Where is the warmth?"><h2 id="tW"></h2><div class="wrap"><canvas id="cW"></canvas></div></div>
+<ul id="wread"></ul>
+<p class="sub">Each line is one box's daily sea-surface temperature compared with its own 1991–2020 average for that day of the year, over the last 365 days, averaged here (area-weighted) from NOAA OISST v2.1. The boxes overlap, so they are not independent: Niño 3.4 takes in the eastern half of Niño 4 and the western part of Niño 3. A single day in the small Niño 1+2 box is noisier than in the larger boxes. Recent days are preliminary.</p>
 </div>
 <div id="pmap" class="hide">
 <h2 style="font-size:18px;margin:26px 0 6px">The Pacific map: this year and past strong El Niños</h2>
 <p style="margin:0 0 12px">The charts above follow one box in the middle of the Pacific. A strong El Niño also warms the coast of South America: winds that normally push warm water west weaken, waves of warm water (Kelvin waves) run east along the equator and then north and south along the coast, and the cold upwelling along Peru and Chile (the Humboldt Current) weakens. The maps show the latest month (or the latest day) next to the same month in the three strongest El Niños since satellites started measuring, on the same 1991–2020 baseline and color scale.</p>
 <div class="views" id="mview" style="margin:0 0 10px">Show: <button class="nb" type="button" data-v="globe">Whole globe</button><button class="nb on" type="button" data-v="pac">Pacific</button><button class="nb" type="button" data-v="eq">Equator and South America</button><button class="nb" type="button" data-v="coast">Peru and Chile coast</button></div>
-<div class="box" data-no-csv data-nav="Map, latest month"><h2 id="tM1"></h2><div class="seg" id="mwhen">Latest: <button class="nb on" type="button" data-w="month">Last full month</button><button class="nb" type="button" data-w="day">Latest day</button></div><div class="seg mkind">Show: <button class="nb on" type="button" data-k="anom">Compared with normal</button><button class="nb" type="button" data-k="temp">Temperature</button></div><div class="wrap" style="height:auto"><canvas id="cM1"></canvas></div><p class="sub" id="rM1" style="margin:6px 0 0;min-height:1.3em"></p></div>
-<div class="box" data-no-csv data-nav="Map, past El Niños"><h2 id="tM2"></h2><div class="seg mkind">Show: <button class="nb on" type="button" data-k="anom">Compared with normal</button><button class="nb" type="button" data-k="temp">Temperature</button></div>
+<div class="box" data-no-csv data-own-switches data-nav="Map, latest month"><h2 id="tM1"></h2><div class="seg" id="mwhen">Latest: <button class="nb on" type="button" data-w="month">Last full month</button><button class="nb" type="button" data-w="day">Latest day</button></div><div class="seg mkind">Show: <button class="nb on" type="button" data-k="anom">Compared with normal</button><button class="nb" type="button" data-k="temp">Temperature</button></div><div class="wrap" style="height:auto"><canvas id="cM1"></canvas></div><p class="sub" id="rM1" style="margin:6px 0 0;min-height:1.3em"></p></div>
+<div class="box" data-no-csv data-own-switches data-nav="Map, past El Niños"><h2 id="tM2"></h2><div class="seg mkind">Show: <button class="nb on" type="button" data-k="anom">Compared with normal</button><button class="nb" type="button" data-k="temp">Temperature</button></div>
  <div class="seg" id="msw">Same month in: <button class="nb" type="button" data-y="1982">1982</button><button class="nb on" type="button" data-y="1997">1997</button><button class="nb" type="button" data-y="2015">2015</button></div>
  <div class="wrap" style="height:auto"><canvas id="cM2"></canvas></div><p class="sub" id="rM2" style="margin:6px 0 0;min-height:1.3em"></p></div>
 <ul id="mread"></ul>
-<p class="sub">Monthly mean sea-surface temperature from NOAA OISST v2.1 (NOAA PSL), every 1° (every 4th point of the 0.25° grid), and the same compared with NOAA's 1991–2020 average for that calendar month. The picture blends neighboring grid points; the value shown when you point at the map is the grid point's own. Gray is land (Natural Earth outline), near-white is sea ice (at least 15% ice cover, from NOAA's ice data in the same product). The map is a Robinson projection centered on 160°W; it opens on the Pacific, and you can drag across a map (pinch on a phone) to zoom in, or use the buttons above to show the whole globe; both maps always show the same area. The dashed box is Niño 3.4 (the box in the charts above); the regional numbers are area-weighted averages of the ocean points inside each box: Niño 1+2 is NOAA's coastal box (0–10°S, 90–80°W); "Peru–Chile coast" is 10–20°S east of 80°W, the warm "second arm" further south. They are averaged from the map's 0.2 °C steps, so they can differ from NOAA's own indexes by a few hundredths of a degree. The first map shows the last complete month (it appears a few days into the next month) or, with "Latest day", the latest single day compared with the 1991–2020 average for that day; the second map is always a monthly mean, for the month the first map is in. A single day is noisier than a month, and recent days are preliminary. The colors stay pale up to ±2 °C and change fastest between 2 and 3 °C, where the coastal warming off South America sits, so it stands out from the broadly warm Pacific without the equatorial core running off the scale.</p>
+<p class="sub">Monthly mean sea-surface temperature from NOAA OISST v2.1 (NOAA PSL), every 1° (every 4th point of the 0.25° grid), and the same compared with NOAA's 1991–2020 average for that calendar month. The picture blends neighboring grid points; the value shown when you point at the map is the grid point's own. Gray is land (Natural Earth outline), near-white is sea ice (at least 15% ice cover, from NOAA's ice data in the same product). The map is a Robinson projection centered on 160°W; it opens on the Pacific, and you can drag across a map (pinch on a phone) to zoom in, or use the buttons above to show the whole globe; both maps always show the same area. The dashed box is Niño 3.4 (the box in the charts above); the dotted boxes are Niño 4 (160°E–150°W) and Niño 3 (150°W–90°W) on the same 5°S–5°N strip, and Niño 1+2 off Ecuador and Peru. The regional numbers are area-weighted averages of the ocean points inside each box: Niño 1+2 is NOAA's coastal box (0–10°S, 90–80°W); "Peru–Chile coast" is 10–20°S east of 80°W, the warm "second arm" further south. They are averaged from the map's 0.2 °C steps, so they can differ from NOAA's own indexes by a few hundredths of a degree. The first map shows the last complete month (it appears a few days into the next month) or, with "Latest day", the latest single day compared with the 1991–2020 average for that day; the second map is always a monthly mean, for the month the first map is in. A single day is noisier than a month, and recent days are preliminary. The colors stay pale up to ±2 °C and change fastest between 2 and 3 °C, where the coastal warming off South America sits, so it stands out from the broadly warm Pacific without the equatorial core running off the scale.</p>
 </div>
 <div id="ace" class="hide">
 <h2 style="font-size:18px;margin:26px 0 6px">El Niño and the hurricane seasons</h2>
 <p style="margin:0 0 12px">El Niño warms the eastern and central Pacific and changes the winds high over the Atlantic. That usually makes the Pacific hurricane season busier and the Atlantic season quieter; La Niña tends to do the opposite. The charts add up each season's <b>accumulated cyclone energy</b> (ACE), which counts every storm by how strong it was and how long it lasted, so one long-lived major hurricane weighs far more than several short tropical storms.</p>
-<div class="box" data-nav="Pacific hurricanes"><h2 id="tA0"></h2><div class="sub bandkey" style="margin:0 0 6px"><button type="button" class="bk" data-band="1" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band1);border:1px solid var(--swatch)"></span> Range of prior years (min–max)</button> &nbsp; <button type="button" class="bk" data-band="2" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band2)"></span> Middle 80% of prior years</button></div><p class="acesum" id="sA0"></p><div class="wrap s"><canvas id="cA0"></canvas></div><p class="sub" id="pA0" style="margin:8px 0 0"></p></div>
-<div class="box" data-nav="Atlantic hurricanes"><h2 id="tA1"></h2><div class="sub bandkey" style="margin:0 0 6px"><button type="button" class="bk" data-band="1" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band1);border:1px solid var(--swatch)"></span> Range of prior years (min–max)</button> &nbsp; <button type="button" class="bk" data-band="2" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band2)"></span> Middle 80% of prior years</button></div><p class="acesum" id="sA1"></p><div class="wrap s"><canvas id="cA1"></canvas></div><p class="sub" id="pA1" style="margin:8px 0 0"></p></div>
+<div class="box" data-own-switches data-nav="Pacific hurricanes"><h2 id="tA0"></h2><div class="sub bandkey" style="margin:0 0 6px"><button type="button" class="bk" data-band="1" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band1);border:1px solid var(--swatch)"></span> Range of prior years (min–max)</button> &nbsp; <button type="button" class="bk" data-band="2" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band2)"></span> Middle 80% of prior years</button></div><p class="acesum" id="sA0"></p><div class="wrap s"><canvas id="cA0"></canvas></div><p class="sub" id="pA0" style="margin:8px 0 0"></p></div>
+<div class="box" data-own-switches data-nav="Atlantic hurricanes"><h2 id="tA1"></h2><div class="sub bandkey" style="margin:0 0 6px"><button type="button" class="bk" data-band="1" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band1);border:1px solid var(--swatch)"></span> Range of prior years (min–max)</button> &nbsp; <button type="button" class="bk" data-band="2" aria-pressed="true"><span style="display:inline-block;width:14px;height:10px;background:var(--band2)"></span> Middle 80% of prior years</button></div><p class="acesum" id="sA1"></p><div class="wrap s"><canvas id="cA1"></canvas></div><p class="sub" id="pA1" style="margin:8px 0 0"></p></div>
 <p class="sub">Most of the swing from one season to the next comes from El Niño, La Niña and other natural patterns, and the yearly totals show no clear long-term trend. Warming shows up in how storms behave instead: a larger share become the most intense, they strengthen faster and they bring more rain (see <a href="claims.html#hurricanes">Hurricanes aren't getting worse</a>). ACE = sum of the squared maximum wind (knots) every 6 hours while a storm is at least a tropical storm (34 kt), divided by 10,000. Northeast Pacific includes the central Pacific up to the date line. <span id="aceThru"></span> Data: NOAA NCEI IBTrACS v04r01, with NHC's operational data for the current season, which is replaced by best-track data after review.</p>
 </div>
 <div id="paleo" class="hide">
 <h2 style="font-size:18px;margin:26px 0 6px">El Niño over 900 years</h2>
 <p style="margin:0 0 12px">Thermometers measure the Niño 3.4 region since the 1870s. Before that, tree rings fill in: El Niño changes rain and drought around the Pacific (the southwestern US, Mexico, Indonesia), and old trees record those wet and dry years in the width of their rings. Cook and Cane (2024) used this to rebuild the Pacific's winter sea-surface temperature back to the year 1100. Below, every winter since then, with the measured winters on top.</p>
-<div class="box" data-nav="900 years of El Niño"><h2 id="tP"></h2><div class="wrap"><canvas id="cP"></canvas></div><p class="sub" id="nP" style="margin:8px 0 0"></p></div>
+<div class="box" data-own-switches data-nav="900 years of El Niño"><h2 id="tP"></h2><div class="wrap"><canvas id="cP"></canvas></div><p class="sub" id="nP" style="margin:8px 0 0"></p></div>
 <p class="sub">Each value is the December–February average over the Niño 3.4 box (5°S–5°N, 170°W–120°W), compared with the measured 1871–2000 average. Tree rings: Cook and Cane (2024), the version with more tree-ring records (from 1500) and the longer one before that; each reconstructed winter has an error of about ±0.5 °C, and like most reconstructions it tends to understate the largest events. Measured: the gridded sea-surface temperatures that come with the reconstruction (1871–1981), then NOAA OISST (from 1982), shifted to the same reference using the winters both cover (1983–2000). A winter average is lower than the peak month of the same event. Data: Cook, E.R. and Cane, M.A. (2024), Tree Rings Reveal ENSO in the Last Millennium, <i>Geophysical Research Letters</i>, <a href="https://doi.org/10.1029/2024GL109759" target="_blank" rel="noopener">doi:10.1029/2024GL109759</a>, via NOAA NCEI Paleoclimatology.</p>
 </div>
 <script>
 const MS=[0,31,59,90,120,151,181,212,243,273,304,334],ML=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const fmtDate=i=>{let m=11;while(MS[m]>i)m--;return ML[m]+' '+(i-MS[m]+1)};
 const HI={1982:'#e6a23c',1997:'#6a994e',2015:'#7b5ea7'};
-let c1,c2,c3,expName='nino34.jpg';
+let c1,c2,c3,cW=null,expName='nino34.jpg';
+// the four NOAA boxes (scripts/build_nino34.py, update-oisst.yml), west to east
+const REG={nino4:{n:'Niño 4',f:'oisst2.1_nino4_sst_day.json',b:'5°S–5°N, 160°E–150°W',c:'#7b5ea7'},nino34:{n:'Niño 3.4',f:'oisst2.1_nino3.4_sst_day.json',b:'5°S–5°N, 170°W–120°W',c:'#d00000'},
+ nino3:{n:'Niño 3',f:'oisst2.1_nino3_sst_day.json',b:'5°S–5°N, 150°W–90°W',c:'#e6a23c'},nino12:{n:'Niño 1+2',f:'oisst2.1_nino12_sst_day.json',b:'0–10°S, 90°W–80°W',c:'#2f8f8f'}};
+const RAW={},getRaw=k=>RAW[k]||(RAW[k]=fetch('data/'+REG[k].f).then(r=>{if(!r.ok)throw 0;return r.text()}).catch(e=>{delete RAW[k];throw e}));
+let curReg='nino34';
 const q=(a,p)=>{const s=a.filter(x=>x!=null).sort((x,y)=>x-y);if(!s.length)return null;const k=(s.length-1)*p,f=Math.floor(k);return s[f]+(s[Math.min(f+1,s.length-1)]-s[f])*(k-f)};
 const col=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 function run(raw){
@@ -92,8 +106,9 @@ function run(raw){
  const rank=at.filter(v=>v>now).length+1;
  const f=x=>(x>=0?'+':'')+x.toFixed(2);
  document.getElementById('cards').innerHTML=[[f(now)+' °C',cur+' anomaly, '+fmtDate(last)],[f(rec)+' °C','Prior record for this date ('+recY+')'],[f(now-rec)+' °C','Margin over that record'],[z.toFixed(1)+' σ','Above 1982–'+(cur-1)+' mean for this date'],[streak+' days','Consecutive days above record']].map(([v,l])=>`<div class="card"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
- document.getElementById('t1').textContent=`Niño 3.4: each day of ${cur} compared with the same day in every year since 1982 (°C above or below the 1991–2020 average)`;
- document.getElementById('t3').textContent=`Niño 3.4: each day of ${cur} in actual sea-surface temperature (°C), compared with every year since 1982`;
+ const RN=REG[curReg].n;document.getElementById('regsub').textContent=`${RN}: ${REG[curReg].b}.`;
+ document.getElementById('t1').textContent=`${RN}: each day of ${cur} compared with the same day in every year since 1982 (°C above or below the 1991–2020 average)`;
+ document.getElementById('t3').textContent=`${RN}: each day of ${cur} in actual sea-surface temperature (°C), compared with every year since 1982`;
  document.getElementById('t2').textContent=`${fmtDate(last)} anomaly, every year`;
  const items=[
   `As of ${fmtDate(last)}, the ${cur} temperature anomaly is ${f(now)} °C. The previous record for this date was ${f(rec)} °C (${recY}); ${now>rec?cur+' is above it by '+(now-rec).toFixed(2)+' °C':cur+' ranks #'+rank+' of '+(at.length+1)+' years'}.`,
@@ -103,7 +118,7 @@ function run(raw){
   `The highest anomaly in the earlier record is ${f(pk)} °C (${pkY}, around ${fmtDate(pkI)}). ${now>pk?cur+' has already passed it.':cur+' is '+(pk-now).toFixed(2)+' °C below it.'}`,
   `El Niño usually peaks between November and January, so values after ${fmtDate(last)} can still change substantially; the last ~2 weeks of a file are often preliminary.`];
  document.getElementById('read').innerHTML=items.map(t=>`<li>${t}</li>`).join('');
- expName=`nino34-${cur}-${fmtDate(last).replace(' ','')}.jpg`;
+ expName=`${curReg}-${cur}-${fmtDate(last).replace(' ','')}.jpg`;
  document.getElementById('out').classList.remove('hide');
  document.getElementById('exp').disabled=false;
  const x=[...Array(N).keys()],tc=THEME.axis,gc=col('--line');
@@ -119,7 +134,7 @@ function run(raw){
  if(c1)c1.destroy();if(c2)c2.destroy();if(c3)c3.destroy();
  c1=new Chart(document.getElementById('c1'),{type:'line',plugins:[bandPlugin,yearLines(prior,A)],data:{labels:x,datasets:ds},options:{animation:false,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
   plugins:{legend:{labels:{color:tc,filter:i=>/^\d{4}$/.test(i.text)}},tooltip:{filter:i=>['Prior-year max','Prior-year min','90th percentile','10th percentile',String(cur),'1982','1997','2015'].includes(i.dataset.label),callbacks:{title:t=>fmtDate(t[0].dataIndex),label:c=>c.dataset.label+': '+(c.parsed.y==null?'–':c.parsed.y.toFixed(2)+' °C')}}},
-  scales:{x:{ticks:{color:tc,maxRotation:0,autoSkip:false,callback:dayTick},grid:{display:false}},y:{min:-3,max:4,title:{display:true,text:'°C vs 1991–2020',color:tc},ticks:{color:tc,stepSize:.5},grid:{color:THEME.grid,lineWidth:1}}}}});
+  scales:{x:{ticks:{color:tc,maxRotation:0,autoSkip:false,callback:dayTick},grid:{display:false}},y:{min:Math.min(-3,Math.floor(Math.min(...mn,...a.filter(v=>v!=null)))),max:Math.max(4,Math.ceil(Math.max(...mx,...a.filter(v=>v!=null)))),title:{display:true,text:'°C vs 1991–2020',color:tc},ticks:{color:tc,stepSize:.5},grid:{color:THEME.grid,lineWidth:1}}}}});
  const bc=prior.map(y=>HI[y]||'#8fa9c4');
  c2=new Chart(document.getElementById('c2'),{type:'bar',data:{labels:[...prior,cur],datasets:[{data:[...at,now],backgroundColor:[...bc,'#d00000']}]},options:{animation:false,maintainAspectRatio:false,
   plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>f(c.parsed.y)+' °C'}}},scales:{x:{ticks:{color:tc,maxRotation:90,autoSkip:true},grid:{display:false}},y:{ticks:{color:tc},grid:{color:THEME.grid}}}}});
@@ -140,8 +155,8 @@ function run(raw){
   plugins:{legend:{labels:{color:tc,filter:i=>shown.includes(i.text)}},tooltip:{filter:i=>['Prior-year max','Prior-year min',...shown].includes(i.dataset.label),callbacks:{title:t=>fmtDate(t[0].dataIndex),label:c=>c.dataset.label+': '+(c.parsed.y==null?'–':c.parsed.y.toFixed(2)+' °C')}}},
   scales:{x:{ticks:{color:tc,maxRotation:0,autoSkip:false,callback:dayTick},grid:{display:false}},y:{title:{display:true,text:'°C',color:tc},ticks:{color:tc,stepSize:.5},grid:{color:THEME.grid,lineWidth:1}}}}});
 }
-['beforeprint','afterprint'].forEach(e=>window.addEventListener(e,()=>{c1&&c1.resize();c2&&c2.resize();c3&&c3.resize();cP&&cP.resize()}));
-document.getElementById('exp').onclick=()=>{if(!c1||!c2||!c3)return;siteExport([[c1,'t1',1],[c2,'t2',0],[c3,'t3',1],...aceCh.map((c,k)=>[c,'tA'+k,1]),...(cP?[[cP,'tP',0]]:[]),...mapCh.map((c,k)=>[c,'tM'+(k+1),0])],expName)};
+['beforeprint','afterprint'].forEach(e=>window.addEventListener(e,()=>{c1&&c1.resize();cW&&cW.resize();c2&&c2.resize();c3&&c3.resize();cP&&cP.resize()}));
+document.getElementById('exp').onclick=()=>{if(!c1||!c2||!c3)return;siteExport([[c1,'t1',1],[c2,'t2',0],[c3,'t3',1],...(cW?[[cW,'tW',0]]:[]),...aceCh.map((c,k)=>[c,'tA'+k,1]),...(cP?[[cP,'tP',0]]:[]),...mapCh.map((c,k)=>[c,'tM'+(k+1),0])],expName)};
 // ---- hurricane season energy (ACE) per basin, from data/ace_daily.csv (scripts/build_ace.py)
 let aceCh=[];
 function ace(text,meta){
@@ -234,7 +249,8 @@ function paleo(raw,csv){
 // area-weighted mean anomaly of the ocean points in a box (land and sea ice are NaN)
 const boxMean=(G,v,la0,la1,lo0,lo1)=>{let s=0,w=0;for(let j=0;j<G.nlat;j++){const la=G.lat0+j*G.step;if(la<la0||la>la1)continue;const c=Math.cos(la*Math.PI/180);
  for(let i=0;i<G.nlon;i++){const lo=G.lon0+i*G.step,a=v[j*G.nlon+i];if(lo<lo0||lo>lo1||a!==a)continue;s+=a*c;w+=c}}return w?s/w:null};
-const BOXES=[['Niño 3.4',-5,5,190,240],['Niño 1+2 (coast, 0–10°S)',-10,0,270,280],['Peru–Chile coast (10–20°S)',-20,-10,280,290]];
+const BOXES=[['Niño 4 (160°E–150°W)',-5,5,160,210],['Niño 3.4',-5,5,190,240],['Niño 3 (150°W–90°W)',-5,5,210,270],['Niño 1+2 (coast, 0–10°S)',-10,0,270,280],['Peru–Chile coast (10–20°S)',-20,-10,280,290]];
+const NBOX=[SSTMap.NINO4,SSTMap.NINO34,SSTMap.NINO3,SSTMap.NINO12];
 // views: [lon west °E, lon east °E, lat south, lat north]; the Pacific is how the page opens
 const MVIEW={globe:null,pac:[120,290,-60,60],eq:[180,300,-40,10],coast:[250,295,-40,5]};
 let mapCh=[];
@@ -252,13 +268,13 @@ function pacific(C,D){
  const ttl=()=>{$m('tM1').textContent=`${when==='day'?'Latest day':'Latest month'}, ${S.mn}: ${what()}`;$m('tM2').textContent=`The same month in ${yr}: ${ML2[S.m-1]} ${yr}${when==='day'?' (monthly mean)':''}, ${what()}`};
  $m('pmap').classList.remove('hide');
  mapCh.forEach(c=>c.destroy());
- mapCh=[SSTMap.chart('cM1',{home:MVIEW.pac,boxes:[SSTMap.NINO34],readout:t=>$m('rM1').textContent=t}),SSTMap.chart('cM2',{home:MVIEW.pac,boxes:[SSTMap.NINO34],readout:t=>$m('rM2').textContent=t})];
+ mapCh=[SSTMap.chart('cM1',{home:MVIEW.pac,boxes:NBOX,readout:t=>$m('rM1').textContent=t}),SSTMap.chart('cM2',{home:MVIEW.pac,boxes:NBOX,readout:t=>$m('rM2').textContent=t})];
  SSTMap.link(mapCh,'#mview .nb',MVIEW,'pac');
  const read=()=>{const G=S.C.grid,mo=ML2[S.m-1],yrs=Object.keys(past),lab=when==='day'?S.mn:'this '+mo;
   const T=BOXES.map(([n,...b])=>({n,now:boxMean(G,cur.anom,...b),p:Object.fromEntries(yrs.map(y=>[y,boxMean(G,past[y].anom,...b)]))}));
   $m('mread').innerHTML=[
   ...T.map(t=>`${t.n}, ${S.mn}: <b>${sg2(t.now)}</b>. Same month in ${yrs.map(y=>`${y}: ${sg2(t.p[y])}`).join(', ')}${when==='day'?' (monthly means)':''}.`),
-  (()=>{const c=T[2],mx=Math.max(...yrs.map(y=>c.p[y]));return c.now==null?'':c.now>mx?`Off Peru and Chile (10–20°S), ${lab} is warmer than ${mo} in any of the three strongest El Niños since 1982.`
+  (()=>{const c=T[T.length-1],mx=Math.max(...yrs.map(y=>c.p[y]));return c.now==null?'':c.now>mx?`Off Peru and Chile (10–20°S), ${lab} is warmer than ${mo} in any of the three strongest El Niños since 1982.`
    :`Off Peru and Chile (10–20°S), ${lab} is ${c.now>Math.min(...yrs.map(y=>c.p[y]))?'within the range of':'cooler than'} ${mo} in the three strongest El Niños since 1982.`})(),
   `Each of these El Niños built up through its year and peaked around the turn of the year (late 1982 to early 1983, late 1997, late 2015), and they did not all develop at the same pace. The same month compares the stage each had reached by then, not their peaks.`].filter(Boolean).map(x=>`<li>${x}</li>`).join('')};
  const show=w=>{when=w;S=SRC[w];document.querySelectorAll('#mwhen .nb').forEach(x=>x.classList.toggle('on',x.dataset.w===w));
@@ -276,6 +292,48 @@ Promise.all([fetch('data/oisst2.1_nino3.4_sst_day.json').then(r=>{if(!r.ok)throw
  .then(([a,b])=>{paleo(a,b);document.getElementById('paleo').classList.remove('hide')}).catch(()=>{});
 Promise.all([fetch('data/ace_daily.csv').then(r=>{if(!r.ok)throw 0;return r.text()}),fetch('data/ace_meta.json').then(r=>{if(!r.ok)throw 0;return r.json()})])
  .then(([t,m])=>ace(t,m)).catch(()=>{});
-fetch('data/oisst2.1_nino3.4_sst_day.json').then(r=>{if(!r.ok)throw 0;return r.text()}).then(run)
- .catch(()=>{document.getElementById('err').textContent='Could not load the data file. Please try again later.'});
+function load(k){return getRaw(k).then(t=>{curReg=k;run(t);document.querySelectorAll('#region .nb').forEach(x=>x.classList.toggle('on',x.dataset.r===k))})}
+document.querySelectorAll('#region .nb').forEach(x=>{x.onclick=()=>load(x.dataset.r).catch(()=>{x.disabled=true;x.title='The data for this box is still being downloaded from NOAA'})});
+load('nino34').catch(()=>{document.getElementById('err').textContent='Could not load the data file. Please try again later.'});
+Promise.all(Object.keys(REG).map(k=>getRaw(k).then(t=>[k,t]).catch(()=>{
+  const b=document.querySelector(`#region .nb[data-r="${k}"]`);if(b){b.disabled=true;b.title='The data for this box is still being downloaded from NOAA'}return null})))
+ .then(l=>{l=l.filter(Boolean);if(l.length>=2)warmth(l)}).catch(e=>console.warn('Warmth chart not shown',e));
+// ---- where is the warmth: the four boxes' anomalies over the last 365 days, west to east
+function warmth(list){
+ const D=list.map(([k,t])=>{const by={};JSON.parse(t).forEach(r=>by[String(r.name)]=r.data);const clim=by['1991-2020'];
+  if(by['Preliminary']){const y=Object.keys(by).filter(k=>/^\d{4}$/.test(k)).sort().pop();by[y]=by[y].map((v,i)=>v==null?by['Preliminary'][i]:v)}
+  const an=(d)=>{const y=d.getUTCFullYear(),i=Math.round((d-Date.UTC(y,0,1))/864e5),v=by[y]&&by[y][i];return v==null||clim[i]==null?null:v-clim[i]};
+  let end=null;Object.keys(by).filter(k=>/^\d{4}$/.test(k)).forEach(y=>by[y].forEach((v,i)=>{if(v!=null){const d=Date.UTC(+y,0,1+i);if(end==null||d>end)end=d}}));
+  return {k,an,end}});
+ const end=Math.max(...D.map(r=>r.end)),days=[];for(let i=364;i>=0;i--)days.push(new Date(end-i*864e5));
+ const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ const lab=d=>MN[d.getUTCMonth()]+' '+d.getUTCDate()+', '+d.getUTCFullYear(),labels=days.map(lab);
+ const S=D.map(r=>({...r,v:days.map(r.an)})),last=d=>{for(let i=d.length-1;i>=0;i--)if(d[i]!=null)return i;return -1};
+ const f=x=>x==null?'–':(x>=0?'+':'−')+Math.abs(x).toFixed(2)+' °C',tc=THEME.axis;
+ document.getElementById('tW').textContent=`Where is the warmth? The four Niño boxes, west to east, over the last 365 days (°C compared with 1991–2020)`;
+ if(cW)cW.destroy();
+ cW=new Chart(document.getElementById('cW'),{type:'line',data:{labels,datasets:S.map(r=>({label:REG[r.k].n,data:r.v,borderColor:REG[r.k].c,borderWidth:r.k==='nino34'?2.6:1.8,pointRadius:0,fill:false,spanGaps:false,order:r.k==='nino34'?0:1}))},
+  options:{animation:false,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+   plugins:{legend:{labels:{color:tc}},tooltip:{callbacks:{title:t=>labels[t[0].dataIndex],label:c=>c.dataset.label+': '+f(c.parsed.y)}}},
+   scales:{x:{ticks:{color:tc,maxRotation:0,autoSkip:false,callback:(v,i)=>days[i].getUTCDate()===1?MN[days[i].getUTCMonth()]+(days[i].getUTCMonth()===0?' '+days[i].getUTCFullYear():''):''},grid:{display:false}},
+    y:{title:{display:true,text:'°C vs 1991–2020',color:tc},ticks:{color:tc,stepSize:.5},grid:{color:c=>c.tick.value==0?THEME.zero:THEME.grid}}}}});
+ document.getElementById('cW').closest('.box').dataset.through=`${labels[labels.length-1]} · NOAA OISST v2.1`;
+ const L=Object.fromEntries(S.map(r=>{const i=last(r.v);return[r.k,{i,v:i<0?null:r.v[i],ch:i>=30&&r.v[i-30]!=null?r.v[i]-r.v[i-30]:null}]}));
+ const items=[`Latest day (${labels[Math.max(...S.map(r=>L[r.k].i))]}): `+S.map(r=>`${REG[r.k].n} <b>${f(L[r.k].v)}</b>`).join(', ')+'.'];
+ const ok=S.filter(r=>L[r.k].v!=null),top=ok.reduce((a,r)=>L[r.k].v>L[a.k].v?r:a,ok[0]);
+ if(ok.length)items.push(`Warmest compared with normal: ${REG[top.k].n}.`);
+ const c=S.filter(r=>L[r.k].ch!=null);
+ if(c.length)items.push('Change over the last 30 days: '+c.map(r=>`${REG[r.k].n} ${f(L[r.k].ch)}`).join(', ')+'.');
+ const n3=L.nino3&&L.nino3.v,n4=L.nino4&&L.nino4.v;
+ if(n3!=null&&n4!=null&&Math.max(n3,n4)>=.5){
+  items.push(n3>n4?`Niño 3 (east) is ${(n3-n4).toFixed(2)} °C warmer than Niño 4 (around the date line): the warmth is centered in the eastern Pacific.`
+   :`Niño 4 (around the date line) is ${(n4-n3).toFixed(2)} °C warmer than Niño 3 (east): the warmth is centered in the central Pacific.`);
+  // the same date in the three strongest El Niños since 1982, from the same files
+  const r3=S.find(r=>r.k==='nino3'),r4=S.find(r=>r.k==='nino4'),dl=days[L.nino3.i];
+  const past=[1982,1997,2015].map(y=>{const d=new Date(Date.UTC(y,dl.getUTCMonth(),dl.getUTCDate())),a=r3.an(d),b=r4.an(d);return a==null||b==null?null:`${y}: ${a-b>=0?'+':'−'}${Math.abs(a-b).toFixed(2)} °C`}).filter(Boolean);
+  if(past.length)items.push(`Niño 3 minus Niño 4 on the same date in the strongest El Niños since 1982: ${past.join(', ')} (now ${n3-n4>=0?'+':'−'}${Math.abs(n3-n4).toFixed(2)} °C).`)}
+ document.getElementById('wread').innerHTML=items.map(t=>`<li>${t}</li>`).join('');
+ document.getElementById('warm').classList.remove('hide');
+ document.getElementById('exp').disabled=!c1;
+}
 </script></main></body></html>

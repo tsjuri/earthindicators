@@ -9,7 +9,7 @@ on:
   workflow_dispatch:           # lets you run it manually from the Actions tab
     inputs:
       only:
-        description: "Run only this series (e.g. sst-map). Leave empty for all."
+        description: "Run only this series (e.g. sst-map, or nino-regions for Niño 3, 4 and 1+2). Leave empty for all."
         required: false
         default: ""
       force:
@@ -47,6 +47,29 @@ jobs:
         if: ${{ !inputs.only || inputs.only == 'nino34' }}
         timeout-minutes: 60
         run: python -u scripts/build_nino34.py --compare reference/climatereanalyzer.json --check-out data/nino34_check.txt
+
+      # The other Niño boxes, NOAA's definitions (longitudes in degrees east), for the region switch and the
+      # "Where is the warmth?" chart on the El Niño page. A first run downloads 1982 to now, saving each year as it goes.
+      - name: Niño 3 (5S-5N, 150W-90W)
+        id: nino3
+        continue-on-error: true
+        if: ${{ !inputs.only || inputs.only == 'nino3' || inputs.only == 'nino-regions' }}
+        timeout-minutes: 90
+        run: python -u scripts/build_nino34.py --lat -5 5 --lon 210 270 --out data/oisst2.1_nino3_sst_day.json --cache data/nino3_daily_sst.csv
+
+      - name: Niño 4 (5S-5N, 160E-150W)
+        id: nino4
+        continue-on-error: true
+        if: ${{ !inputs.only || inputs.only == 'nino4' || inputs.only == 'nino-regions' }}
+        timeout-minutes: 90
+        run: python -u scripts/build_nino34.py --lat -5 5 --lon 160 210 --out data/oisst2.1_nino4_sst_day.json --cache data/nino4_daily_sst.csv
+
+      - name: Niño 1+2 (0-10S, 90W-80W)
+        id: nino12
+        continue-on-error: true
+        if: ${{ !inputs.only || inputs.only == 'nino12' || inputs.only == 'nino-regions' }}
+        timeout-minutes: 60
+        run: python -u scripts/build_nino34.py --lat -10 0 --lon 270 280 --out data/oisst2.1_nino12_sst_day.json --cache data/nino12_daily_sst.csv
 
       # Global: 60S-60N, every 4th grid point (1 degree)
       - name: World (60S-60N)
@@ -135,6 +158,9 @@ jobs:
         run: |
           failed=""
           [[ "${{ steps.nino34.outcome }}" =~ ^(success|skipped)$ ]] || failed="$failed Niño3.4"
+          [[ "${{ steps.nino3.outcome }}" =~ ^(success|skipped)$ ]] || failed="$failed Niño3"
+          [[ "${{ steps.nino4.outcome }}" =~ ^(success|skipped)$ ]] || failed="$failed Niño4"
+          [[ "${{ steps.nino12.outcome }}" =~ ^(success|skipped)$ ]] || failed="$failed Niño1+2"
           [[ "${{ steps.world.outcome }}" =~ ^(success|skipped)$ ]] || failed="$failed world"
           [[ "${{ steps.gmaine.outcome }}" =~ ^(success|skipped)$ ]] || failed="$failed Gulf-of-Maine"
           [[ "${{ steps.gmex.outcome }}" =~ ^(success|skipped)$ ]] || failed="$failed Gulf-of-Mexico"
