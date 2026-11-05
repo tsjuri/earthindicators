@@ -1,4 +1,2 @@
-4226 granules; 50 to read; 4221 days in the grid cache
-syntax error, unexpected end of file, expecting ';'
-context: Error {  code = 404; message = "The specified path 'collections/C3480440870-NSIDC_CPRD/granules/SMAP_L4_SM_gph_20261009T103000_Vv8013_001.h5_u9loH5HD' does not identify a granule in CMR.";}^
-4226 days; 139 months, 2015-04 to 2026-10; last 0.20762
+4234 granules; 53 to read; 4226 days in the grid cache
+4234 days; 139 months, 2015-04 to 2026-10; last 0.20666
