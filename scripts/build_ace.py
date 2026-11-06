@@ -19,7 +19,8 @@ How ACE is counted (the NHC/CSU convention)
   maximum sustained wind of at least 34 kt, add wind² / 10,000 (wind in knots, USA_WIND: the 1-minute mean from NHC
   best track, or in the West Pacific, Indian Ocean and Southern Hemisphere from the US Joint Typhoon Warning Center,
   JTWC, as CSU's global ACE does; for the current season, the operational data). Other agencies (JMA, IMD, BoM...)
-  use 10-minute winds, which are lower, so their numbers are not mixed in.
+  use 10-minute winds, which are lower, so their numbers are not mixed in. Where JTWC left the status blank
+  (older years and the current season, mostly), IBTrACS's NATURE column decides: tropical (TS) or subtropical (SS).
   Each fix counts on its own date and in the basin it was in at that moment (BASIN column), so a storm that crosses
   from the Atlantic into the Pacific, or across the date line, counts in each basin only for its time there.
   Interpolated points (3-hourly, or USA intensity filled in, IFLAG 'P' or 'I'), special landfall times and spur tracks
@@ -98,7 +99,12 @@ def main():
             if w < 34:
                 continue
             st = r["USA_STATUS"].strip().upper()
-            if st not in STATUS:
+            if not st:                             # JTWC tracks often leave the status blank (older years, the
+                st = "nature " + r["NATURE"].strip().upper()   # current season): then use IBTrACS's own NATURE
+                ok = st in ("nature TS", "nature SS")          # (TS tropical, SS subtropical; not ET, DS, MX, NR)
+            else:
+                ok = st in STATUS
+            if not ok:
                 skipped[(basin, st)] += 1
                 continue
             ace[(t[:10], basin, sid)] += w * w / 1e4
