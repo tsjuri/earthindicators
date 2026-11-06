@@ -31,7 +31,7 @@ Fixes of 34 kt or more left out because of their status (EX extratropical, LO lo
   NI XX: 35
   NI nature DS: 9
   NI nature MX: 6
-  NI nature NR: 426
+  NI nature NR: 399
   SA LO: 16
   SA TD: 1
   SI EX: 93
@@ -41,14 +41,14 @@ Fixes of 34 kt or more left out because of their status (EX extratropical, LO lo
   SI nature DS: 27
   SI nature ET: 46
   SI nature MX: 199
-  SI nature NR: 28
+  SI nature NR: 11
   SP DB: 1
   SP EX: 80
   SP MD: 1
   SP XX: 375
   SP nature ET: 17
   SP nature MX: 7
-  SP nature NR: 103
+  SP nature NR: 8
   WP DB: 2
   WP ET: 2
   WP EX: 276
@@ -58,7 +58,7 @@ Fixes of 34 kt or more left out because of their status (EX extratropical, LO lo
   WP XX: 235
   WP nature ET: 240
   WP nature MX: 162
-  WP nature NR: 674
+  WP nature NR: 72
 
 Fixes in 2026 (00/06/12/18 UTC) per basin, and how many carry each wind column:
   EP: USA_WIND 1004, agency nhc_working_bt 1004, fixes 1004, track PROVISIONAL 1004
@@ -112,6 +112,6 @@ Calendar-year ACE, all basins together:
   2021: 647.5
   2022: 565.3
   2023: 863.2
-  2024: 632.5
-  2025: 703.1
-  2026: 529.1
+  2024: 633.2
+  2025: 710.3
+  2026: 947.3
