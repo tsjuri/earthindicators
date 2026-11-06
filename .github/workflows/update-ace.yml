@@ -16,15 +16,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      # The two IBTrACS files are tens of MB each and change only a few times a week (hardly at all from
+      # The IBTrACS basin files are tens of MB each and change only a few times a week (hardly at all from
       # December to May), so first ask NOAA when they last changed and skip the download if nothing is new.
       - name: Check for new IBTrACS files
         id: check
         run: |
           base=https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv
-          stamp=$(for b in NA EP; do curl -fsSI --retry 3 --retry-delay 20 "$base/ibtracs.$b.list.v04r01.csv" | grep -i '^last-modified:' | tr -d '\r'; done || true)
+          stamp=$(for b in NA EP WP NI SI SP SA; do curl -fsSI --retry 3 --retry-delay 20 "$base/ibtracs.$b.list.v04r01.csv" | grep -i '^last-modified:' | tr -d '\r'; done || true)
           echo "$stamp"
-          if [ "$(printf '%s\n' "$stamp" | grep -c .)" -eq 2 ] && [ "$stamp" = "$(cat data/ace_source.txt 2>/dev/null)" ]; then
+          if [ "$(printf '%s\n' "$stamp" | grep -c .)" -eq 7 ] && [ "$stamp" = "$(cat data/ace_source.txt 2>/dev/null)" ]; then
             echo "new=no" >> "$GITHUB_OUTPUT"; echo "No change since the last run"
           else
             echo "new=yes" >> "$GITHUB_OUTPUT"; printf '%s\n' "$stamp" > /tmp/ace_stamp
@@ -34,7 +34,7 @@ jobs:
         timeout-minutes: 30
         run: |
           python -u scripts/build_ace.py
-          [ "$(grep -c . /tmp/ace_stamp)" -eq 2 ] && cp /tmp/ace_stamp data/ace_source.txt || true
+          [ "$(grep -c . /tmp/ace_stamp)" -eq 7 ] && cp /tmp/ace_stamp data/ace_source.txt || true
       - name: Commit changes
         run: |
           git config user.name "github-actions"
