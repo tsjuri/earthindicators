@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "45 15 * * *"     # daily, 15:45 UTC; NOAA updates IBTrACS a few times a week
   workflow_dispatch:           # lets you run it manually from the Actions tab
+    inputs:
+      force:
+        description: "Rebuild even if NOAA's files have not changed"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -24,7 +29,7 @@ jobs:
           base=https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv
           stamp=$(for b in NA EP WP NI SI SP SA; do curl -fsSI --retry 3 --retry-delay 20 "$base/ibtracs.$b.list.v04r01.csv" | grep -i '^last-modified:' | tr -d '\r'; done || true)
           echo "$stamp"
-          if [ "$(printf '%s\n' "$stamp" | grep -c .)" -eq 7 ] && [ "$stamp" = "$(cat data/ace_source.txt 2>/dev/null)" ]; then
+          if [ "${{ inputs.force }}" != "true" ] && [ "$(printf '%s\n' "$stamp" | grep -c .)" -eq 7 ] && [ "$stamp" = "$(cat data/ace_source.txt 2>/dev/null)" ]; then
             echo "new=no" >> "$GITHUB_OUTPUT"; echo "No change since the last run"
           else
             echo "new=yes" >> "$GITHUB_OUTPUT"; printf '%s\n' "$stamp" > /tmp/ace_stamp
