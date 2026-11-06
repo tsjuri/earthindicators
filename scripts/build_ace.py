@@ -67,11 +67,15 @@ def load(local):
     return out
 
 
+CUR = str(__import__("datetime").date.today().year)
+
+
 def main():
     local = sys.argv[2] if len(sys.argv) == 3 and sys.argv[1] == "--local" else None
     texts = load(local)
     seen, ace = set(), defaultdict(float)          # (date, basin, sid) -> ace
     names, latest = {}, {b: "" for b in BASINS}
+    cov = defaultdict(lambda: defaultdict(int))
     skipped = defaultdict(int)                     # (basin, status) -> fixes of 34 kt or more left out, for the check
     for text in texts.values():
         for r in rows(text):
@@ -87,6 +91,13 @@ def main():
             if int(t[:4]) < FIRST_YEAR.get(basin, FIRST_YEAR_OTHER) or "spur" in r["TRACK_TYPE"].lower():
                 continue
             hh, mm = int(t[11:13]), t[14:16]
+            if t[:4] == CUR and not hh % 6 and mm == "00":   # what the current season's fixes carry, for the check
+                cov[basin]["fixes"] += 1
+                for c in ("USA_WIND", "WMO_WIND", "TOKYO_WIND", "CMA_WIND", "HKO_WIND", "BOM_WIND", "REUNION_WIND", "NADI_WIND", "NEWDELHI_WIND"):
+                    if (r.get(c) or "").strip():
+                        cov[basin][c] += 1
+                cov[basin]["track " + r["TRACK_TYPE"].strip()] += 1
+                cov[basin]["agency " + (r.get("USA_AGENCY") or "").strip()] += 1
             if hh % 6 or mm != "00":
                 continue
             fl = (r.get("IFLAG") or " ")[0]
@@ -132,6 +143,8 @@ def main():
               "Fixes of 34 kt or more left out because of their status (EX extratropical, LO low, DB disturbance, ...):"]
     lines += [f"  {b} {st or '(blank)'}: {n}" for (b, st), n in sorted(skipped.items())]
     yrs = sorted({y for (_, y) in totals})
+    lines += ["", f"Fixes in {CUR} (00/06/12/18 UTC) per basin, and how many carry each wind column:"]
+    lines += [f"  {b}: " + ", ".join(f"{k} {n}" for k, n in sorted(d.items())) for b, d in sorted(cov.items())]
     lines += ["", "Calendar-year ACE, all basins together:"]
     lines += [f"  {y}: {sum(v for (b, yy), v in totals.items() if yy == y):.1f}" for y in yrs if y >= FIRST_YEAR_OTHER]
     with open(CHECK, "w") as fh:
