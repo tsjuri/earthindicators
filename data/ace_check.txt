@@ -66,7 +66,7 @@ Fixes in 2026 (00/06/12/18 UTC) per basin, and how many carry each wind column:
   NI: USA_WIND 28, agency tcvitals 30, fixes 30, track PROVISIONAL 30
   SI: BOM_WIND 196, REUNION_WIND 306, USA_WIND 309, WMO_WIND 497, agency  210, agency tcvightals 11, agency tcvitals 300, fixes 521, track PROVISIONAL 16, track US-PROVISIONAL 495, track main 10
   SP: BOM_WIND 144, NADI_WIND 28, USA_WIND 141, WMO_WIND 173, agency  102, agency tcvitals 141, fixes 243, track PROVISIONAL 36, track US-PROVISIONAL 201, track main 6
-  WP: TOKYO_WIND 27, USA_WIND 847, WMO_WIND 27, agency  16, agency nhc_working_bt 5, agency tcvitals 850, fixes 871, track PROVISIONAL 819, track US-PROVISIONAL 52
+  WP: TOKYO_WIND 27, USA_WIND 848, WMO_WIND 27, agency  16, agency nhc_working_bt 5, agency tcvitals 851, fixes 872, track PROVISIONAL 820, track US-PROVISIONAL 52
 
 Calendar-year ACE, all basins together:
   1981: 544.6
@@ -114,4 +114,4 @@ Calendar-year ACE, all basins together:
   2023: 863.2
   2024: 633.2
   2025: 710.3
-  2026: 947.3
+  2026: 947.6
