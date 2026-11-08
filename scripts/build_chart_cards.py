@@ -191,8 +191,14 @@ def main():
                 card(el.screenshot()).save(f"og/s/{name}.jpg", quality=85, optimize=True, progressive=True)
                 versions[name] = hashlib.sha1(open(f"og/s/{name}.jpg", "rb").read()).hexdigest()[:8]
                 anchor = b["id"] or "ch-" + b["cid"]
+                # description: the chart's own data-desc, else the active page-wide switch button's, else the page's
+                cdesc = pg.evaluate(f"""() => {{ const b = document.querySelectorAll('main .box')[{b['i']}];
+                    if (b.dataset.desc) return b.dataset.desc;
+                    for (const g of document.querySelectorAll('main .seg')) {{ if (g.closest('.box')) continue;
+                      const on = g.querySelector('.nb.on[data-desc]'); if (on) return on.dataset.desc; }}
+                    return ''; }}""") or desc
                 with open(f"s/{name}.html", "w", encoding="utf-8") as fh:
-                    fh.write(share_page(name, title or b["title"], desc, f"{f}#{anchor}" + ("" if name == f"{stem}-{b['cid']}" else f"~{code}"), versions[name]))
+                    fh.write(share_page(name, title or b["title"], cdesc, f"{f}#{anchor}" + ("" if name == f"{stem}-{b['cid']}" else f"~{code}"), versions[name]))
                 made.add(name)
                 if name != f"{stem}-{b['cid']}":
                     variants.add(name)
