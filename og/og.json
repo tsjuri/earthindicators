@@ -1,7 +1,7 @@
 {
  "air": {
   "title": "Global air temperature",
-  "big": "+1.51 °C",
+  "big": "+1.52 °C",
   "label": "last 12 months, above pre-industrial (1850–1900)",
   "spark": [
    -0.6848743169398905,
@@ -93,12 +93,12 @@
   ],
   "sparkLabel": "yearly, 1940–2025",
   "source": "Copernicus ERA5",
-  "through": "Oct 31, 2026"
+  "through": "Nov 7, 2026"
  },
  "sst": {
   "title": "Sea surface temperature",
-  "big": "+0.84 °C",
-  "label": "vs 1991–2020 average on Oct 31",
+  "big": "+0.89 °C",
+  "label": "vs 1991–2020 average on Nov 7",
   "spark": [
    -0.2998904109589043,
    -0.21846849315068484,
@@ -147,20 +147,13 @@
   ],
   "sparkLabel": "yearly, 1982–2025",
   "source": "NOAA OISST",
-  "through": "Oct 31, 2026"
+  "through": "Nov 7, 2026"
  },
  "nino": {
   "title": "El Niño and La Niña (Niño 3.4)",
-  "big": "+3.37 °C",
-  "label": "central Pacific vs 1991–2020, Oct 31",
+  "big": "+3.13 °C",
+  "label": "central Pacific vs 1991–2020, Nov 7",
   "spark": [
-   -0.6280000000000001,
-   -0.5750000000000028,
-   -0.5429999999999993,
-   -0.5730000000000004,
-   -0.6560000000000024,
-   -0.7409999999999997,
-   -0.809000000000001,
    -0.8300000000000018,
    -0.8239999999999981,
    -0.820999999999998,
@@ -505,24 +498,31 @@
    3.254999999999999,
    3.280000000000001,
    3.3359999999999985,
-   3.471,
-   3.341000000000001,
-   3.3270000000000017,
-   3.338000000000001,
-   3.3999999999999986,
-   3.4279999999999973,
-   3.4559999999999995,
+   3.363999999999997,
+   3.3550000000000004,
+   3.336000000000002,
+   3.3560000000000016,
+   3.3840000000000003,
+   3.401,
+   3.431000000000001,
    3.4819999999999993,
    3.4879999999999995,
    3.4529999999999994,
    3.427000000000003,
    3.3590000000000018,
    3.440999999999999,
-   3.3689999999999998
+   3.3689999999999998,
+   3.3909999999999982,
+   3.3569999999999993,
+   3.381999999999998,
+   3.321999999999999,
+   3.2509999999999977,
+   3.2520000000000024,
+   3.1340000000000003
   ],
   "sparkLabel": "last 12 months",
   "source": "NOAA OISST",
-  "through": "Oct 31, 2026"
+  "through": "Nov 7, 2026"
  },
  "land-ice": {
   "title": "Land ice: glaciers and ice sheets",
@@ -666,8 +666,8 @@
  },
  "pdo": {
   "title": "Pacific Decadal Oscillation (PDO)",
-  "big": "−1.55",
-  "label": "PDO index, Sep 2026",
+  "big": "−2.26",
+  "label": "PDO index, Oct 2026",
   "spark": [
    0.04083333333333335,
    0.12333333333333335,
@@ -1156,12 +1156,13 @@
    -2.0158333333333336,
    -1.9391666666666667,
    -1.7683333333333333,
-   -1.656666666666667,
-   -1.5933333333333335
+   -1.6558333333333335,
+   -1.59,
+   -1.5808333333333333
   ],
   "sparkLabel": "12-month average, 1986–2026",
   "source": "NOAA NCEI",
-  "through": "Sep 2026"
+  "through": "Oct 2026"
  },
  "sun": {
   "title": "The Sun: solar cycle",
@@ -2300,17 +2301,17 @@
    99.66565,
    102.64284,
    107.25096,
-   112.58383,
-   115.08353
+   112.44995,
+   115.03833
   ],
   "sparkLabel": "1993–2026",
   "source": "NASA",
-  "through": "Oct 2026"
+  "through": "Nov 2026"
  },
  "sea-ice": {
   "title": "Arctic sea ice extent",
-  "big": "−1.76 M km²",
-  "label": "vs 1981–2010, Nov 1",
+  "big": "−1.68 M km²",
+  "label": "vs 1981–2010, Nov 7",
   "spark": [
    7.051133333333332,
    7.667066666666666,
@@ -2363,12 +2364,12 @@
   ],
   "sparkLabel": "September extent, 1979–2026",
   "source": "NSIDC",
-  "through": "Nov 1, 2026"
+  "through": "Nov 7, 2026"
  },
  "co2": {
   "title": "Carbon dioxide (CO₂)",
-  "big": "426.9 ppm",
-  "label": "30-day average to Nov 1",
+  "big": "427.4 ppm",
+  "label": "30-day average to Nov 8",
   "spark": [
    331.40379999999993,
    332.01328947368427,
@@ -2423,7 +2424,7 @@
   ],
   "sparkLabel": "yearly, 1975–2025",
   "source": "NOAA Mauna Loa",
-  "through": "Nov 1, 2026"
+  "through": "Nov 8, 2026"
  },
  "ch4": {
   "title": "Methane",
@@ -3327,7 +3328,7 @@
  },
  "water": {
   "title": "Water vapor in the air",
-  "big": "+3.5%",
+  "big": "+3.8%",
   "label": "water vapor, last 12 months vs 1991–2020",
   "spark": [
    -3.7384444906944894,
@@ -4359,16 +4360,17 @@
    2.9387652516529346,
    2.9905651201673376,
    3.192988794327526,
-   3.4505999698070853
+   3.4505999698070853,
+   3.7918606668764654
   ],
   "sparkLabel": "12-month mean, 1940–2026",
   "source": "Copernicus ERA5",
-  "through": "Sep 2026"
+  "through": "Oct 2026"
  },
  "wildfires": {
   "title": "Wildfires: CO₂ from fires",
-  "big": "5.9 Gt",
-  "label": "CO₂ from fires worldwide, 1 January to Oct 28 2026",
+  "big": "6.0 Gt",
+  "label": "CO₂ from fires worldwide, 1 January to Nov 4 2026",
   "spark": [
    7.812412699999999,
    7.365816400000003,
@@ -4396,12 +4398,12 @@
   ],
   "sparkLabel": "yearly totals, 2003–2025 (billion metric tons)",
   "source": "GWIS (Copernicus)",
-  "through": "Oct 28, 2026"
+  "through": "Nov 4, 2026"
  },
  "corals": {
   "title": "Coral reefs under heat stress",
-  "big": "17%",
-  "label": "of the world's reef regions under bleaching-level heat stress, Oct 29 2026",
+  "big": "16%",
+  "label": "of the world's reef regions under bleaching-level heat stress, Nov 7 2026",
   "spark": [
    0.2829343233900907,
    0.8820893611573415,
@@ -4444,11 +4446,11 @@
    11.79234413007296,
    21.016546652367108,
    10.881957957628748,
-   12.959915546309807
+   13.050949653301174
   ],
   "sparkLabel": "yearly average, 1985–2026",
   "source": "NOAA Coral Reef Watch",
-  "through": "Oct 29, 2026"
+  "through": "Nov 7, 2026"
  },
  "slow": {
   "title": "Slow signals",
