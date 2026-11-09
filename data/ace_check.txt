@@ -61,12 +61,12 @@ Fixes of 34 kt or more left out because of their status (EX extratropical, LO lo
   WP nature NR: 72
 
 Fixes in 2026 (00/06/12/18 UTC) per basin, and how many carry each wind column:
-  EP: USA_WIND 1004, agency nhc_working_bt 1004, fixes 1004, track PROVISIONAL 1004
+  EP: USA_WIND 1027, agency nhc_working_bt 1027, fixes 1027, track PROVISIONAL 1027
   NA: USA_WIND 234, agency nhc_working_bt 234, fixes 234, track PROVISIONAL 234
   NI: USA_WIND 28, agency tcvitals 30, fixes 30, track PROVISIONAL 30
-  SI: BOM_WIND 196, REUNION_WIND 306, USA_WIND 309, WMO_WIND 497, agency  210, agency tcvightals 11, agency tcvitals 300, fixes 521, track PROVISIONAL 16, track US-PROVISIONAL 495, track main 10
+  SI: BOM_WIND 196, REUNION_WIND 306, USA_WIND 311, WMO_WIND 497, agency  210, agency tcvightals 11, agency tcvitals 302, fixes 523, track PROVISIONAL 18, track US-PROVISIONAL 495, track main 10
   SP: BOM_WIND 144, NADI_WIND 28, USA_WIND 141, WMO_WIND 173, agency  102, agency tcvitals 141, fixes 243, track PROVISIONAL 36, track US-PROVISIONAL 201, track main 6
-  WP: TOKYO_WIND 27, USA_WIND 848, WMO_WIND 27, agency  16, agency nhc_working_bt 5, agency tcvitals 851, fixes 872, track PROVISIONAL 820, track US-PROVISIONAL 52
+  WP: TOKYO_WIND 27, USA_WIND 856, WMO_WIND 27, agency  16, agency nhc_working_bt 5, agency tcvitals 859, fixes 880, track PROVISIONAL 828, track US-PROVISIONAL 52
 
 Calendar-year ACE, all basins together:
   1981: 544.6
@@ -114,4 +114,4 @@ Calendar-year ACE, all basins together:
   2023: 863.2
   2024: 633.2
   2025: 710.3
-  2026: 947.6
+  2026: 950.6
