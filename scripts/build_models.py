@@ -287,15 +287,22 @@ def main():
             {"made": 2019, "target": "1.5 °C", "base": 2019, "rate": -7.6, "to": 2030,
              "note": "7.6% less every year from 2020 to 2030", "src": "UNEP Emissions Gap Report 2019",
              "url": "https://www.unep.org/resources/emissions-gap-report-2019"}],
-        "ghg_pledges": {"base": 2025, "points": [[2030, -5, -8], [2035, -11, -15]], "src": "UNEP Emissions Gap Report 2026", "note": "full delivery of all national pledges (NDCs), cut from 2025 levels", "url": "https://wedocs.unep.org/handle/20.500.11822/50038"},
-        "unep_return": {"base": 2025, "points": [[2030, -18], [2035, -45], [2040, -69]], "src": "UNEP Emissions Gap Report 2026", "label": "lowest possible 1.5 °C overshoot", "note": "peak warming about 1.7–1.8 °C around mid-century; about an even chance of being back at or below 1.5 °C by 2100; needs roughly 320 billion metric tons of CO₂ removed from the air this century", "url": "https://wedocs.unep.org/handle/20.500.11822/50038"},
-        # IPCC AR6 Synthesis Report, Table SPM.1: GHG emission reductions from 2019 (%), median [5th-95th percentile]
+        # UNEP Emissions Gap Report 2026, "The point of return": all cuts from 2025 levels (ES p. viii; full report section 4.3,
+        # p. 31). These are the paths still open now; the IPCC AR6 paths from 2019 below are shown as missed (grey).
+        "ghg_pledges": {"base": 2025, "points": [[2030, -5, -8], [2035, -11, -15], [2040, -20, -27]], "src": "UNEP Emissions Gap Report 2026", "note": "full delivery of all national pledges (NDCs), cut from 2025 levels", "url": "https://wedocs.unep.org/handle/20.500.11822/50038"},
+        # points: [year, median %, range low %, range high %]; from_2019: the same cuts relative to 2019 (report footnote 4, p. 31)
+        "unep_return": {"base": 2025, "points": [[2030, -18, -15, -36], [2035, -45, -30, -60], [2040, -69, -60, -76]], "from_2019": [[2030, -14], [2035, -42], [2040, -67]],
+                        "src": "UNEP Emissions Gap Report 2026", "label": "lowest possible 1.5 °C overshoot", "note": "peak warming about 1.7–1.8 °C around mid-century; about an even chance of being back at or below 1.5 °C by 2100; needs roughly 320 billion metric tons of CO₂ removed from the air this century", "url": "https://wedocs.unep.org/handle/20.500.11822/50038"},
+        "unep_2c": {"base": 2025, "points": [[2030, -11, 0, -23], [2035, -24, -9, -51], [2040, -37, -26, -73]], "from_2019": [[2030, -5], [2035, -19], [2040, -33]],
+                    "src": "UNEP Emissions Gap Report 2026", "label": "below 2 °C (at least two in three)", "note": "peak warming about 1.9 °C with a two-in-three chance", "url": "https://wedocs.unep.org/handle/20.500.11822/50038"},
+        # IPCC AR6 Synthesis Report, Table SPM.1: GHG emission reductions from 2019 (%), median [5th-95th percentile].
+        # Shown as missed paths since UNEP's 2026 report: they assumed cuts from about 2020 that did not happen.
         "ipcc_ghg_paths": {"base": 2019, "years": [2030, 2035, 2040, 2050],
             "1.5": {"label": "1.5 °C (>50% chance, no or limited overshoot)", "mid": [43, 60, 69, 84], "lo": [34, 49, 58, 73], "hi": [60, 77, 90, 98]},
             "2": {"label": "2 °C (>67% chance)", "mid": [21, 35, 46, 64], "lo": [1, 22, 34, 53], "hi": [42, 55, 63, 77]},
             "source": "IPCC AR6 Synthesis Report (2023), Summary for Policymakers, Table SPM.1",
             "url": "https://www.ipcc.ch/report/ar6/syr/summary-for-policymakers/"},
-        "unep": {"current_policies": 2.8, "ndcs": [2.6, 2.6], "ndcs_netzero": 2.1, "published": "2026-10-21", "source": "UNEP Emissions Gap Report 2026", "url": "https://wedocs.unep.org/handle/20.500.11822/50038"},
+        "unep": {"current_policies": 2.8, "ndcs": [2.6, 2.7], "ndcs_netzero": 2.1, "published": "2026-10-21", "source": "UNEP Emissions Gap Report 2026", "url": "https://wedocs.unep.org/handle/20.500.11822/50038"},
     }
     json.dump(outlook, open("data/models_outlook.json", "w"), ensure_ascii=False, indent=1)
     print("wrote data/models_old.json, data/models_cmip6.csv (", len(models), "models ), data/models_outlook.json")

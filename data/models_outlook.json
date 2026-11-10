@@ -1976,6 +1976,11 @@
     2035,
     -11,
     -15
+   ],
+   [
+    2040,
+    -20,
+    -27
    ]
   ],
   "src": "UNEP Emissions Gap Report 2026",
@@ -1987,20 +1992,81 @@
   "points": [
    [
     2030,
-    -18
+    -18,
+    -15,
+    -36
    ],
    [
     2035,
-    -45
+    -45,
+    -30,
+    -60
    ],
    [
     2040,
-    -69
+    -69,
+    -60,
+    -76
+   ]
+  ],
+  "from_2019": [
+   [
+    2030,
+    -14
+   ],
+   [
+    2035,
+    -42
+   ],
+   [
+    2040,
+    -67
    ]
   ],
   "src": "UNEP Emissions Gap Report 2026",
   "label": "lowest possible 1.5 °C overshoot",
   "note": "peak warming about 1.7–1.8 °C around mid-century; about an even chance of being back at or below 1.5 °C by 2100; needs roughly 320 billion metric tons of CO₂ removed from the air this century",
+  "url": "https://wedocs.unep.org/handle/20.500.11822/50038"
+ },
+ "unep_2c": {
+  "base": 2025,
+  "points": [
+   [
+    2030,
+    -11,
+    0,
+    -23
+   ],
+   [
+    2035,
+    -24,
+    -9,
+    -51
+   ],
+   [
+    2040,
+    -37,
+    -26,
+    -73
+   ]
+  ],
+  "from_2019": [
+   [
+    2030,
+    -5
+   ],
+   [
+    2035,
+    -19
+   ],
+   [
+    2040,
+    -33
+   ]
+  ],
+  "src": "UNEP Emissions Gap Report 2026",
+  "label": "below 2 °C (at least two in three)",
+  "note": "peak warming about 1.9 °C with a two-in-three chance",
   "url": "https://wedocs.unep.org/handle/20.500.11822/50038"
  },
  "ipcc_ghg_paths": {
@@ -2060,7 +2126,7 @@
   "current_policies": 2.8,
   "ndcs": [
    2.6,
-   2.6
+   2.7
   ],
   "ndcs_netzero": 2.1,
   "published": "2026-10-21",

@@ -139,7 +139,7 @@ Promise.all(['models_old.json','models_outlook.json'].map(f=>fetch('data/'+f).th
  const B=D.budget,em=B.emissions.fossil+B.emissions.land;
  $('mdl').innerHTML=[['10 of 17','warming projections from 1970–2007 matched what followed','Hausfather et al. 2020'],
   ['14 of 17','matched once the real rise in greenhouse gases is counted','Hausfather et al. 2020'],
-  [`about ${D.unep.current_policies.toFixed(1)} °C`,'by 2100 with the policies now in place (estimate)','UNEP, Emissions Gap Report 2025'],
+  [`about ${D.unep.current_policies.toFixed(1)} °C`,'by 2100 with the policies now in place (estimate)',D.unep.source.replace('UNEP ','UNEP, ')],
   [`about ${(B.levels[0].p50/em).toFixed(0)} years`,'of current CO₂ emissions left for an even chance of staying under 1.5 °C (estimate)','Indicators of Global Climate Change 2025']]
   .map(([v,l,s])=>`<div><b>${v}</b><span>${l}</span><small>${s}</small></div>`).join('')}).catch(e=>{console.error(e);$('mdl').textContent='Data unavailable right now.'});
 </script></main></body></html>
