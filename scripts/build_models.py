@@ -303,6 +303,17 @@ def main():
             "source": "IPCC AR6 Synthesis Report (2023), Summary for Policymakers, Table SPM.1",
             "url": "https://www.ipcc.ch/report/ar6/syr/summary-for-policymakers/"},
         "unep": {"current_policies": 2.8, "ndcs": [2.6, 2.7], "ndcs_netzero": 2.1, "published": "2026-10-21", "source": "UNEP Emissions Gap Report 2026", "url": "https://wedocs.unep.org/handle/20.500.11822/50038"},
+        # IPCC AR6 WG1 sea-level rise projections (SPM B.5.3, Table 9.9), relative to 1995-2014, metres: [median, 17th, 83rd
+        # percentile]. Entered by hand; kept in this script so the monthly rebuild does not drop it (it did on 2 November 2026).
+        "ar6_slr": {"source": "IPCC AR6 WG1, Summary for Policymakers, B.5.3 / Table 9.9 (medium-confidence projections)",
+                    "baseline": "1995-2014", "unit": "m",
+                    "scenarios": {"SSP1-1.9": {"2050": [0.18, 0.15, 0.23], "2100": [0.38, 0.28, 0.55]},
+                                  "SSP1-2.6": {"2050": [0.19, 0.16, 0.25], "2100": [0.44, 0.32, 0.62]},
+                                  "SSP2-4.5": {"2050": [0.20, 0.17, 0.26], "2100": [0.56, 0.44, 0.76]},
+                                  "SSP3-7.0": {"2050": [0.22, 0.18, 0.27], "2100": [0.68, 0.55, 0.90]},
+                                  "SSP5-8.5": {"2050": [0.23, 0.20, 0.29], "2100": [0.77, 0.63, 1.01]}},
+                    "low_confidence_ssp585_2100": [0.88, 0.63, 1.60],
+                    "note": "median and likely range (17-83%)"},
     }
     json.dump(outlook, open("data/models_outlook.json", "w"), ensure_ascii=False, indent=1)
     print("wrote data/models_old.json, data/models_cmip6.csv (", len(models), "models ), data/models_outlook.json")

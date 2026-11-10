@@ -716,7 +716,7 @@ function seaLevel(t,D){
   {label:'Measured (yearly average)',data:obs,borderColor:OBS,backgroundColor:OBS,borderWidth:2.4,pointRadius:2,order:0},
   {label:'If the measured speed-up continued (curve fit)',data:curve.filter(d=>d.x>=last),borderColor:MOD,backgroundColor:MOD,borderWidth:2,borderDash:[6,4],pointRadius:0,order:1},
   ...K.map((k,i)=>{const a=A.scenarios[k]['2050'],b=A.scenarios[k]['2100'],xa=2050+off[i],xb=2100+off[i];
-   return {label:`IPCC ${k} (${SSPN[k]})`,data:[{x:xa,y:a[1]*100},{x:xa,y:a[0]*100},{x:xa,y:a[2]*100},{x:NaN,y:null},{x:xb,y:b[1]*100},{x:xb,y:b[0]*100},{x:xb,y:b[2]*100}],
+   return {label:`IPCC ${k} (${SSPN[k]})`,data:[{x:xa,y:a[1]*100},{x:xa,y:a[0]*100},{x:xa,y:a[2]*100},{x:(xa+xb)/2,y:null},{x:xb,y:b[1]*100},{x:xb,y:b[0]*100},{x:xb,y:b[2]*100}],
     borderColor:col(k),backgroundColor:col(k),borderWidth:5,pointRadius:[0,5,0,0,0,5,0],pointHoverRadius:[0,6,0,0,0,6,0],pointBorderColor:THEME.dark?'#000':'#fff',spanGaps:false,order:2}})];
  ready('sl',new Chart($('c11'),{type:'line',data:{datasets:ds},
   options:{animation:false,maintainAspectRatio:false,parsing:false,interaction:{mode:'nearest',intersect:false},
