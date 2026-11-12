@@ -1,1 +1,1 @@
-845 pentads, (2015, 18) to (2026, 59); 16204 SMAP points; correlation 0.37
+846 pentads, (2015, 18) to (2026, 60); 16204 SMAP points; correlation 0.37

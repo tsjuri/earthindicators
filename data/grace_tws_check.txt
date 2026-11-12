@@ -1,2 +1,2 @@
-GRCTellus.JPL.200204_202608.GLO.RL06.3M.MSCNv04CRI.nc: 46 MB; variables ['lwe_thickness', 'uncertainty', 'lat_bounds', 'lon_bounds', 'time_bounds', 'land_mask', 'scale_factor', 'mascon_ID', 'GAD']
-260 months, 2002-04-17 to 2026-08-16; land counted 131.8 million km²; last -58.20 mm
+GRCTellus.JPL.200204_202609.GLO.RL06.3M.MSCNv04CRI.nc: 46 MB; variables ['lwe_thickness', 'uncertainty', 'lat_bounds', 'lon_bounds', 'time_bounds', 'land_mask', 'scale_factor', 'mascon_ID', 'GAD']
+261 months, 2002-04-17 to 2026-09-16; land counted 131.8 million km²; last -71.24 mm
