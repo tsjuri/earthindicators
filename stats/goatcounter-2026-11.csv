@@ -198,3 +198,69 @@ chart-pick/nino-c3,"Niño 3.4: each day of 2026 in actual sea-surface temperatur
 chart-pick-make/1,1 charts,1,Chrome 156,Windows 10,0,,o,"1536,0,1",AR,1,2026-11-10T02:12:27Z
 /air.html,Global air temperature tracker,0,Chrome 155,macOS 10.15,0,chatgpt.com,c,"1280,0,1",VN,1,2026-11-10T03:22:27Z
 /nino.html,Niño 3.4 tracker,0,Safari 27.2,iOS 18.7,0,chatgpt.com,c,"440,0,1",US-DC,1,2026-11-10T06:08:08Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1920,0,1",NL,1,2026-11-10T08:24:17Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/nino-c1_3.html,h,"444,0,1",GB,1,2026-11-10T08:41:08Z
+/air.html,Global air temperature tracker,0,Chrome 142,Windows 8.1,0,chatgpt.com,c,"1536,0,1",PE,1,2026-11-10T13:57:57Z
+/air.html,Global air temperature tracker,0,Safari 27.2,macOS 10.15,0,chatgpt.com,c,"2560,0,1",FR,1,2026-11-10T14:08:35Z
+/air.html,Global air temperature tracker,0,Safari 27.2,macOS 10.15,0,chatgpt.com,c,"2560,0,1",FR,0,2026-11-10T14:11:33Z
+/nino.html,Niño 3.4 tracker,0,Chrome 137,Android 10,0,chatgpt.com,c,"393,0,1",BR,1,2026-11-10T14:33:24Z
+/air.html,Global air temperature tracker,0,Chrome 142,Windows 8.1,0,chatgpt.com,c,"1536,0,1",PE,1,2026-11-10T15:00:38Z
+/air.html,Global air temperature tracker,0,Chrome 142,Windows 8.1,0,chatgpt.com,c,"1920,0,1",PE,1,2026-11-10T15:02:43Z
+/sun.html,Solar cycle tracker,0,Chrome 158,macOS 10.15,0,chatgpt.com,c,"1440,0,1",CH,1,2026-11-10T15:55:13Z
+/air.html,Global air temperature tracker,0,Chrome 142,Windows 8.1,0,chatgpt.com,c,"1920,0,1",PE,1,2026-11-10T17:11:09Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1336,0,1",DE,1,2026-11-10T19:21:16Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-10T19:21:19Z
+/sea-ice.html,Sea ice extent tracker,0,Chrome 157,Windows 10,0,earthindicators.org/nino.html,h,"1336,0,1",DE,1,2026-11-10T19:21:42Z
+/land-ice.html,Land ice tracker,0,Chrome 157,Windows 10,0,earthindicators.org/sea-ice.html,h,"1336,0,1",DE,1,2026-11-10T19:22:21Z
+/water.html,Water vapour tracker,0,Chrome 157,Windows 10,0,earthindicators.org/land-ice.html,h,"1336,0,1",DE,1,2026-11-10T19:24:17Z
+/ohc.html,Ocean heat content tracker,0,Chrome 157,Windows 10,0,earthindicators.org/water.html,h,"1336,0,1",DE,1,2026-11-10T19:24:24Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,earthindicators.org/ohc.html,h,"1336,0,1",DE,1,2026-11-10T19:24:29Z
+/slow.html,Slow signals,0,Chrome 157,Windows 10,0,earthindicators.org/index.html,h,"1336,0,1",DE,1,2026-11-10T19:24:36Z
+chart-pick/slow-c8,"Full bloom of the cherry trees in Kyoto, 812–2026",1,Chrome 157,Windows 10,0,earthindicators.org/index.html,h,"1336,0,1",DE,1,2026-11-10T19:28:02Z
+chart-pick-make/1,1 charts,1,Chrome 157,Windows 10,0,earthindicators.org/index.html,h,"1336,0,1",DE,1,2026-11-10T19:28:05Z
+/sea-ice.html,Sea ice extent tracker,0,Chrome 157,Linux ,0,,o,"1280,0,1",US-OR,1,2026-11-10T20:42:16Z
+/sea-ice.html?x-target-selector=table,Sea ice and snow tracker,0,Chrome 157,Linux ,0,,o,"1280,0,1",US-OR,1,2026-11-10T20:47:26Z
+/nino.html,Niño 3.4 tracker,0,Safari 26.6,iOS 18.7,0,chatgpt.com,c,"428,0,1",BR,1,2026-11-10T21:01:15Z
+/sst.html,Global sea-surface temperature tracker,0,Firefox 159,Windows 10,0,,o,"1920,0,1",PT,1,2026-11-11T02:21:31Z
+/nino.html,Niño 3.4 tracker,0,Safari 26.5,iOS 18.7,0,chatgpt.com,c,"393,0,1",US-CA,1,2026-11-11T03:52:52Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-11T08:03:19Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-11T08:03:28Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1728,0,1",NL,1,2026-11-11T09:13:45Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 156,Android 10,0,chatgpt.com,c,"384,0,1",FR,1,2026-11-11T09:16:35Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 156,Android 10,0,chatgpt.com,c,"384,0,1",FR,0,2026-11-11T09:16:51Z
+/eei.html,Earth's energy imbalance tracker,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1280,0,1",AU,1,2026-11-11T12:28:03Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 156,Android 10,0,Google,g,"384,0,1",MA,1,2026-11-11T13:46:40Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 156,Android 10,0,Google,g,"384,0,1",MA,0,2026-11-11T13:46:49Z
+/nino.html,Niño 3.4 tracker,0,Safari 18.7,iOS 18.7,0,chatgpt.com,c,"390,0,1",BR,1,2026-11-11T16:14:23Z
+/sst.html,Global sea-surface temperature tracker,0,Safari 27.2,iOS 18.7,0,chatgpt.com,c,"393,0,1",US-CA,1,2026-11-11T17:48:17Z
+/sst.html,Global sea-surface temperature tracker,0,Safari 27.2,iOS 18.7,0,chatgpt.com,c,"393,0,1",US-CA,0,2026-11-11T17:48:20Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 156,Windows 10,0,chatgpt.com,c,"1280,0,1",AU,1,2026-11-12T03:48:19Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 156,Android 10,0,chatgpt.com,c,"360,0,1",GE,1,2026-11-12T08:08:17Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-12T08:28:44Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-12T08:28:55Z
+/slow.html,Slow signals,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1280,0,1",GB,1,2026-11-12T10:25:34Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,0,2026-11-12T11:21:03Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,0,2026-11-12T11:21:05Z
+/air.html,Global air temperature tracker,0,Chrome 143,Android 10,0,,o,"385,0,1",IN,1,2026-11-12T12:44:00Z
+/air.html,Global air temperature tracker,0,Chrome 143,Android 10,0,earthindicators.org/air.html,h,"385,0,1",IN,0,2026-11-12T12:48:18Z
+/ohc.html,Ocean heat content tracker,0,Chrome 143,Android 10,0,earthindicators.org/air.html,h,"385,0,1",IN,1,2026-11-12T12:48:33Z
+/air.html,Global air temperature tracker,0,Chrome 143,Android 10,0,,o,"385,0,1",IN,0,2026-11-12T12:55:39Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1728,0,1",NL,1,2026-11-12T13:19:53Z
+/nino.html,Niño 3.4 tracker,0,Safari 26.5,iOS 18.7,0,chatgpt.com,c,"440,0,1",MX,1,2026-11-12T14:43:28Z
+/nino.html,Niño 3.4 tracker,0,Safari 18.7,iOS 18.7,0,chatgpt.com,c,"390,0,1",BR,1,2026-11-12T16:23:43Z
+/pdo.html,PDO tracker,0,Safari 27.2,iOS 18.7,0,chatgpt.com,c,"375,0,1",US-TX,1,2026-11-12T18:16:30Z
+/pdo.html,PDO tracker,0,Safari 27.2,iOS 18.7,0,chatgpt.com,c,"375,0,1",US-TX,1,2026-11-12T18:16:36Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1920,0,1",US-FL,1,2026-11-12T22:30:27Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1920,0,1",US-FL,1,2026-11-12T22:30:33Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1536,0,1",US-MN,1,2026-11-13T01:28:16Z
+/sea-ice.html,Sea ice extent tracker,0,Chrome 157,Windows 10,0,earthindicators.org/nino.html,h,"1536,0,1",US-MN,1,2026-11-13T01:31:38Z
+/land-ice.html,Land ice tracker,0,Chrome 157,Windows 10,0,earthindicators.org/sea-ice.html,h,"1536,0,1",US-MN,1,2026-11-13T01:32:07Z
+/corals.html,Coral reefs,0,Chrome 157,Windows 10,0,earthindicators.org/land-ice.html,h,"1536,0,1",US-MN,1,2026-11-13T01:32:34Z
+/co2.html,CO₂ tracker,0,Chrome 157,Windows 10,0,earthindicators.org/corals.html,h,"1536,0,1",US-MN,1,2026-11-13T01:32:55Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,earthindicators.org/co2.html,h,"1536,0,1",US-MN,1,2026-11-13T01:33:40Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Safari 11.0,iOS 27.2,0,,o,"402,0,1",US-MN,1,2026-11-13T01:35:28Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/index.html,h,"402,0,1",US-MN,1,2026-11-13T01:35:49Z
+/corals.html,Coral reefs,0,Chrome 156,Chrome OS ,0,chatgpt.com,c,"1280,0,1",KR,1,2026-11-13T02:05:25Z
+/corals.html,Coral reefs,0,Chrome 156,Chrome OS ,0,chatgpt.com,c,"1280,0,1",KR,0,2026-11-13T02:12:52Z
+/corals.html,Coral reefs,0,Chrome 156,Chrome OS ,0,chatgpt.com,c,"1280,0,1",KR,0,2026-11-13T02:18:00Z
+/air.html,Global air temperature tracker,0,Chrome 155,macOS 10.15,0,chatgpt.com,c,"1280,0,1",VN,1,2026-11-13T05:08:46Z
