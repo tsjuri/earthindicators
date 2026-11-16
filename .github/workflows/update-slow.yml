@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: write            # to start the chart share-link redraw when Hansen's table changes
 
 jobs:
   update:
@@ -45,4 +46,13 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data
           git add reference/hansen_temp_check.txt 2>/dev/null || true
-          git diff --cached --quiet || (git commit -m "Update slow signals" && git pull --rebase && git push)
+          if git diff --cached --quiet; then exit 0; fi
+          hansen=$(git diff --cached --name-only | grep -c '^data/models_hansen_temp.csv$' || true)
+          git commit -m "Update slow signals" && git pull --rebase && git push
+          # A new NASA month changes the "Can 2026 beat 2024?" chart: redraw that page's share previews now
+          # instead of waiting for the weekly redraw, so links posted on X show the new month.
+          if [ "$hansen" = "1" ]; then
+            gh workflow run update-chart-cards.yml -f pages=models.html
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
