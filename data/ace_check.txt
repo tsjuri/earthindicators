@@ -61,7 +61,7 @@ Fixes of 34 kt or more left out because of their status (EX extratropical, LO lo
   WP nature NR: 72
 
 Fixes in 2026 (00/06/12/18 UTC) per basin, and how many carry each wind column:
-  EP: USA_WIND 1043, agency nhc_working_bt 1043, fixes 1043, track PROVISIONAL 1043
+  EP: USA_WIND 1045, agency nhc_working_bt 1045, fixes 1045, track PROVISIONAL 1045
   NA: USA_WIND 234, agency nhc_working_bt 234, fixes 234, track PROVISIONAL 234
   NI: USA_WIND 28, agency tcvitals 30, fixes 30, track PROVISIONAL 30
   SI: BOM_WIND 196, REUNION_WIND 306, USA_WIND 319, WMO_WIND 497, agency  210, agency tcvightals 11, agency tcvitals 310, fixes 531, track PROVISIONAL 26, track US-PROVISIONAL 495, track main 10
