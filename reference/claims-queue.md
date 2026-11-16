@@ -6,13 +6,7 @@ claim can't be answered without them. Covered claims get extra search words (dat
 
 ## To build
 
-- mid-century-cooling (new): "Global cooling from the 1930s/40s to the mid-70s while CO2 rose, so CO2 doesn't drive
-  temperature." Answer: sulfate aerosols from post-war industry (sulfur dioxide) masked the CO2 warming; clean-air laws
-  from the 1970s cut them and warming resumed; the dip was mostly Northern Hemisphere, where the pollution was; part of
-  the 1940s peak is a sea-surface measurement artifact (bucket vs engine-intake change, Thompson et al. 2008); CO2 forcing
-  was still small then (link how-much-human). Mark aerosol cooling size as an estimate (IPCC AR6). Link ice-age-1970s.
-- Search words only: co2-lags + "as it gets warmer so does the co2", "warmer ocean releases co2", "outgassing";
-  no-experiment + "spiking", "experiment should be there", "fit to the models".
+(empty)
 
 ## Built
 
@@ -44,3 +38,6 @@ claim can't be answered without them. Covered claims get extra search words (dat
   100%; "why isn't it 10 degrees hotter" with the pot-on-a-flame check), natural-cycles (orbit), dinosaurs ("returning CO2
   where it came from"), no-experiment (sensitivity per doubling), climate-optimum (regional Greenland/Makassar chart)
   extended; new chart: 12,000 years of global temperature (Temp12k, Kaufman et al. 2020) on air.html#holocene.
+- 2026-11-16: mid-century-cooling (new: sulfur dioxide 1950-1975 from CEDS, global dimming, fossil CO2 share before 1945,
+  bucket artifact, aerosol size marked as estimate); search words added to co2-lags ("as it gets warmer so does the co2",
+  outgassing) and no-experiment ("spiking", "fit to the models").
