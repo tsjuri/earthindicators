@@ -810,10 +810,15 @@ window.eiCopy = function (btn, text, label) {
       // the key includes the switches as they are set now (region, baseline, data source...), so the same chart
       // can be added once per setting, e.g. Arctic and Antarctic volume side by side in one image
       const pb = document.createElement('button'); pb.type = 'button'; pb.className = 'nb pick';
-      const key = () => [stem + '-' + cv.id, ...[...box.querySelectorAll('.seg .nb.on')].map(e => e.textContent.trim())].join(' · ');
+      // page-wide switches (outside any box, e.g. the Niño page's "Box:" region switch) count too, so the same chart
+      // can be added once per region; the in-box switches follow
+      const key = () => [stem + '-' + cv.id,
+        ...[...document.querySelectorAll('main .seg')].filter(g => !g.closest('.box')).flatMap(g => [...g.querySelectorAll('.nb.on')]).map(e => e.textContent.trim()),
+        ...[...box.querySelectorAll('.seg .nb.on')].map(e => e.textContent.trim())].join(' · ');
       const label = () => { const on = picks.list().some(i => i.k === key()); pb.textContent = on ? 'In your image ✓' : 'Add to image'; pb.classList.toggle('on', on); };
       pb.onclick = () => picks.toggle(key(), box, cv, stem, label);
       box.addEventListener('click', e => { if (e.target.closest('.seg')) setTimeout(label, 0); });   // after the page has switched
+      document.addEventListener('click', e => { const g = e.target.closest('main .seg'); if (g && !g.closest('.box')) setTimeout(label, 0); });
       label(); picks.labels.push(label);
       if (!EMBED) bar.appendChild(pb);
       // the numbers behind the chart, as it is set now (region, switches, bands): data-no-csv on a box leaves it out (maps)
