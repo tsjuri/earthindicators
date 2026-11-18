@@ -1,1 +1,1 @@
-https://data.asdc.earthdata.nasa.gov/asdc-prod-protected/CERES/CERES_EBAF-TOA_Edition4.2.1/CERES_EBAF-TOA_Edition4.2.1_200003-202608.nc
+https://data.asdc.earthdata.nasa.gov/asdc-prod-protected/CERES/CERES_EBAF-TOA_Edition4.2.1/CERES_EBAF-TOA_Edition4.2.1_200003-202609.nc
