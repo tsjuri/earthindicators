@@ -264,3 +264,251 @@ chart-pick-make/1,1 charts,1,Chrome 157,Windows 10,0,earthindicators.org/index.h
 /corals.html,Coral reefs,0,Chrome 156,Chrome OS ,0,chatgpt.com,c,"1280,0,1",KR,0,2026-11-13T02:12:52Z
 /corals.html,Coral reefs,0,Chrome 156,Chrome OS ,0,chatgpt.com,c,"1280,0,1",KR,0,2026-11-13T02:18:00Z
 /air.html,Global air temperature tracker,0,Chrome 155,macOS 10.15,0,chatgpt.com,c,"1280,0,1",VN,1,2026-11-13T05:08:46Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-13T09:27:54Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-13T09:27:55Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Chrome 157,Windows 10,0,Google,g,"1920,0,1",IN,1,2026-11-13T11:01:46Z
+/pdo.html,PDO tracker,0,Safari 27.2,iOS 18.7,0,chatgpt.com,c,"375,0,1",US-TX,1,2026-11-13T14:20:14Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,chatgpt.com,c,"2926,0,1",CA,1,2026-11-13T15:52:42Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1920,0,1",CH,1,2026-11-13T15:57:18Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,,o,"2560,0,1",US-CA,1,2026-11-13T17:42:28Z
+/co2.html,CO₂ tracker,0,Chrome 157,Windows 10,0,earthindicators.org/nino.html,h,"2560,0,1",US-CA,1,2026-11-13T17:43:51Z
+/nino.html,Niño 3.4 tracker,0,Safari 26.6,macOS 10.15,0,chatgpt.com,c,"1024,0,1",US-OR,1,2026-11-13T18:06:13Z
+/pdo.html,PDO tracker,0,Chrome 153,Android 10,0,chatgpt.com,c,"360,0,1",RO,1,2026-11-13T18:08:35Z
+/nino.html,Niño 3.4 tracker,0,Chrome 153,Android 10,0,earthindicators.org/pdo.html,h,"360,0,1",RO,1,2026-11-13T18:09:34Z
+chart-copy/nino-c2,ناهنجاری ۱۲ نوامبر، هر سال,1,Chrome 153,Android 10,0,earthindicators.org/pdo.html,h,"360,0,1",RO,1,2026-11-13T18:10:51Z
+chart-csv/nino-c2,"Nov 6 anomaly, every year",1,Chrome 153,Android 10,0,earthindicators.org/pdo.html,h,"360,0,1",RO,1,2026-11-13T18:10:53Z
+/sun.html,Solar cycle tracker,0,Chrome 153,Android 10,0,earthindicators.org/nino.html,h,"360,0,1",RO,1,2026-11-13T18:12:59Z
+/models.html,Climate models,0,Chrome 153,Android 10,0,earthindicators.org/sun.html,h,"360,0,1",RO,1,2026-11-13T18:13:54Z
+/pdo.html,PDO tracker,0,Chrome 153,Android 10,0,earthindicators.org/sun.html,h,"360,0,1",RO,0,2026-11-13T18:14:21Z
+claim-link/natural-cycles,It's just natural cycles. Or: It's the sun.,1,Chrome 153,Android 10,0,earthindicators.org/pdo.html,h,"360,0,1",RO,1,2026-11-13T18:15:14Z
+/claims.html,"Common climate claims, answered with the latest data | Earth Indicators",0,Chrome 153,Android 10,0,earthindicators.org/pdo.html,h,"360,0,1",RO,1,2026-11-13T18:15:14Z
+/sun.html,Solar cycle tracker,0,Chrome 153,Android 10,0,earthindicators.org/nino.html,h,"360,0,1",RO,0,2026-11-13T18:16:37Z
+/nino.html,Niño 3.4 tracker,0,Chrome 153,Android 10,0,earthindicators.org/pdo.html,h,"360,0,1",RO,0,2026-11-13T18:16:37Z
+/pdo.html,PDO tracker,0,Chrome 153,Android 10,0,chatgpt.com,c,"360,0,1",RO,0,2026-11-13T18:16:38Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1336,0,1",DE,1,2026-11-13T21:48:17Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-13T21:48:25Z
+/air.html,Global air temperature tracker,0,Chrome 157,Windows 10,0,earthindicators.org/sst.html,h,"1336,0,1",DE,1,2026-11-13T21:55:15Z
+/models.html,Climate models,0,Chrome 157,Windows 10,0,earthindicators.org/s/models-c8.html,h,"1536,0,1",CA,1,2026-11-14T00:13:51Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Chrome 157,Windows 10,0,Google,g,"1920,0,1",IN,1,2026-11-14T04:22:52Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-14T08:50:38Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-14T08:50:50Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1336,0,1",DE,1,2026-11-14T10:57:44Z
+/air.html,Global air temperature tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-14T10:57:47Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,chatgpt.com,c,"407,0,1",DK,1,2026-11-14T17:33:55Z
+/slow.html,Slow signals,0,Chrome 156,macOS 10.15,0,chatgpt.com,c,"1792,0,1",DE,1,2026-11-14T19:43:55Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 156,macOS 10.15,0,earthindicators.org/slow.html,h,"1792,0,1",DE,1,2026-11-14T19:44:13Z
+/slow.html,Slow signals,0,Chrome 156,macOS 10.15,0,earthindicators.org/index.html,h,"1792,0,1",DE,0,2026-11-14T19:44:20Z
+/slow.html,Slow signals,0,Chrome 156,macOS 10.15,0,earthindicators.org/index.html,h,"1792,0,1",DE,0,2026-11-14T19:44:45Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 156,macOS 10.15,0,earthindicators.org/slow.html,h,"1792,0,1",DE,0,2026-11-14T19:44:53Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 156,macOS 10.15,0,earthindicators.org/index.html,h,"1792,0,1",DE,0,2026-11-14T19:44:55Z
+/models.html,Climate models,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1536,0,1",BO,1,2026-11-15T01:34:40Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-15T08:08:45Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-15T08:08:47Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1280,0,1",AU,1,2026-11-15T09:53:14Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 157,Windows 10,0,,o,"1280,0,1",AU,0,2026-11-15T10:12:24Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1366,0,1",PE,1,2026-11-15T10:15:58Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-15T14:23:32Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-15T14:23:33Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,0,2026-11-15T14:25:17Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,0,2026-11-15T14:25:18Z
+/pdo.html,PDO tracker,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1920,0,1",CA,1,2026-11-15T17:18:38Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,chatgpt.com,c,"407,0,1",PY,1,2026-11-15T21:04:54Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1728,0,1",NL,1,2026-11-16T07:44:00Z
+/land-ice.html,Land ice tracker,0,Safari 27.2,iOS 18.7,0,chatgpt.com,c,"440,0,1",AU,1,2026-11-16T09:33:37Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-16T10:56:43Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-16T10:56:45Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Chrome 157,Linux ,0,,o,"1280,0,1",US-IA,1,2026-11-16T11:05:20Z
+/co2.html,CO₂ tracker,0,Firefox 160,Windows 10,0,chatgpt.com,c,"1920,0,1",PL,1,2026-11-16T13:03:51Z
+/sun.html,Solar cycle tracker,0,Chrome 158,macOS 10.15,0,chatgpt.com,c,"1440,0,1",CH,1,2026-11-16T13:44:17Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,0,2026-11-16T14:06:42Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,0,2026-11-16T14:06:44Z
+/co2.html,CO₂ tracker,0,Firefox 160,Windows 10,0,chatgpt.com,c,"1920,0,1",PL,0,2026-11-16T14:49:14Z
+/models.html,Climate models,0,Chrome 156,Linux ,0,,o,"1920,0,1",US-NY,1,2026-11-16T15:25:42Z
+chart-copy/models-c14,"Can 2026 beat 2024? Average so far, month by month, in NASA's record (°C above 1880–1920)",1,Chrome 156,Linux ,0,,o,"1920,0,1",US-NY,1,2026-11-16T15:28:29Z
+/nino.html,Niño 3.4 tracker,0,Chrome 109,Windows 10,0,earthindicators.org/s/nino-c1_3.html,h,"1536,0,1",GB,1,2026-11-16T16:45:47Z
+/air.html,Global air temperature tracker,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1536,0,1",ES,1,2026-11-16T17:43:33Z
+/corals.html,Coral reefs,0,Chrome 157,Windows 10,0,chatgpt.com,c,"2560,0,1",CA,1,2026-11-16T19:38:25Z
+chart-copy/corals-c2,"Share of the world's coral reef regions that reached bleaching-level heat stress at least once in the year, 1985–2026 (%)",1,Chrome 157,Windows 10,0,,o,"2560,0,1",CA,1,2026-11-16T19:39:33Z
+chart-csv/corals-c2,"Share of the world's coral reef regions that reached bleaching-level heat stress at least once in the year, 1985–2026 (%)",1,Chrome 157,Windows 10,0,,o,"2560,0,1",CA,1,2026-11-16T19:39:36Z
+chart-pick/corals-c2,"Share of the world's coral reef regions that reached bleaching-level heat stress at least once in the year, 1985–2026 (%)",1,Chrome 157,Windows 10,0,,o,"2560,0,1",CA,1,2026-11-16T19:39:37Z
+chart-pick/corals-c1,Share of the world's coral reef regions under bleaching-level heat stress (Alert Level 1 or 2): each day of 2026 compared with every year since 1985 (%),1,Chrome 157,Windows 10,0,,o,"2560,0,1",CA,1,2026-11-16T19:40:15Z
+chart-pick-make/2,2 charts,1,Chrome 157,Windows 10,0,,o,"2560,0,1",CA,1,2026-11-16T19:40:19Z
+chart-pick/corals-c2,"Share of the world's coral reef regions that reached bleaching-level heat stress at least once in the year, 1985–2026 (%)",1,Chrome 157,Windows 10,0,,o,"2560,0,1",CA,0,2026-11-16T19:40:29Z
+chart-pick/corals-c3,"Reef surveys that found bleached corals, 1998–2019 (% of the year's surveys)",1,Chrome 157,Windows 10,0,,o,"2560,0,1",CA,1,2026-11-16T19:40:33Z
+chart-pick-make/2,2 charts,1,Chrome 157,Windows 10,0,,o,"2560,0,1",CA,0,2026-11-16T19:40:35Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 157,Windows 10,0,openai,c,"1920,0,1",JP,1,2026-11-16T22:24:07Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c9.html,h,"412,0,1",CA,1,2026-11-16T23:30:13Z
+/models.html,Climate models,0,Chrome 157,Windows 10,0,earthindicators.org/s/models-c8.html,h,"1536,0,1",CA,1,2026-11-17T01:06:32Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1336,0,1",DE,1,2026-11-17T01:50:32Z
+/sea-ice.html,Sea ice extent tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-17T01:50:37Z
+/slow.html,Slow signals,0,Safari 26.6,macOS 10.15,0,chatgpt.com,c,"1512,0,1",AU,1,2026-11-17T06:55:45Z
+/co2.html,CO₂ tracker,0,Safari 27.2,iOS 18.7,0,chatgpt.com,c,"393,0,1",CH,1,2026-11-17T06:55:50Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1728,0,1",NL,1,2026-11-17T07:32:19Z
+/ohc.html,Ocean heat content tracker,0, ,iOS 27.2,0,earthindicators.org/s/ohc-c1.html,h,"390,0,1",DK,1,2026-11-17T10:21:06Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/nino-c1_3.html,h,"360,0,1",US-KY,1,2026-11-17T12:34:04Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org/s/nino-c1_3.html,h,"1920,0,1",GB,1,2026-11-17T13:14:23Z
+/nino.html,Niño 3.4 tracker,0,Chrome 139,Windows 10,0,www.facebook.com,h,"2000,0,1",US-NC,1,2026-11-17T13:40:18Z
+/nino.html,Niño 3.4 tracker,0,Chrome 139,Windows 10,0,www.facebook.com,h,"2000,0,1",SE,1,2026-11-17T13:40:19Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"393,0,1",CO,1,2026-11-17T14:34:03Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Linux ,0,www.facebook.com,h,"2000,0,1",IE,1,2026-11-17T14:37:39Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",EC,1,2026-11-17T15:22:21Z
+/nino.html,Niño 3.4 tracker,0,Safari 27.0,iOS 18.7,0,go.bsky.app,h,"402,0,1",US-CA,1,2026-11-17T15:32:48Z
+/slow.html,Slow signals,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1366,0,1",DZ,1,2026-11-17T16:42:44Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"402,0,1",AR,1,2026-11-17T16:48:22Z
+/slow.html,Slow signals,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1366,0,1",DZ,0,2026-11-17T16:53:53Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.0,0,facebook.com,h,"428,0,1",PY,1,2026-11-17T17:28:17Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,Google,g,"1920,0,1",US-MN,1,2026-11-17T17:34:44Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org/index.html,h,"1920,0,1",US-MN,1,2026-11-17T17:35:26Z
+/co2.html,CO₂ tracker,0,Chrome 157,Windows 10,0,earthindicators.org/nino.html,h,"1920,0,1",US-MN,1,2026-11-17T17:36:23Z
+/sea-ice.html,Sea ice extent tracker,0,Chrome 157,Windows 10,0,earthindicators.org/co2.html,h,"1920,0,1",US-MN,1,2026-11-17T17:36:36Z
+/boundaries.html,Planetary boundaries,0,Firefox 160,macOS 10.15,0,chatgpt.com,c,"2560,0,1",FR,1,2026-11-17T17:49:55Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"440,0,1",PE,1,2026-11-17T17:50:19Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"440,0,1",PE,0,2026-11-17T17:50:52Z
+chart-csv/nino-c1,Niño 3.4: each day of 2026 compared with the same day in every year since 1982 (°C above or below the 1991–2020 average),1,Safari 11.0,iOS 27.2,0,facebook.com,h,"440,0,1",PE,1,2026-11-17T17:51:13Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"440,0,1",PE,0,2026-11-17T17:51:52Z
+/pdo.html,PDO tracker,0,Chrome 153,Android 10,0,Telegram Messenger,g,"360,0,1",RO,1,2026-11-17T18:51:00Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"384,0,1",VE,1,2026-11-17T18:57:38Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 14,0,www.facebook.com,g,"385,0,1",UY,1,2026-11-17T19:01:41Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,www.facebook.com,g,"360,0,1",EC,1,2026-11-17T19:11:27Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,www.facebook.com,g,"385,0,1",BR,1,2026-11-17T19:13:52Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1336,0,1",DE,1,2026-11-17T19:42:25Z
+/air.html,Global air temperature tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-17T19:42:27Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,www.facebook.com,g,"360,0,1",MX,1,2026-11-17T19:45:46Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",PE,1,2026-11-17T20:03:53Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"412,0,1",VN,1,2026-11-17T20:09:27Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,earthindicators.org,h,"412,0,1",VN,1,2026-11-17T20:09:49Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 15,0,www.facebook.com,g,"360,0,1",EC,1,2026-11-17T20:29:59Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.0,0,facebook.com,h,"428,0,1",CO,1,2026-11-17T20:41:43Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.7,0,facebook.com,h,"440,0,1",CO,1,2026-11-17T21:17:51Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",PE,1,2026-11-17T21:33:05Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"432,0,1",AR,1,2026-11-17T21:35:44Z
+/nino.html,Niño 3.4 tracker,0,Chrome 152,Android 10,0,,o,"360,0,1",VN,1,2026-11-17T21:35:50Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"360,0,1",EC,1,2026-11-17T21:54:56Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,www.facebook.com,g,"1600,0,1",MX,1,2026-11-17T22:02:30Z
+/nino.html,Niño 3.4 tracker,0,Chrome 109,Windows 10,0,www.facebook.com,g,"1366,0,1",AR,1,2026-11-17T22:07:47Z
+/nino.html,Niño 3.4 tracker,0,Safari 27.0,iOS 18.7,0,www.facebook.com,h,"320,0,1",MX,1,2026-11-17T22:25:28Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"320,0,1",PE,1,2026-11-17T22:41:58Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"360,0,1",AR,1,2026-11-17T22:48:14Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 18.7,0,facebook.com,h,"414,0,1",PE,1,2026-11-17T22:52:54Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",EC,1,2026-11-17T23:05:46Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",CO,1,2026-11-17T23:09:40Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"385,0,1",PE,1,2026-11-17T23:09:45Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,www.facebook.com,g,"384,0,1",CO,1,2026-11-17T23:31:53Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"412,0,1",GT,1,2026-11-17T23:38:12Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,www.facebook.com,g,"339,0,1",CL,1,2026-11-17T23:38:30Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,www.facebook.com,g,"1280,0,1",MX,1,2026-11-17T23:42:15Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Chrome 157,Windows 10,0,earthindicators.org/nino.html,h,"1280,0,1",MX,1,2026-11-17T23:44:10Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"375,0,1",AR,1,2026-11-17T23:44:17Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"402,0,1",CL,1,2026-11-18T00:00:25Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,www.facebook.com,g,"1739,0,1",PE,1,2026-11-18T00:07:52Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,www.facebook.com,g,"1512,0,1",MX,1,2026-11-18T00:08:08Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 156,Windows 10,0,chatgpt.com,c,"1536,0,1",BR,1,2026-11-18T00:16:15Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",PE,1,2026-11-18T00:20:58Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,www.facebook.com,g,"1366,0,1",AR,1,2026-11-18T00:23:39Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 14,0,www.facebook.com,g,"360,0,1",UY,1,2026-11-18T00:24:45Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 156,Windows 10,0,chatgpt.com,c,"1536,0,1",BR,0,2026-11-18T00:30:14Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Chrome 156,Windows 10,0,earthindicators.org/sst.html,h,"1536,0,1",BR,1,2026-11-18T00:30:50Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"320,0,1",CO,1,2026-11-18T00:46:40Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,www.facebook.com,g,"385,0,1",AR,1,2026-11-18T01:24:12Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"360,0,1",PE,1,2026-11-18T01:41:13Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"394,0,1",PE,1,2026-11-18T01:43:57Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.0,0,facebook.com,h,"402,0,1",CO,1,2026-11-18T01:48:07Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Chrome 156,Windows 10,0,earthindicators.org/sst.html,h,"1536,0,1",BR,0,2026-11-18T01:53:02Z
+/models.html,Climate models,0,Chrome 157,Windows 10,0,earthindicators.org/s/models-c8.html,h,"1536,0,1",CA,1,2026-11-18T01:58:28Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Chrome 156,Windows 10,0,earthindicators.org/sst.html,h,"1536,0,1",BR,0,2026-11-18T02:03:28Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.0,0,facebook.com,h,"428,0,1",MX,1,2026-11-18T02:07:10Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 12,0,www.facebook.com,g,"432,0,1",AR,1,2026-11-18T02:11:04Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,www.facebook.com,g,"1366,0,1",PE,1,2026-11-18T02:12:21Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"390,0,1",EC,1,2026-11-18T02:14:50Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"390,0,1",EC,0,2026-11-18T02:15:43Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"390,0,1",EC,0,2026-11-18T02:16:26Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"390,0,1",EC,0,2026-11-18T02:16:45Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"390,0,1",EC,0,2026-11-18T02:17:08Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"360,0,1",EC,1,2026-11-18T02:43:31Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"360,0,1",EC,1,2026-11-18T02:58:35Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"393,0,1",PE,1,2026-11-18T03:02:13Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,www.facebook.com,g,"320,0,1",PE,1,2026-11-18T03:26:40Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,www.facebook.com,g,"1280,0,1",PE,1,2026-11-18T03:30:53Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,Android 10,0,,o,"384,0,1",PE,1,2026-11-18T03:30:58Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 15,0,www.facebook.com,g,"360,0,1",CO,1,2026-11-18T03:34:22Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"384,0,1",AR,1,2026-11-18T04:00:57Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c9.html,h,"412,0,1",CA,1,2026-11-18T04:36:10Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,www.facebook.com,g,"360,0,1",MX,1,2026-11-18T04:36:24Z
+/nino.html,Niño 3.4 tracker,0,Chrome 143,Android 10,0,,o,"360,0,1",CA,1,2026-11-18T04:36:25Z
+/nino.html?sfnsn=wa,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,,o,"1920,0,1",PE,1,2026-11-18T05:05:58Z
+/nino.html?sfnsn=wa,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,,o,"1920,0,1",PE,0,2026-11-18T05:41:05Z
+/nino.html?sfnsn=wa,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,,o,"1920,0,1",PE,0,2026-11-18T05:41:26Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,www.facebook.com,g,"412,0,1",AR,1,2026-11-18T06:05:36Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"375,0,1",PE,1,2026-11-18T06:44:01Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"375,0,1",PE,0,2026-11-18T06:44:52Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.6,0,facebook.com,h,"440,0,1",PE,1,2026-11-18T08:06:48Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Chrome 158,Linux ,0,,o,"1280,0,1",US-IA,1,2026-11-18T08:28:57Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1728,0,1",NL,1,2026-11-18T08:47:33Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"390,0,1",ES,1,2026-11-18T09:25:04Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"320,0,1",PE,1,2026-11-18T09:32:15Z
+/ohc.html,Ocean heat content tracker,0, ,iOS 27.2,0,earthindicators.org/s/ohc-c1.html,h,"810,0,1",US-TX,1,2026-11-18T10:25:38Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,www.facebook.com,g,"1920,0,1",GB,1,2026-11-18T10:32:51Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 12,0,www.facebook.com,g,"320,0,1",PR,1,2026-11-18T10:38:45Z
+chart-csv/nino-cA1,"Atlantic: hurricane season energy (ACE) added up day by day, 2026 compared with every season since 1971",1,Chrome 157,Android 12,0,www.facebook.com,g,"320,0,1",PR,1,2026-11-18T10:39:47Z
+chart-csv/nino-cA1,"Atlantic: hurricane season energy (ACE) added up day by day, 2026 compared with every season since 1971",1,Chrome 157,Android 12,0,www.facebook.com,g,"320,0,1",PR,0,2026-11-18T10:40:09Z
+chart-csv/nino-cA1,"Atlantic: hurricane season energy (ACE) added up day by day, 2026 compared with every season since 1971",1,Chrome 157,Android 12,0,www.facebook.com,g,"320,0,1",PR,0,2026-11-18T10:40:11Z
+chart-csv/nino-cA1,"Atlantic: hurricane season energy (ACE) added up day by day, 2026 compared with every season since 1971",1,Chrome 157,Android 12,0,www.facebook.com,g,"320,0,1",PR,0,2026-11-18T10:40:11Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"430,0,1",PE,1,2026-11-18T10:42:25Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"320,0,1",PR,1,2026-11-18T10:43:41Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Safari 11.0,iOS 27.2,0,earthindicators.org/nino.html,h,"430,0,1",PE,1,2026-11-18T10:45:25Z
+chart-csv/nino-cA1,"Atlantic: hurricane season energy (ACE) added up day by day, 2026 compared with every season since 1971",1,Chrome 157,Android 10,0,,o,"320,0,1",PR,1,2026-11-18T10:45:39Z
+/ohc.html,Ocean heat content tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/index.html,h,"430,0,1",PE,1,2026-11-18T10:46:00Z
+/sea-level.html,Sea level tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/ohc.html,h,"430,0,1",PE,1,2026-11-18T10:46:16Z
+/ohc.html,Ocean heat content tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/sea-level.html,h,"430,0,1",PE,0,2026-11-18T10:46:45Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/ohc.html,h,"430,0,1",PE,0,2026-11-18T10:47:00Z
+chart-pick/nino-cM2 · Niño 3.4 · Comparado con lo normal · 1997,"El mismo mes de 1997: octubre de 1997, temperatura de la superficie del mar en comparación con la normal (°C frente a 1991–2020)",1,Chrome 157,Android 10,0,,o,"320,0,1",PR,1,2026-11-18T10:48:29Z
+chart-copy/nino-cM2,"El mismo mes de 1997: octubre de 1997, temperatura de la superficie del mar en comparación con la normal (°C frente a 1991–2020)",1,Chrome 157,Android 10,0,,o,"320,0,1",PR,1,2026-11-18T10:49:01Z
+chart-csv/nino-cW,"¿Dónde está el calor? Las cuatro zonas del Niño, de oeste a este, durante los últimos 365 días (°C comparado con el periodo 1991-2020).",1,Chrome 157,Android 10,0,,o,"320,0,1",PR,1,2026-11-18T10:49:50Z
+chart-csv/nino-c3,"Niño 1+2: each day of 2026 in actual sea-surface temperature (°C), compared with every year since 1982",1,Chrome 157,Android 10,0,,o,"320,0,1",PR,1,2026-11-18T10:50:10Z
+chart-csv/nino-c2,"Nov 6 anomaly, every year",1,Chrome 157,Android 10,0,,o,"320,0,1",PR,1,2026-11-18T10:50:19Z
+chart-csv/nino-c1,Niño 3.4: each day of 2026 compared with the same day in every year since 1982 (°C above or below the 1991–2020 average),1,Chrome 157,Android 10,0,,o,"320,0,1",PR,1,2026-11-18T10:50:33Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,earthindicators.org/nino.html,h,"320,0,1",PR,1,2026-11-18T10:51:04Z
+/models.html,Climate models,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"320,0,1",PR,1,2026-11-18T10:51:27Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,earthindicators.org/models.html,h,"320,0,1",PR,0,2026-11-18T10:54:44Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",NI,1,2026-11-18T11:02:43Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,www.facebook.com,g,"360,0,1",PE,1,2026-11-18T11:22:24Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,www.facebook.com,h,"370,0,1",EC,1,2026-11-18T11:26:43Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.0,0,facebook.com,h,"375,0,1",EC,1,2026-11-18T11:32:32Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.0,0,facebook.com,h,"375,0,1",EC,0,2026-11-18T11:32:54Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,www.facebook.com,g,"424,0,1",CO,1,2026-11-18T11:53:14Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",AR,1,2026-11-18T11:56:55Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,facebook.com,h,"393,0,1",CL,1,2026-11-18T12:00:19Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.0,0,facebook.com,h,"320,0,1",MX,1,2026-11-18T12:11:23Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.7,0,facebook.com,h,"375,0,1",PE,1,2026-11-18T12:18:31Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,h,"360,0,1",PE,1,2026-11-18T12:24:22Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"360,0,1",BO,1,2026-11-18T12:33:25Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 15,0,www.facebook.com,g,"360,0,1",AR,1,2026-11-18T12:37:46Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"360,0,1",BO,0,2026-11-18T12:42:34Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.0,0,facebook.com,h,"375,0,1",ES,1,2026-11-18T12:42:37Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,www.facebook.com,g,"1440,0,1",CO,1,2026-11-18T12:58:34Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 17,0,www.facebook.com,h,"376,0,1",EC,1,2026-11-18T12:59:07Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-18T13:00:58Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-18T13:00:59Z
+chart-csv/nino-c1,Niño 3.4: each day of 2026 compared with the same day in every year since 1982 (°C above or below the 1991–2020 average),1,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-18T13:06:42Z
+chart-csv/nino-c3,"Niño 1+2: each day of 2026 in actual sea-surface temperature (°C), compared with every year since 1982",1,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-18T13:06:55Z
+chart-csv/nino-c2,"Nov 6 anomaly, every year",1,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-18T13:07:27Z
+chart-csv/nino-c1,Niño 3.4: each day of 2026 compared with the same day in every year since 1982 (°C above or below the 1991–2020 average),1,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,0,2026-11-18T13:07:49Z
+chart-csv/nino-c3,"Niño 1+2: each day of 2026 in actual sea-surface temperature (°C), compared with every year since 1982",1,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,0,2026-11-18T13:07:59Z
+chart-csv/nino-c3,"Niño 1+2: each day of 2026 in actual sea-surface temperature (°C), compared with every year since 1982",1,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,0,2026-11-18T13:08:08Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"360,0,1",BO,0,2026-11-18T13:14:21Z
+chart-csv/nino-c3,"Niño 1+2: each day of 2026 in actual sea-surface temperature (°C), compared with every year since 1982",1,Chrome 157,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-18T13:24:47Z
+/slow.html,Slow signals,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1366,0,1",ES,1,2026-11-18T13:27:07Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"376,0,1",PE,1,2026-11-18T13:38:44Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"376,0,1",PE,1,2026-11-18T13:38:53Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,earthindicators.org/nino.html,h,"376,0,1",PE,0,2026-11-18T13:39:01Z
+chart-csv/slow-c3,"Fossil CO₂ emissions by source, 1850–2025 (billion metric tons of CO₂ a year)",1,Chrome 157,Windows 10,0,,o,"1366,0,1",ES,1,2026-11-18T13:44:56Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,,o,"424,0,1",CO,1,2026-11-18T13:47:48Z
+/slow.html,Slow signals,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1366,0,1",ES,1,2026-11-18T13:47:57Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",PE,1,2026-11-18T13:48:13Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,earthindicators.org/nino.html,h,"376,0,1",PE,0,2026-11-18T14:30:36Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,Google,g,"1920,0,1",PE,1,2026-11-18T14:33:40Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 16,0,www.facebook.com,g,"384,0,1",PE,1,2026-11-18T14:35:21Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1920,0,1",PE,1,2026-11-18T14:35:46Z
+chart-copy/nino-c3,"Niño 1+2: each day of 2026 in actual sea-surface temperature (°C), compared with every year since 1982",1,Chrome 157,Android 10,0,earthindicators.org/nino.html,h,"376,0,1",PE,1,2026-11-18T14:36:36Z
+chart-copy/nino-c3,"Niño 1+2: each day of 2026 in actual sea-surface temperature (°C), compared with every year since 1982",1,Chrome 157,Android 10,0,earthindicators.org/nino.html,h,"376,0,1",PE,0,2026-11-18T14:38:26Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 26.7,0,facebook.com,h,"375,0,1",PE,1,2026-11-18T14:54:27Z
