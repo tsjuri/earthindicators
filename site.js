@@ -1117,15 +1117,25 @@ window.eiCopy = function (btn, text, label) {
       if (lx > pad && lx + w > W - pad) { lx = pad; row++; }
       const at = { lx, row }; lx += w + 22 * r; return at; }); });
     const rows = flow.map(f => f.length ? f[f.length - 1].row + 1 : 0);
+    // titles wrap at word breaks to the image width (a long title used to run off the right edge)
+    mx.font = '600 ' + 15 * r + F;
+    const tl = sections.map(([, tid]) => {
+      const words = (typeof tid === 'string' ? document.getElementById(tid) : tid).textContent.trim().split(/\s+/), L = [];
+      words.forEach(wd => { const t = L.length ? L[L.length - 1] + ' ' + wd : wd;
+        if (L.length && mx.measureText(t).width > W - pad * 2) L.push(wd); else if (L.length) L[L.length - 1] = t; else L.push(wd); });
+      return L.length ? L : [''];
+    });
+    const tLine = 20 * r;
     const H = pad * 2 + gap * (sections.length - 1) + sections.reduce((h, [ch, , key], n) =>
-      h + tH + (key ? kH : 0) + (rows[n] ? rows[n] * rowH + 6 * r : 0) + ch.canvas.height, 0);
+      h + tH + (tl[n].length - 1) * tLine + (key ? kH : 0) + (rows[n] ? rows[n] * rowH + 6 * r : 0) + ch.canvas.height, 0);
     const o = document.createElement('canvas'); o.width = W; o.height = H;
     const x = o.getContext('2d'), font = (px, b) => x.font = (b ? '600 ' : '') + px * r + F;
     x.fillStyle = THEME.card; x.fillRect(0, 0, W, H); x.textBaseline = 'top';
     let y = pad;
     sections.forEach(([ch, tid, key], n) => {
       if (n) y += gap;
-      font(15, 1); x.fillStyle = THEME.ink; x.fillText((typeof tid === 'string' ? document.getElementById(tid) : tid).textContent, pad, y); y += tH;
+      font(15, 1); x.fillStyle = THEME.ink;
+      tl[n].forEach((t, i) => x.fillText(t, pad, y + i * tLine)); y += tH + (tl[n].length - 1) * tLine;
       font(12);
       if (key) {   // only what is switched on in the chart's band key
         let kx = pad;
