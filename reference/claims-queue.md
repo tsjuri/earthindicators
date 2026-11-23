@@ -6,7 +6,20 @@ claim can't be answered without them. Covered claims get extra search words (dat
 
 ## To build
 
-(empty)
+- hockey-noise (new): "The hockey stick comes from the method: screen proxies by correlation with thermometers, flip
+  the negative ones, average, and even random red noise gives a hockey stick, so agreement between reconstructions
+  means nothing." Heard: WUWT "Mining for hockeysticks" (2024-06-29). Answer points:
+  - Concede the real part: screening on the calibration period is a known pitfall (it flatters calibration skill).
+  - Noise only reproduces the blade, which thermometers already measure; the question is the handle. Averaging noise
+    always gives a flat handle; real proxies show structure (post-eruption cold dips in the right years).
+  - PAGES2k 2017 data paper: composites broadly similar across archive types, land vs ocean, and screening criteria.
+  - PAGES2k 2019 (Neukom et al., Nature Geoscience): seven methods, from basic composite-plus-scaling to newer ones.
+  - Evidence with no screening at all: boreholes (heat diffusion), worldwide glacier lengths, Temp12k (air.html#holocene).
+  - Held-out verification years: screened noise passes calibration but fails verification.
+  - Sign of each proxy type is set by physics, not flipped freely.
+  - TO VERIFY before building (from general knowledge, not yet sourced): volcanic dips, verification test, sign rule.
+  Link from medieval-warm; add data-also there: screening, screened, red noise, pseudoproxies, random noise, flipped,
+  selection fallacy, mining for hockey sticks.
 
 ## Built
 
