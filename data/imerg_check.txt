@@ -1,4 +1,30 @@
-11556 land points
-Final run through 2025-09-30
-  2026: 14 days read, 24 s
-29 years; 11378 land points counted; last [2026, '1.05', '7.21', 319, 319]
+  1998: 365 days read, 62 s
+  1999: 365 days read, 107 s
+  2000: 366 days read, 150 s
+  2001: 365 days read, 190 s
+  2002: 365 days read, 230 s
+  2003: 365 days read, 268 s
+  2004: 366 days read, 305 s
+  2005: 365 days read, 341 s
+  2006: 365 days read, 378 s
+  2007: 365 days read, 414 s
+  2008: 366 days read, 451 s
+  2009: 365 days read, 489 s
+  2010: 365 days read, 529 s
+  2011: 365 days read, 566 s
+  2012: 366 days read, 602 s
+  2013: 365 days read, 639 s
+  2014: 365 days read, 674 s
+  2015: 365 days read, 708 s
+  2016: 366 days read, 743 s
+  2017: 365 days read, 779 s
+  2018: 365 days read, 813 s
+  2019: 365 days read, 849 s
+  2020: 366 days read, 890 s
+  2021: 365 days read, 927 s
+  2022: 365 days read, 962 s
+  2023: 365 days read, 1020 s
+  2024: 366 days read, 1057 s
+  2025: 365 days read, 1095 s
+  2026: 327 days read, 1128 s
+29 years; 11378 land points counted; last [2026, '2.99', '7.18', 327, 327]
