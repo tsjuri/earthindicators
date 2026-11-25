@@ -80,8 +80,10 @@
   };
   // text (no tags) -> [key, values]
   // each value remembers its kind: d(ate), o(rdinal), n(umber), w(ord)
-  const tokText = (s, vals) => s.replace(TOK, (m, d, ym, o, n, w) => {
-    vals.push({ v: m, k: d ? 'd' : ym ? 'r' : o ? 'o' : n ? 'n' : 'w' }); return '{' + (vals.length - 1) + '}'; });
+  // a number right after "Niño" is a name (Niño 3.4, Niño 1+2): kept exactly as it is
+  const tokText = (s, vals) => s.replace(TOK, (m, d, ym, o, n, w, off, str) => {
+    const name = n && /Niño (?:\d+\+)?$/.test(str.slice(Math.max(0, off - 9), off));
+    vals.push({ v: m, k: d ? 'd' : ym || name ? 'r' : o ? 'o' : n ? 'n' : 'w' }); return '{' + (vals.length - 1) + '}'; });
   const fmtVal = x => x.k === 'r' ? x.v : x.k === 'd' ? fmtDate(x.v) : x.k === 'o' ? fmtOrd(x.v) : x.k === 'n' ? fmtNum(x.v) : fmtWord(x.v);
   const fill = (tr, vals) => tr.replace(/\{(\d+)(:raw)?\}/g, (m, i, raw) => {
     const x = vals[+i]; if (x == null) return m;
@@ -96,6 +98,20 @@
   const COLLECT = QS.get('i18n') === 'missing';
   window.EI_MISSING = missing;
 
+  // keys with {*}: the fixed part is translated, the variable part ({*}) sentence by sentence (names stay as they are)
+  let WILD = null, quiet = false;          // quiet: a name list inside a {*} is not 'missing'
+  const esc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  function wild(k, vals) {
+    const d = dict(); if (!d) return null;
+    if (!WILD) WILD = Object.keys(d).filter(x => x.includes('{*}')).map(x => [new RegExp('^' + esc(x).replace('\\{\\*\\}', '([\\s\\S]*?)') + '$'), d[x]]);
+    for (const [re, tr] of WILD) {
+      const m = k.match(re); if (!m) continue;
+      const eng = m[1].replace(/\{(\d+)\}/g, (x, i) => vals[+i] ? vals[+i].v : x);
+      const part = eng.split(/(?<=[.!?])\s+/).map(p => { quiet = true; const t = tPlain(p); quiet = false; return t != null ? t : p.replace(TOK, (x, d1, ym, o, n) => n ? fmtNum(x) : x); }).join(' ');
+      return fill(tr.replace('{*}', '\u0000'), vals).replace('\u0000', part);
+    }
+    return null;
+  }
   // translate plain text (no markup); returns null if there is no translation
   const cache = new Map();
   const outs = new Set();                           // everything we have written (so copies of it are left alone)
@@ -109,7 +125,7 @@
       const vals = []; const k = tokText(n, vals);
       if (d[k] != null) out = fill(d[k], vals);
       else if (onlyTokens(k)) out = vals.length ? fill(k, vals) : null;
-      else if (COLLECT) missing.add(k);
+      else if ((out = wild(k, vals)) == null && COLLECT && !quiet) missing.add(k);
     }
     if (out != null && s !== n) {                  // keep the original's leading/trailing spaces
       const lead = s.match(/^\s*/)[0], trail = s.match(/\s*$/)[0]; out = lead + out + trail;
@@ -190,10 +206,11 @@
     if (tr == null && onlyTokens(k)) {               // just numbers/dates (or only islands): local style, nothing to look up
       if (vals.some(x => x.k !== 'n' || /[.,]/.test(x.v))) tr = k; else { done.set(el, el.innerHTML); return; }
     }
-    if (tr == null) { if (COLLECT && k) missing.add(k); done.set(el, el.innerHTML); return; }
+    let html = tr != null ? fill(tr, vals) : wild(k, vals);
+    if (html == null) { if (COLLECT && k) missing.add(k); done.set(el, el.innerHTML); return; }
     if (!src.has(el) || host !== el) src.set(el, host.innerHTML);
     if (host !== el) el.innerHTML = host.innerHTML;     // back to English first, so apply() finds the original elements
-    apply(el, fill(tr, vals));
+    apply(el, html);
     done.set(el, el.innerHTML); outs.add(norm(el.textContent));
   }
   function attrs(el) {
