@@ -9,6 +9,7 @@
 // Keep it short: two or three sentences that someone with no science background can follow.
 
 window.CLAIMS = {
+  'extreme-picks':    '"Extreme weather is decreasing"',
   'hoax':             '"Man-made climate change is a hoax"',
   'natural-cycles':   '"It\'s just natural cycles" or "it\'s the sun"',
   'always-changed':   '"The climate has always changed"',
