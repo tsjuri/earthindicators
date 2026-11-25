@@ -56,6 +56,7 @@
   const DAY = '(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)';   // not Mon/Sun...: 'The Sun' is a page
   const TOK = new RegExp(
     '(?<![\\p{L}])(' + MON + ' \\d{1,2}(?:, \\d{4})?)(?![\\p{L}\\p{N}])' +             // 1 date: Nov 23 / Nov 23, 2026
+    '|(?<![\\p{L}\\p{N}/])(\\d{4}/\\d{2})(?![\\p{N}/])' +                                     //   or a month: 2025/10
     '|(?<![\\p{L}\\p{N}_.,:/])(\\d+(?:st|nd|rd|th))(?![\\p{L}\\p{N}])' +                  // 2 ordinal: 82nd
     '|(?<![\\p{L}\\p{N}_.,:/])(' + NUM + ')(?![\\p{L}\\p{N}_/])' +                        // 3 number
     '|(?<![\\p{L}])(' + MON + '|' + DAY + ')(?![\\p{L}])', 'gu');                        // 4 month or day name
@@ -79,9 +80,9 @@
   };
   // text (no tags) -> [key, values]
   // each value remembers its kind: d(ate), o(rdinal), n(umber), w(ord)
-  const tokText = (s, vals) => s.replace(TOK, (m, d, o, n, w) => {
-    vals.push({ v: m, k: d ? 'd' : o ? 'o' : n ? 'n' : 'w' }); return '{' + (vals.length - 1) + '}'; });
-  const fmtVal = x => x.k === 'd' ? fmtDate(x.v) : x.k === 'o' ? fmtOrd(x.v) : x.k === 'n' ? fmtNum(x.v) : fmtWord(x.v);
+  const tokText = (s, vals) => s.replace(TOK, (m, d, ym, o, n, w) => {
+    vals.push({ v: m, k: d ? 'd' : ym ? 'r' : o ? 'o' : n ? 'n' : 'w' }); return '{' + (vals.length - 1) + '}'; });
+  const fmtVal = x => x.k === 'r' ? x.v : x.k === 'd' ? fmtDate(x.v) : x.k === 'o' ? fmtOrd(x.v) : x.k === 'n' ? fmtNum(x.v) : fmtWord(x.v);
   const fill = (tr, vals) => tr.replace(/\{(\d+)(:raw)?\}/g, (m, i, raw) => {
     const x = vals[+i]; if (x == null) return m;
     return raw ? x.v : fmtVal(x);
