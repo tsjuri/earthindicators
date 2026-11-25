@@ -55,7 +55,7 @@
   const MON = '(?:January|February|March|April|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept|Sep|Oct|Nov|Dec)';
   const DAY = '(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)';   // not Mon/Sun...: 'The Sun' is a page
   const TOK = new RegExp(
-    '(?<![\\p{L}])(' + MON + ' \\d{1,2}(?:, \\d{4})?)(?![\\p{L}\\p{N}])' +             // 1 date: Nov 23 / Nov 23, 2026
+    '(?<![\\p{L}])(' + MON + ' \\d{1,2}(?:, \\d{4})?)(?![\\p{L}\\p{N}])(?![.,]\\d)' +   // 1 date: Nov 23 / Nov 23, 2026 (not Jan 0.96)
     '|(?<![\\p{L}\\p{N}/])(\\d{4}/\\d{2})(?![\\p{N}/])' +                                     //   or a month: 2025/10
     '|(?<![\\p{L}\\p{N}_.,:/])(\\d+(?:st|nd|rd|th))(?![\\p{L}\\p{N}])' +                  // 2 ordinal: 82nd
     '|(?<![\\p{L}\\p{N}_.,:/])(' + NUM + ')(?!\\.\\d)(?!(?![MkK](?![\\p{L}\\p{N}]))[\\p{L}\\p{N}_/])' +   // 3 number (13.98M: number + M)
