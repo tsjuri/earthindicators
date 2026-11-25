@@ -91,8 +91,8 @@ a{color:var(--link)}
 .seg.switch .nb:hover{background:var(--tint);position:relative;z-index:1}
 .seg.switch .nb.on{background:var(--ink);border-color:var(--ink);color:var(--onink);position:relative;z-index:2}
 .seg.switch .nb:disabled{color:var(--disfg2);background:var(--disbg2)}
-@media (max-width:600px){.seg.switch{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;overflow:visible}.seg.switch .lbl{grid-column:1/-1;margin:0}
- .seg.switch .nb,.seg.switch .nb:first-of-type,.seg.switch .nb:last-of-type{border-radius:8px;margin:0;padding:8px 4px;font-size:14px;text-align:center}}
+@media (max-width:600px){.seg.switch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;overflow:visible}.seg.switch .lbl{grid-column:1/-1;margin:0}
+ .seg.switch .nb,.seg.switch .nb:first-of-type,.seg.switch .nb:last-of-type{border-radius:8px;margin:0;padding:8px 4px;font-size:14px;text-align:center;white-space:normal;line-height:1.25;hyphens:auto}}
 
 /* back-to-top button */
 /* sits just right of the content column (1000px wide, centered) where there is room; otherwise in the corner */
