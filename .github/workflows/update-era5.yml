@@ -2,8 +2,8 @@ name: Update global air temperature data
 
 on:
   schedule:
-    - cron: "23 8 * * *"       # twice a day: Copernicus adds a day to its live series daily, at no fixed time;
-    - cron: "23 20 * * *"      # odd minutes, because GitHub delays runs set on the hour or half hour the most
+    - cron: "23 * * * *"       # hourly: Copernicus adds a day at no fixed time, and GitHub often starts
+                               # scheduled runs hours late; odd minute, because runs on the hour are delayed most
   workflow_dispatch:           # lets you run it manually from the Actions tab
 
 permissions:
@@ -19,12 +19,33 @@ jobs:
     timeout-minutes: 340
     steps:
       - uses: actions/checkout@v7
+
+      # Light check first: ask Copernicus for only the last 300 bytes of its live file and compare them
+      # with what the last full run saw. Unchanged -> stop here (no Python, no download, no commit).
+      # If the check itself fails, do a full run anyway so the job can never get stuck.
+      - name: Has Copernicus changed its live file?
+        id: check
+        run: |
+          URL=https://sites.ecmwf.int/data/climatepulse/data/series/era5_daily_series_2t_global.csv
+          if curl -sf --max-time 60 -r -300 "$URL" | tail -c 300 > /tmp/tail.txt && [ -s /tmp/tail.txt ]; then
+            if [ "${{ github.event_name }}" = "schedule" ] && cmp -s /tmp/tail.txt data/era5_live_tail.txt; then
+              echo "No change at Copernicus; nothing to do."; echo "run=false" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+            tail -n 2 /tmp/tail.txt
+          else
+            echo "Check failed; doing a full run."; rm -f /tmp/tail.txt
+          fi
+          echo "run=true" >> "$GITHUB_OUTPUT"
+
       - uses: actions/setup-python@v7
+        if: steps.check.outputs.run == 'true'
         with:
           python-version: "3.12"
       - run: pip install numpy xarray netCDF4 cdsapi
+        if: steps.check.outputs.run == 'true'
 
       - name: Build global air temperature (Copernicus ERA5)
+        if: steps.check.outputs.run == 'true'
         continue-on-error: true
         timeout-minutes: 320
         env:
@@ -32,11 +53,11 @@ jobs:
         run: |
           printf 'url: https://cds.climate.copernicus.eu/api\nkey: %s\n' "$CDS_API_KEY" > ~/.cdsapirc
           chmod 600 ~/.cdsapirc
-          python -u scripts/build_era5.py
+          python -u scripts/build_era5.py && { [ -s /tmp/tail.txt ] && cp /tmp/tail.txt data/era5_live_tail.txt || true; }
           rm -f ~/.cdsapirc
 
       - name: Commit changes
-        if: always()
+        if: always() && steps.check.outputs.run == 'true'
         run: |
           rm -f ~/.cdsapirc
           git config user.name "github-actions"
