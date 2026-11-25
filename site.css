@@ -231,6 +231,7 @@ html.srch-on{overflow:hidden}
 /* narrow screens: hamburger button; the menu opens as a full-width list under the header */
 @media (max-width:860px){
  .burger{display:block;order:3}
+ .site-head.mini{column-gap:6px}   /* keeps the icons and the menu button on one row on phones */
  .search-btn{order:2;margin-left:auto}
  .theme-btn{order:2;margin-left:-8px}
  .lang-btn{order:2;margin-left:-4px}
@@ -356,3 +357,5 @@ html.embed main{max-width:none;padding:0}
 html.embed .box{margin:0;border-radius:0;border:0}
 html.embed .cbar a.nb{text-decoration:none;color:inherit}
 html.embed body{background:var(--card)}
+@media (max-width:380px){.site-head.mini{column-gap:2px;padding-left:12px;padding-right:12px}.site-head.mini .brand{gap:8px}}   /* small phones: same one-row slim header */
+@media (max-width:340px){.site-head.mini .wm{font-size:19px}.site-head.mini img{height:26px}}
