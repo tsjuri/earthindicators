@@ -433,7 +433,7 @@ function ar6(D,E){
    {type:'line',label:'Best estimate',data:[],showLine:false,pointStyle:'line',pointRadius:22,pointHoverRadius:22,pointBorderWidth:3,borderColor:THEME.ink,backgroundColor:THEME.ink,order:0},
    {type:'bar',label:'Very likely range (90%)',data:[],backgroundColor:K.map(k=>hatch(col(k),.22)),borderColor:K.map(col),borderWidth:1.5,barPercentage:.6,order:1}]},
   options:{animation:false,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-   plugins:{legend:{display:false},tooltip:{callbacks:{title:t=>K[t[0].dataIndex]+' ('+SSPN[K[t[0].dataIndex]]+' emissions), '+A.periods[per],
+   plugins:{legend:{display:false},tooltip:{callbacks:{title:t=>K[t[0].dataIndex]+' ('+SSPN[K[t[0].dataIndex]].replace(/ emissions$/,'')+' emissions), '+A.periods[per],
     label:c=>{const v=A.scenarios[K[c.dataIndex]][per];return c.datasetIndex?`Very likely range: ${f1(v[1])}–${f1(v[2])} °C`:`Best estimate: ${f1(v[0])} °C`}}}},
    scales:{x:{grid:{display:false},ticks:{autoSkip:false}},y:{min:0,max:6,title:{display:true,text:'°C above 1850–1900'},grid:{color:THEME.grid}}}}});
  const set=p=>{per=p;ch.data.datasets[0].data=K.map(k=>A.scenarios[k][p][0]);ch.data.datasets[1].data=K.map(k=>[A.scenarios[k][p][1],A.scenarios[k][p][2]]);
