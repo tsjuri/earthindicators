@@ -201,6 +201,14 @@ window.eiCopy = function (btn, text, label) {
     const ind = PAGES.filter(p => !['index.html', 'claims.html'].includes(p[0]));
     const onInd = ind.some(p => p[0] === here);
     const claimIcon = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2.5 3.5h11v7h-6l-3 2.5v-2.5h-2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 5.6c.2-.7.8-1 1.4-.9.7.1 1.1.6 1 1.2-.1.7-1.2.8-1.3 1.6M8.1 8.8v.1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>';
+    // language button: shows the current language; each click moves to the next one (see i18n.js)
+    const LG = window.EI_LANGS || { en: 'English' }, lg = window.EI_LANG || 'en', codes = Object.keys(LG);
+    const langBtn = codes.length < 2 || !window.EI_LANG_BUTTON ? '' : '<button class="lang-btn" type="button" translate="no" data-i18n="off" title="Language / Taal: ' + LG[lg] +
+      '" aria-label="Language: ' + LG[lg] + '">' + lg.toUpperCase() + '</button>';
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.lang-btn')) return;
+      window.EI_SETLANG(codes[(codes.indexOf(lg) + 1) % codes.length]);
+    });
     const headHTML = (cls, menuId) =>
       '<header class="site-head' + cls + '">' +
       '<a class="brand" href="index.html" aria-label="Earth Indicators, overview"><img src="img/logo.svg" alt="" width="56" height="52">' +
@@ -217,7 +225,8 @@ window.eiCopy = function (btn, text, label) {
       link([PAGES[1][0], claimIcon + PAGES[1][1]], 'm-claims') +
       '</nav><button class="search-btn" type="button" title="Search the site (/)" aria-label="Search the site">' +
       '<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m12.8 12.8 4.4 4.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>' +
-      '<button class="theme-btn" type="button" title="' + themeLabel[stored] + '" aria-label="' + themeLabel[stored] + '">' + themeIcon(stored) + '</button></header>';
+      '<button class="theme-btn" type="button" title="' + themeLabel[stored] + '" aria-label="' + themeLabel[stored] + '">' + themeIcon(stored) + '</button>' +
+      langBtn + '</header>';
     // dropdown and hamburger behavior, for either header
     const wire = head => {
       const burger = head.querySelector('.burger'), dd = head.querySelector('.dd'), ddBtn = head.querySelector('.dd-btn');

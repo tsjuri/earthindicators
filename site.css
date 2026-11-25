@@ -154,7 +154,9 @@ a{color:var(--link)}
 /* theme button (auto / light / dark) at the end of the header */
 .theme-btn{background:none;border:1px solid transparent;border-radius:8px;color:var(--mut2);padding:6px;cursor:pointer;line-height:0;margin-left:-12px}
 .theme-btn:hover{border-color:var(--rule);color:var(--ink)}
-@media print{.theme-btn,.search-btn{display:none}}
+.lang-btn{background:none;border:1px solid transparent;border-radius:8px;color:var(--mut2);padding:6px 4px;cursor:pointer;font:600 12px/18px system-ui,sans-serif;letter-spacing:.03em;margin-left:-6px}
+.lang-btn:hover{border-color:var(--rule);color:var(--ink)}
+@media print{.theme-btn,.search-btn,.lang-btn{display:none}}
 /* site search: magnifying glass in the header opens a panel near the top of the screen */
 .search-btn{background:none;border:1px solid transparent;border-radius:8px;color:var(--mut2);padding:6px;cursor:pointer;line-height:0;margin-left:-12px}
 .search-btn:hover{border-color:var(--rule);color:var(--ink)}
@@ -231,6 +233,7 @@ html.srch-on{overflow:hidden}
  .burger{display:block;order:3}
  .search-btn{order:2;margin-left:auto}
  .theme-btn{order:2;margin-left:-8px}
+ .lang-btn{order:2;margin-left:-4px}
  .menu{order:4}
  .menu{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;padding-top:4px}
  .site-head.open .menu{display:flex}
@@ -249,11 +252,12 @@ html.srch-on{overflow:hidden}
 /* narrow screens, full header: brand on the left over two rows; the menu button top right, search and theme under it
    (in one flex row the menu button would wrap onto a line of its own); the opened menu runs full width below */
 @media (max-width:860px){
- .site-head:not(.mini){display:grid;grid-template-columns:1fr auto auto;grid-template-areas:"brand burger burger" "brand search theme" "menu menu menu";column-gap:2px;row-gap:0;align-items:center}
+ .site-head:not(.mini){display:grid;grid-template-columns:1fr auto auto auto;grid-template-areas:"brand burger burger burger" "brand search theme lang" "menu menu menu menu";column-gap:2px;row-gap:0;align-items:center}
  .site-head:not(.mini) .brand{grid-area:brand}
  .site-head:not(.mini) .burger{grid-area:burger;justify-self:end;margin:-6px -6px 0 0}
  .site-head:not(.mini) .search-btn{grid-area:search;margin:0}
  .site-head:not(.mini) .theme-btn{grid-area:theme;margin:0 -6px 0 0}
+ .site-head:not(.mini) .lang-btn{grid-area:lang;margin:0 -6px 0 2px}
  .site-head:not(.mini) .menu{grid-area:menu;margin-left:0}   /* the desktop margin-left:auto would shrink it to its content and push it right */
 }
 @media (max-width:520px){.site-head img{height:48px}.site-head .wm{font-size:27px;line-height:30px}.site-head .tag{font-size:12px;line-height:16px}}
