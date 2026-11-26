@@ -716,3 +716,242 @@ chart-copy/nino-c1,Niño 3.4: each day of 2026 compared with the same day in eve
 /nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1728,0,1",NL,1,2026-11-24T12:08:03Z
 /air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,,o,"1536,0,1",PE,1,2026-11-24T12:33:56Z
 /nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,chatgpt.com,c,"1920,0,1",ZA,1,2026-11-24T13:20:12Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,chatgpt.com,c,"1536,0,1",PE,1,2026-11-24T17:20:55Z
+/eei.html,Earth's energy imbalance tracker,0,Chrome 157,Android 10,0,chatgpt.com,c,"366,0,1",FI,1,2026-11-24T19:44:06Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,earthindicators.org/eei.html,h,"366,0,1",FI,1,2026-11-24T19:45:23Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,earthindicators.org,h,"384,0,1",US-AL,1,2026-11-24T19:45:39Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,0,2026-11-24T19:54:02Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-24T19:54:11Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,,o,"2560,0,1",US-CA,1,2026-11-24T21:07:29Z
+/nino.html,Niño 3.4 tracker,0,Firefox 160,Windows 10,0,earthindicators.org/s/nino-cW.html,h,"1920,0,1",CA,1,2026-11-25T01:44:51Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 15,0,earthindicators.org/s/nino-cW.html,h,"360,0,1",EC,1,2026-11-25T01:53:43Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 13,0,earthindicators.org/s/nino-cW.html,h,"360,0,1",PE,1,2026-11-25T03:56:41Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,macOS 10.15,0,earthindicators.org/s/nino-cW.html,h,"1728,0,1",US-CA,1,2026-11-25T05:44:27Z
+/nino.html,Niño 3.4 tracker,0,Safari 26.6,macOS 10.15,0,earthindicators.org/s/nino-cW.html,h,"1920,0,1",US-GA,1,2026-11-25T06:59:28Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1728,0,1",NL,1,2026-11-25T07:43:31Z
+/nino.html,Niño 3.4 tracker,0, ,iOS 27.2,0,earthindicators.org/s/nino-cW.html,h,"393,0,1",CH,1,2026-11-25T08:22:16Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,,o,"393,0,1",CH,1,2026-11-25T08:22:20Z
+/nino.html,Niño 3.4 tracker,0,Safari 11.0,iOS 27.2,0,,o,"393,0,1",CH,0,2026-11-25T08:23:02Z
+/nino.html,Niño 3.4 tracker,0,Firefox 161,Windows 10,0,earthindicators.org/s/nino-cW.html,h,"1067,0,1",JP,1,2026-11-25T08:25:07Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,1,2026-11-25T08:37:26Z
+/ohc.html,Ocean heat content tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-25T08:38:10Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,0,2026-11-25T08:38:36Z
+/nino.html,Niño 3.4 tracker,0, ,iOS 27.2,0,earthindicators.org/s/nino-cW.html,h,"440,0,1",IN,1,2026-11-25T08:53:53Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,0,2026-11-25T08:54:38Z
+/sun.html,Solar cycle tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-25T08:55:17Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/nino-cW.html,h,"1600,0,1",BR,1,2026-11-25T11:26:46Z
+/nino.html,Niño 3.4 tracker,0, ,iOS 27.0,0,earthindicators.org/s/nino-cW.html,h,"393,0,1",BR,1,2026-11-25T12:47:50Z
+/nino.html,Niño 3.4 tracker,0,Chrome 152,Linux ,0,earthindicators.org/s/nino-cW.html,h,"1920,0,1",BR,1,2026-11-25T14:20:19Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,0,2026-11-25T14:26:40Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-25T14:26:52Z
+/claims.html,"Common climate claims, answered with the latest data | Earth Indicators",0,Chrome 157,Android 10,0,earthindicators.org/air.html,h,"366,0,1",FI,1,2026-11-25T14:26:57Z
+claim-link/stopped-1998,Warming stopped in 1998.,1,Chrome 157,Android 10,0,earthindicators.org/air.html,h,"366,0,1",FI,1,2026-11-25T14:26:57Z
+claim-open/stopped-1998,Warming stopped in 1998.,1,Chrome 157,Android 10,0,earthindicators.org/air.html,h,"366,0,1",FI,1,2026-11-25T14:26:57Z
+/claims.html,"Common climate claims, answered with the latest data | Earth Indicators",0,Chrome 157,Android 10,0,earthindicators.org/air.html,h,"366,0,1",FI,0,2026-11-25T14:27:02Z
+claim-link/natural-cycles,It's just natural cycles. Or: It's the sun.,1,Chrome 157,Android 10,0,earthindicators.org/air.html,h,"366,0,1",FI,1,2026-11-25T14:27:02Z
+/land-ice.html,Land ice tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-25T14:27:53Z
+chart-pick/land-ice-c1,"Ice sheet mass change since 2002–03, Greenland and Antarctica, to Jul 2026",1,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-25T14:28:02Z
+chart-pick/land-ice-c1,"Ice sheet mass change since 2002–03, Greenland and Antarctica, to Jul 2026",1,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,0,2026-11-25T14:28:11Z
+chart-pick-make/1,1 charts,1,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-25T14:28:12Z
+/nino.html,Niño 3.4 tracker,0, ,iOS 26.6,0,earthindicators.org/s/nino-cW.html,h,"402,0,1",BR,1,2026-11-25T15:04:01Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,,o,"2560,0,1",US-CA,1,2026-11-25T15:40:32Z
+/nino.html,Niño 3.4 tracker,0, ,iOS 27.2,0,earthindicators.org/s/nino-cW.html,h,"402,0,1",BR,1,2026-11-25T17:47:42Z
+/air.html,Global air temperature tracker,0,Chrome 157,Windows 10,0,chatgpt.com,c,"1280,0,1",BR,1,2026-11-25T18:43:28Z
+/nino.html,Niño 3.4 tracker,0, ,iOS 27.2,0,earthindicators.org/s/nino-cW.html,h,"440,0,1",BR,1,2026-11-25T19:01:03Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Linux ,0,,o,"800,0,1",US,1,2026-11-25T19:24:40Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 158,Android 10,0,Google,g,"384,0,1",DE,1,2026-11-25T20:34:09Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org,h,"384,0,1",DE,1,2026-11-25T20:34:15Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/air.html,h,"384,0,1",DE,1,2026-11-25T20:35:19Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 158,Android 10,0,Google,g,"384,0,1",DE,0,2026-11-25T20:41:51Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org,h,"384,0,1",DE,0,2026-11-25T20:41:54Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Android 10,0,earthindicators.org/sst.html,h,"384,0,1",DE,1,2026-11-25T20:42:05Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 11,0,earthindicators.org/s/nino-cW.html,h,"376,0,1",BR,1,2026-11-25T23:10:12Z
+/nino.html,Niño 3.4 tracker,0, ,iOS 26.6,0,earthindicators.org/s/nino-cW.html,h,"390,0,1",BR,1,2026-11-26T01:35:50Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/nino-cW.html,h,"1920,0,1",BR,1,2026-11-26T02:41:58Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,1,2026-11-26T04:22:23Z
+/co2.html,CO₂ tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-26T04:22:32Z
+/sea-level.html,Sea level tracker,0,Chrome 157,Android 10,0,earthindicators.org/co2.html,h,"366,0,1",FI,1,2026-11-26T04:24:00Z
+/co2.html,CO₂ tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,0,2026-11-26T04:25:07Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,0,2026-11-26T04:25:08Z
+/land-ice.html,Land ice tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-26T04:25:15Z
+/sun.html,Solar cycle tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-26T04:26:04Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,Android 10,0,chatgpt.com,c,"360,0,1",IN,1,2026-11-26T04:30:09Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,Android 10,0,chatgpt.com,c,"360,0,1",IN,0,2026-11-26T04:33:13Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,Android 10,0,chatgpt.com,c,"360,0,1",IN,0,2026-11-26T04:35:42Z
+/nino.html,Niño 3.4 tracker,0,Chrome 154,macOS 10.15,0,earthindicators.org/s/nino-cM1_1.0.html,h,"1512,0,1",US-CA,1,2026-11-26T05:08:27Z
+/pdo.html,PDO tracker,0,Chrome 158,Android 10,0,chatgpt.com,c,"360,0,1",JP,1,2026-11-26T05:20:39Z
+/pdo.html,PDO tracker,0,Chrome 158,Android 10,0,chatgpt.com,c,"360,0,1",JP,0,2026-11-26T05:24:17Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,chatgpt.com,c,"360,0,1",US-CA,1,2026-11-26T05:36:13Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 158,Windows 10,0,,o,"1336,0,1",DE,1,2026-11-26T07:15:19Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-26T07:15:22Z
+chart-pick/nino-cW · Niño 1+2 (coast),"Where is the warmth? The four Niño boxes, west to east, over the last 365 days (°C compared with 1991–2020)",1,Chrome 158,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-26T07:17:45Z
+chart-pick-make/1,1 charts,1,Chrome 158,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-26T07:17:51Z
+/pdo.html,PDO tracker,0,Chrome 158,Windows 10,0,earthindicators.org/nino.html,h,"1336,0,1",DE,1,2026-11-26T07:19:12Z
+/sea-level.html,Sea level tracker,0,Chrome 158,Windows 10,0,earthindicators.org/pdo.html,h,"1336,0,1",DE,1,2026-11-26T07:19:44Z
+/sea-ice.html,Sea ice extent tracker,0,Chrome 158,Windows 10,0,earthindicators.org/sea-level.html,h,"1336,0,1",DE,1,2026-11-26T07:19:57Z
+claim-link/sea-level,Sea level rise is tiny.,1,Chrome 157,Windows 10,0,t.co,h,"1536,0,1",NZ,1,2026-11-26T07:30:54Z
+/claims.html,"Common climate claims, answered with the latest data | Earth Indicators",0,Chrome 157,Windows 10,0,t.co,h,"1536,0,1",NZ,1,2026-11-26T07:30:54Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/nino-cM1_1.0.html,h,"1920,0,1",PL,1,2026-11-26T07:37:34Z
+/sst.html,Global sea-surface temperature tracker,0,Safari 27.0,macOS 10.15,0,chatgpt.com,c,"440,0,1",CZ,1,2026-11-26T08:18:10Z
+/sst.html,Global sea-surface temperature tracker,0,Safari 27.0,macOS 10.15,0,chatgpt.com,c,"440,0,1",CZ,0,2026-11-26T08:18:12Z
+/sst.html,Global sea-surface temperature tracker,0,Safari 27.3,iOS 18.7,0,chatgpt.com,c,"430,0,1",BR,1,2026-11-26T09:41:17Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 158,Windows 10,0,,o,"1336,0,1",DE,0,2026-11-26T10:20:47Z
+/sea-ice.html,Sea ice extent tracker,0,Chrome 158,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,0,2026-11-26T10:20:50Z
+chart-pick/sea-ice-c7 · Global,"Global sea-ice extent, 12-month average, 1979–2026",1,Chrome 158,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,1,2026-11-26T10:21:11Z
+chart-pick-make/1,1 charts,1,Chrome 158,Windows 10,0,earthindicators.org,h,"1336,0,1",DE,0,2026-11-26T10:21:12Z
+/land-ice.html,Land ice tracker,0,Chrome 158,Windows 10,0,earthindicators.org/sea-ice.html,h,"1336,0,1",DE,1,2026-11-26T10:21:43Z
+chart-pick/land-ice-c1,"Ice sheet mass change since 2002–03, Greenland and Antarctica, to Jul 2026",1,Chrome 158,Windows 10,0,earthindicators.org/sea-ice.html,h,"1336,0,1",DE,1,2026-11-26T10:22:13Z
+chart-pick-make/1,1 charts,1,Chrome 158,Windows 10,0,earthindicators.org/sea-ice.html,h,"1336,0,1",DE,0,2026-11-26T10:22:14Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 15,0,earthindicators.org/s/nino-cW.html,h,"384,0,1",CH,1,2026-11-26T10:57:24Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 158,Windows 10,0,,o,"1280,0,1",VN,1,2026-11-26T11:36:08Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-26T11:36:17Z
+/models.html,Climate models,0,Chrome 157,Windows 10,0,earthindicators.org/s/models-c8.html,h,"1536,0,1",CA,1,2026-11-26T12:33:57Z
+/air.html,Global air temperature tracker,0,Chrome 158,macOS 10.15,0,earthindicators.org/s/air-c1_0.1.html,h,"1728,0,1",NL,1,2026-11-26T12:37:20Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/nino-cM1_1.0.html,h,"1920,0,1",ID,1,2026-11-26T12:47:21Z
+chart-copy/air-c1,World: each day of 2026 compared with the same day in every year since 1940 (°C above or below the 1991–2020 average),1,Chrome 158,macOS 10.15,0,earthindicators.org/s/air-c1_0.1.html,h,"1728,0,1",NL,1,2026-11-26T12:53:12Z
+/pdo.html,PDO tracker,0,Chrome 158,Windows 10,0,earthindicators.org/nino.html,h,"1920,0,1",ID,1,2026-11-26T12:58:23Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,earthindicators.org/pdo.html,h,"1920,0,1",ID,0,2026-11-26T12:59:58Z
+/models.html,Climate models,0,Chrome 158,Windows 10,0,earthindicators.org/nino.html,h,"1920,0,1",ID,1,2026-11-26T12:59:59Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/models.html,h,"1920,0,1",ID,1,2026-11-26T13:00:23Z
+/claims.html,"Common climate claims, answered with the latest data | Earth Indicators",0,Chrome 158,Windows 10,0,earthindicators.org/sst.html,h,"1920,0,1",ID,1,2026-11-26T13:01:47Z
+/air.html,Global air temperature tracker,0,Chrome 139,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"2000,0,1",US-NC,1,2026-11-26T13:04:42Z
+/air.html,Global air temperature tracker,0, ,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"375,0,1",NL,1,2026-11-26T13:08:13Z
+/air.html,Global air temperature tracker,0,Safari 27.2,iOS 18.7,0,,o,"375,0,1",NL,1,2026-11-26T13:08:19Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T13:09:39Z
+/air.html,Global air temperature tracker,0, ,iOS 27.0,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T13:11:35Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"390,0,1",NL,1,2026-11-26T13:14:40Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1536,0,1",NL,1,2026-11-26T13:14:59Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"408,0,1",NL,1,2026-11-26T13:17:58Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 26.6,0,earthindicators.org/s/air-c1_0.1.html,h,"375,0,1",NL,1,2026-11-26T13:20:59Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",AU,1,2026-11-26T13:22:37Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T13:23:14Z
+/air.html,Global air temperature tracker,0,Firefox 161,macOS 10.15,0,earthindicators.org,h,"2560,0,1",NL,1,2026-11-26T13:26:01Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T13:32:35Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,0,2026-11-26T13:32:40Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T13:34:02Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T13:35:14Z
+/air.html,Global air temperature tracker,0,Chrome 158,macOS 10.15,0,earthindicators.org/s/air-c1_0.1.html,h,"1470,0,1",NL,1,2026-11-26T13:37:13Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 158,Windows 10,0,,o,"1280,0,1",VN,0,2026-11-26T13:39:45Z
+/nino.html,Niño 3.4 tracker,0,Chrome 158,Windows 10,0,earthindicators.org,h,"1280,0,1",VN,1,2026-11-26T13:39:46Z
+/air.html,Global air temperature tracker,0,Chrome 157,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T13:43:43Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 16,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T13:43:55Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T13:44:20Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,earthindicators.org/air.html,h,"1920,0,1",NL,1,2026-11-26T13:44:21Z
+/co2.html,CO₂ tracker,0,Chrome 157,Windows 10,0,earthindicators.org/index.html,h,"1920,0,1",NL,1,2026-11-26T13:44:25Z
+/,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Windows 10,0,,o,"1920,0,1",NL,1,2026-11-26T13:44:32Z
+/sst.html,Global sea-surface temperature tracker,0,Chrome 157,Windows 10,0,earthindicators.org,h,"1920,0,1",NL,1,2026-11-26T13:44:58Z
+/eei.html,Earth's energy imbalance tracker,0,Chrome 157,Windows 10,0,earthindicators.org/sst.html,h,"1920,0,1",NL,1,2026-11-26T13:45:05Z
+/air.html,Global air temperature tracker,0,Safari 27.0,iOS 27.0,0,earthindicators.org/s/air-c1_0.1.html,h,"402,0,1",NL,1,2026-11-26T13:45:06Z
+/boundaries.html,Planetary boundaries,0,Chrome 157,Windows 10,0,earthindicators.org/eei.html,h,"1920,0,1",NL,1,2026-11-26T13:47:04Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"2560,0,1",NL,1,2026-11-26T13:47:44Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T13:49:12Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T13:49:53Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 158,Windows 10,0,earthindicators.org/air.html,h,"2560,0,1",NL,1,2026-11-26T13:51:26Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"2560,0,1",NL,0,2026-11-26T13:51:35Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"430,0,1",NL,1,2026-11-26T13:51:44Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T13:53:18Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"3440,0,1",NL,1,2026-11-26T13:53:54Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T13:55:46Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"320,0,1",NL,1,2026-11-26T13:57:03Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.0,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T13:57:31Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T13:58:25Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"414,0,1",NL,1,2026-11-26T14:00:55Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T14:02:08Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T14:02:16Z
+/air.html,Global air temperature tracker,0,Firefox 161,Windows 10,0,earthindicators.org,h,"1920,0,1",NL,1,2026-11-26T14:02:57Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Firefox 161,Windows 10,0,earthindicators.org/air.html,h,"1920,0,1",NL,1,2026-11-26T14:04:33Z
+/methods.html,How the numbers are made: data and methods | Earth Indicators,0,Firefox 161,Windows 10,0,earthindicators.org/index.html,h,"1920,0,1",NL,1,2026-11-26T14:05:06Z
+/air.html,Global air temperature tracker,0, ,iOS 26.7,0,earthindicators.org/s/air-c1_0.1.html,h,"390,0,1",NL,1,2026-11-26T14:06:10Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T14:07:09Z
+/air.html,Global air temperature tracker,0,Chrome 157,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1536,0,1",NL,1,2026-11-26T14:09:28Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 16,0,earthindicators.org/s/air-c1_0.1.html,h,"384,0,1",NL,1,2026-11-26T14:10:22Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T14:11:39Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"384,0,1",NL,1,2026-11-26T14:11:41Z
+/air.html,Global air temperature tracker,0,Chrome 156,macOS 10.15,0,earthindicators.org/s/air-c1_0.1.html,h,"3008,0,1",NL,1,2026-11-26T14:12:26Z
+/air.html,Global air temperature tracker,0,Chrome 148,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T14:12:40Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T14:13:44Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 16,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T14:13:53Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T14:14:14Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,1,2026-11-26T14:17:54Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-26T14:18:03Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T14:19:07Z
+/air.html,Global air temperature tracker,0,Safari 27.2,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"402,0,1",NL,1,2026-11-26T14:23:10Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 26.6,0,earthindicators.org/s/air-c1_0.1.html,h,"375,0,1",NL,1,2026-11-26T14:27:30Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"384,0,1",NL,1,2026-11-26T14:29:16Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T14:31:24Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"384,0,1",NL,1,2026-11-26T14:39:02Z
+/air.html,Global air temperature tracker,0, ,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"420,0,1",NL,1,2026-11-26T14:42:26Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1536,0,1",NL,1,2026-11-26T14:43:43Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"384,0,1",NL,1,2026-11-26T14:48:36Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,,o,"384,0,1",NL,1,2026-11-26T14:48:40Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T14:50:18Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T14:50:58Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"402,0,1",NL,1,2026-11-26T14:58:11Z
+/air.html,Global air temperature tracker,0,Chrome 150,Android 11,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T14:59:41Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T15:00:27Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 12,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T15:01:44Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T15:03:06Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T15:03:37Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T15:04:07Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",BE,1,2026-11-26T15:04:21Z
+/air.html,Global air temperature tracker,0, ,iOS 26.6,0,earthindicators.org/s/air-c1_0.1.html,h,"440,0,1",NL,1,2026-11-26T15:05:54Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T15:07:29Z
+/air.html,Global air temperature tracker,0,Safari 26.3,iOS 18.6,0,earthindicators.org/s/air-c1_0.1.html,h,"375,0,1",NL,1,2026-11-26T15:07:35Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",ES,1,2026-11-26T15:08:11Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 16,0,earthindicators.org/s/air-c1_0.1.html,h,"384,0,1",NL,1,2026-11-26T15:09:37Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"2560,0,1",NL,1,2026-11-26T15:12:23Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"820,0,1",NL,1,2026-11-26T15:13:47Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T15:13:54Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T15:13:56Z
+/air.html,Global air temperature tracker,0,Chrome 156,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",GR,1,2026-11-26T15:14:02Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T15:14:44Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"390,0,1",NL,1,2026-11-26T15:15:00Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"2307,0,1",NL,1,2026-11-26T15:15:10Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"375,0,1",NL,1,2026-11-26T15:15:23Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"3072,0,1",NL,1,2026-11-26T15:17:46Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"390,0,1",NL,0,2026-11-26T15:17:57Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"414,0,1",NL,1,2026-11-26T15:18:25Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"2049,0,1",NL,1,2026-11-26T15:18:35Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"384,0,1",NL,1,2026-11-26T15:18:57Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T15:23:16Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"390,0,1",NL,1,2026-11-26T15:23:39Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1280,0,1",NL,1,2026-11-26T15:23:54Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1920,0,1",NL,1,2026-11-26T15:23:55Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T15:24:25Z
+/sun.html,Solar cycle tracker,0,Chrome 158,Windows 10,0,earthindicators.org/air.html,h,"1920,0,1",NL,1,2026-11-26T15:24:25Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 158,Windows 10,0,earthindicators.org/sun.html,h,"1920,0,1",NL,1,2026-11-26T15:24:32Z
+/sea-level.html,Sea level tracker,0,Chrome 158,Windows 10,0,earthindicators.org/index.html,h,"1920,0,1",NL,1,2026-11-26T15:24:41Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,0,2026-11-26T15:27:37Z
+/sea-ice.html,Sea ice extent tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-26T15:27:47Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T15:29:09Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 16,0,earthindicators.org/s/air-c1_0.1.html,h,"394,0,1",NL,1,2026-11-26T15:30:34Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"408,0,1",NL,1,2026-11-26T15:31:00Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"408,0,1",NL,0,2026-11-26T15:31:12Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 13,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T15:31:22Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"390,0,1",NL,1,2026-11-26T15:32:26Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,earthindicators.org/air.html,h,"408,0,1",NL,1,2026-11-26T15:33:26Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"408,0,1",NL,0,2026-11-26T15:33:32Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 27.2,0,earthindicators.org/s/air-c1_0.1.html,h,"440,0,1",NL,1,2026-11-26T15:34:10Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"366,0,1",FI,0,2026-11-26T15:34:21Z
+/corals.html,Coral reefs,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-26T15:34:29Z
+/nino.html,Niño 3.4 tracker,0,Chrome 157,Android 10,0,earthindicators.org/index.html,h,"366,0,1",FI,1,2026-11-26T15:34:56Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"408,0,1",NL,0,2026-11-26T15:34:57Z
+/index.html,Earth Indicators: is the climate changing? The latest data,0,Chrome 157,Android 10,0,,o,"800,0,1",FI,0,2026-11-26T15:35:08Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T15:36:00Z
+/nino.html,Niño 3.4 tracker,0,Chrome 155,macOS 10.15,0,,o,"1728,0,1",NL,1,2026-11-26T15:36:28Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T15:38:08Z
+/air.html,Global air temperature tracker,0,Chrome 148,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"900,0,1",NL,1,2026-11-26T15:39:45Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"385,0,1",NL,1,2026-11-26T15:44:57Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 26.6,0,earthindicators.org/s/air-c1_0.1.html,h,"440,0,1",NL,1,2026-11-26T15:45:59Z
+/air.html,Global air temperature tracker,0,Safari 27.2,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"390,0,1",NL,1,2026-11-26T15:46:19Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T15:48:32Z
+/air.html,Global air temperature tracker,0,Safari 27.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"375,0,1",NL,1,2026-11-26T15:55:25Z
+/air.html,Global air temperature tracker,0,Safari 27.2,macOS 10.15,0,earthindicators.org/s/air-c1_0.1.html,h,"1459,0,1",NL,1,2026-11-26T15:57:55Z
+/air.html,Global air temperature tracker,0,Chrome 157,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"412,0,1",NL,1,2026-11-26T16:00:04Z
+/air.html,Global air temperature tracker,0,Firefox 161,Android 17,0,earthindicators.org/s/air-c1_0.1.html,h,"378,0,1",NL,1,2026-11-26T16:00:08Z
+/air.html,Global air temperature tracker,0,Safari 11.0,iOS 18.7,0,earthindicators.org/s/air-c1_0.1.html,h,"393,0,1",NL,1,2026-11-26T16:00:13Z
+/air.html,Global air temperature tracker,0,Safari 11.0,macOS 10.15,0,earthindicators.org/s/air-c1_0.1.html,h,"810,0,1",NL,1,2026-11-26T16:00:51Z
+/air.html,Global air temperature tracker,0,Chrome 158,Windows 10,0,earthindicators.org/s/air-c1_0.1.html,h,"1536,0,1",NL,1,2026-11-26T16:05:36Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T16:06:11Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T16:07:20Z
+/air.html,Global air temperature tracker,0,Chrome 158,Android 10,0,earthindicators.org/s/air-c1_0.1.html,h,"360,0,1",NL,1,2026-11-26T16:09:47Z
