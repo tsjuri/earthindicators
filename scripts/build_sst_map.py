@@ -13,7 +13,7 @@ time axes of the files):
   day.json       the latest day in this year's daily file (preliminary for about two weeks)
   past_MM.json   calendar month MM in 1982, 1997 and 2015, built once
 Maps are text, one character per grid point, rows from south to north, each row from 0.125E eastwards:
-  anomaly: 0.2 C steps from -6 to +6 C (ALPH), actual temperature: 0.5 C steps from -2 to +36 C (ALPHT);
+  anomaly: 0.2 C steps from -9 to +9 C (ALPH; "alo": -9 in each file), actual temperature: 0.5 C steps from -2 to +36 C (ALPHT);
   ' ' = land or no data, '!' = sea ice.
 """
 import json, os, sys, time
@@ -30,7 +30,8 @@ PAST = (1982, 1997, 2015)
 OUT = "data/sst_map"
 ICE = 0.15
 CHARS = "".join(chr(c) for c in range(35, 127) if chr(c) != "\\")
-ALPH, ALPHT = CHARS[:61], CHARS[:77]          # -6.0 ... +6.0 C by 0.2;  -2.0 ... +36.0 C by 0.5
+ALO = -9                                      # lowest anomaly code; was -6 until Nov 2026, when the El Nino ran past +6 C
+ALPH, ALPHT = CHARS[:91], CHARS[:77]          # -9.0 ... +9.0 C by 0.2;  -2.0 ... +36.0 C by 0.5
 
 
 def note(msg):
@@ -91,7 +92,7 @@ def enc(sst, clim, ice):
         elif np.isfinite(i) and i >= ICE:
             an.append("!"); tp.append("!")
         else:
-            an.append(" " if not np.isfinite(c) else ALPH[int(np.clip(round((s - c) / 0.2), -30, 30)) + 30])
+            an.append(" " if not np.isfinite(c) else ALPH[int(np.clip(round((s - c) / 0.2), -45, 45)) + 45])
             tp.append(ALPHT[int(np.clip(round((s + 2) / 0.5), 0, 76))])
     return "".join(an), "".join(tp)
 
@@ -110,7 +111,7 @@ def stored(name, key, grid):
     if not os.path.exists(p):
         return None
     d = json.load(open(p))
-    return d.get(key) if d.get("grid") == grid else None
+    return d.get(key) if d.get("grid") == grid and d.get("alo") == ALO else None   # older coding: rebuild
 
 
 def ice_for(icec_da, months, ym):
@@ -151,7 +152,7 @@ def monthly():
         w = np.cos(np.deg2rad(la))[:, None] * np.ones_like(raw)
         note(f"{cur} Nino 3.4 anomaly on the map: {float(((raw - clim) * w)[box].sum() / w[box].sum()):+.2f} C")
         an, tp = enc(raw, clim, zero if ice is None else ice)
-        write("month.json", {"month": cur, "grid": grid, "base": "1991-2020", "anom": an, "temp": tp})
+        write("month.json", {"month": cur, "alo": ALO, "grid": grid, "base": "1991-2020", "anom": an, "temp": tp})
     if need_past:
         clim = get(ltm, 0, 11)
         P = {}
@@ -165,8 +166,8 @@ def monthly():
             for y in PAST:
                 ice = P[y][1][k]
                 an, tp = enc(P[y][0][k], clim[k], zero if ice is None else ice)
-                maps[str(y)] = {"anom": an, "temp": tp}
-            write(f"past_{k + 1:02d}.json", {"grid": grid, "base": "1991-2020", "maps": maps})
+                maps[str(y)] = {"alo": ALO, "anom": an, "temp": tp}
+            write(f"past_{k + 1:02d}.json", {"alo": ALO, "grid": grid, "base": "1991-2020", "maps": maps})
 
 
 def daily():
@@ -203,7 +204,7 @@ def daily():
         note(f"no ice data for {d}: {e}")
         ice = np.zeros_like(raw)
     an, tp = enc(raw, clim, ice)
-    write("day.json", {"date": d, "grid": grid, "base": "1991-2020", "anom": an, "temp": tp})
+    write("day.json", {"date": d, "alo": ALO, "grid": grid, "base": "1991-2020", "anom": an, "temp": tp})
 
 
 if __name__ == "__main__":
