@@ -24,10 +24,10 @@
 
   // ---- colors: compared with normal (blue–red, as before) and actual temperature (like Climate Reanalyzer's scale)
   const SCALES = {
-    anom: { lo: -9, hi: 9, // up to ±2 °C stays pale, so a broadly warm ocean doesn't look alarming; the steps are steepest between ±2 and ±3 °C,
+    anom: { lo: -7, hi: 11, // up to ±2 °C stays pale, so a broadly warm ocean doesn't look alarming; the steps are steepest between ±2 and ±3 °C,
       // so a +3 °C coastal arm still stands out from a +1.5 °C background
-      stops: [[-7.5, '#061633'], [-5.5, '#0b2654'], [-4, '#18498a'], [-3, '#2f6fae'], [-2.5, '#5a9bcc'], [-2, '#92c5de'], [-1, '#cfe3ef'], [-.3, '#eef4f8'], [0, '#f7f7f7'], [.3, '#fbefe9'], [1, '#fbd6c3'], [2, '#f4a582'], [2.5, '#e0664f'], [3, '#c62a2e'], [4, '#8f0a28'], [5.5, '#5a0018'], [7.5, '#2e000d']],
-      ticks: [-8, -4, 0, 4, 8], label: 'cooler / warmer than 1991–2020:', fmt: v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v) + (v === 8 ? ' °C' : '') },
+      stops: [[-6.5, '#061633'], [-5.5, '#0b2654'], [-4, '#18498a'], [-3, '#2f6fae'], [-2.5, '#5a9bcc'], [-2, '#92c5de'], [-1, '#cfe3ef'], [-.3, '#eef4f8'], [0, '#f7f7f7'], [.3, '#fbefe9'], [1, '#fbd6c3'], [2, '#f4a582'], [2.5, '#e0664f'], [3, '#c62a2e'], [4, '#8f0a28'], [5.5, '#5a0018'], [7, '#3a000f'], [8.5, '#7d3a5a'], [10, '#c99ab6'], [11, '#ecd9e4']],   // past +7 °C it turns pink, so record warmth stands out from merely very warm
+      ticks: [-5, 0, 5, 10], label: 'cooler / warmer than 1991–2020:', fmt: v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v) + (v === 10 ? ' °C' : '') },
     temp: { lo: -2, hi: 36, stops: [[-2, '#f3eef5'], [0, '#cfa9d3'], [2, '#8e3f99'], [3.5, '#5d0d6d'], [5, '#c13bd3'], [7, '#7b3bd0'], [9, '#3a2fa6'], [11, '#2a52b8'], [13, '#6e9fe0'], [15, '#b6e4f4'],
       [17, '#7fc3a6'], [19, '#3f994b'], [21, '#2e8a2b'], [23, '#a8cc5a'], [25, '#f5ee8a'], [27, '#f2a443'], [29, '#d8452a'], [31, '#a2141b'], [32.5, '#5a0a0a'], [34, '#2c0505'], [35, '#8b5b5b'], [36, '#ecdddd']],
       ticks: [0, 5, 10, 15, 20, 25, 30, 35], label: 'sea-surface temperature:', fmt: v => v + (v === 35 ? ' °C' : '') }
@@ -54,7 +54,7 @@
   }
   // a map object: {grid, anom, temp, ice, label}; anom and temp are Float32Arrays
   function makeMap(grid, codes, label) {
-    const a = decode(codes.anom, codes.alo == null ? -6 : codes.alo, .2)   // older files: −6 … +6 °C; newer: −9 … +9 °C
+    const a = decode(codes.anom, codes.alo == null ? -6 : codes.alo, .2)   // older files: −6 … +6 °C; since Nov 2026: −7 … +11 °C
    , t = decode(codes.temp, -2, .5);
     return { grid, anom: a.v, temp: t.v, ice: a.ice, label };
   }
@@ -207,7 +207,7 @@
           const G = M.grid, i = cell(G, p[0], p[1]), L = G.lon0 + (i % G.nlon) * G.step, B = G.lat0 + Math.floor(i / G.nlon) * G.step, t = M.temp[i], an = M.anom[i];
           hov = [L, B];
           rd(`${latLab(Math.round(B * 10) / 10)} ${lonLab(L)}: ` + (M.ice[i] ? 'sea ice' : t !== t ? 'land' :
-            kind === 'temp' ? `${t.toFixed(1)} °C` + (an === an ? ` (${sg(an)} °C compared with 1991–2020)` : '') : (an === an ? `${sg(an)} °C compared with 1991–2020` : '') + ` (${t.toFixed(1)} °C)`));
+            kind === 'temp' ? `${t.toFixed(1)} °C` + (an === an ? ` (${sg(an)} °C${an > 10.9 ? ' or more' : an < -6.9 ? ' or less' : ''} compared with 1991–2020)` : '') : (an === an ? `${sg(an)} °C${an > 10.9 ? ' or more' : an < -6.9 ? ' or less' : ''} compared with 1991–2020` : '') + ` (${t.toFixed(1)} °C)`));
           c.draw();
         },
         plugins: { legend: { display: false }, tooltip: { enabled: false },
@@ -261,5 +261,5 @@
     bs.forEach(b => b.onclick = () => { const v = views[b.dataset.v]; mapView(charts[0], v ? planeBox(v) : FULL); mark(b.dataset.v); });
   }
 
-  window.SSTMap = { chart, link, makeMap, json, NINO34, NINO4, NINO3, NINO12, planeBox };
+  window.SSTMap = { latLab, lonLab, chart, link, makeMap, json, NINO34, NINO4, NINO3, NINO12, planeBox };
 })();

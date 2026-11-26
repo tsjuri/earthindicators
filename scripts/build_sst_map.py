@@ -13,7 +13,7 @@ time axes of the files):
   day.json       the latest day in this year's daily file (preliminary for about two weeks)
   past_MM.json   calendar month MM in 1982, 1997 and 2015, built once
 Maps are text, one character per grid point, rows from south to north, each row from 0.125E eastwards:
-  anomaly: 0.2 C steps from -9 to +9 C (ALPH; "alo": -9 in each file), actual temperature: 0.5 C steps from -2 to +36 C (ALPHT);
+  anomaly: 0.2 C steps from -7 to +11 C (ALPH; "alo": -7 in each file), actual temperature: 0.5 C steps from -2 to +36 C (ALPHT);
   ' ' = land or no data, '!' = sea ice.
 """
 import json, os, sys, time
@@ -30,8 +30,8 @@ PAST = (1982, 1997, 2015)
 OUT = "data/sst_map"
 ICE = 0.15
 CHARS = "".join(chr(c) for c in range(35, 127) if chr(c) != "\\")
-ALO = -9                                      # lowest anomaly code; was -6 until Nov 2026, when the El Nino ran past +6 C
-ALPH, ALPHT = CHARS[:91], CHARS[:77]          # -9.0 ... +9.0 C by 0.2;  -2.0 ... +36.0 C by 0.5
+ALO = -7                                      # lowest anomaly code; was -6 (-6 ... +6 C) until Nov 2026, when the El Nino ran past +6 C
+ALPH, ALPHT = CHARS[:91], CHARS[:77]          # -7.0 ... +11.0 C by 0.2;  -2.0 ... +36.0 C by 0.5
 
 
 def note(msg):
@@ -92,7 +92,7 @@ def enc(sst, clim, ice):
         elif np.isfinite(i) and i >= ICE:
             an.append("!"); tp.append("!")
         else:
-            an.append(" " if not np.isfinite(c) else ALPH[int(np.clip(round((s - c) / 0.2), -45, 45)) + 45])
+            an.append(" " if not np.isfinite(c) else ALPH[int(np.clip(round((s - c) / 0.2), -35, 55)) + 35])
             tp.append(ALPHT[int(np.clip(round((s + 2) / 0.5), 0, 76))])
     return "".join(an), "".join(tp)
 

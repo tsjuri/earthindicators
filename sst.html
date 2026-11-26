@@ -45,6 +45,7 @@
 <div class="box" data-no-csv id="smap" data-own-switches data-nav="Map, every ocean"><h2 id="tMap"></h2>
  <div class="seg" id="swhen">When: <button class="nb on" type="button" data-w="day">Latest day</button><button class="nb" type="button" data-w="month">Last complete month</button></div><div class="seg" id="skind">Show: <button class="nb on" type="button" data-k="temp">Temperature</button><button class="nb" type="button" data-k="anom">Compared with normal</button></div>
  <div class="wrap" style="height:auto"><canvas id="cMap"></canvas></div><p class="sub" id="rMap" style="margin:6px 0 0;min-height:1.3em"></p></div>
+<div class="inshort" id="mapNote" data-i18n="off" style="margin:12px 0 10px" hidden></div>
 <p class="sub">NOAA OISST v2.1 (NOAA PSL), every 1° (every 4th point of the 0.25° grid). "Compared with normal" is the difference from NOAA's 1991–2020 average for the same day of the year (latest day) or calendar month. The latest day is preliminary: NOAA revises it over about two weeks. The picture blends neighboring grid points; the value shown when you point at the map is the grid point's own. Gray is land (Natural Earth outline), near-white is sea ice (at least 15% ice cover, from NOAA's ice data in the same product). Robinson projection centered on 160°W, like Climate Reanalyzer's map; the dashed box is Niño 3.4 (<a href="nino.html">El Niño page</a>, which also compares the Pacific with past El Niños). <a href="methods.html#sst-map">How the map is made</a>.</p>
 </div>
 <h2 style="font-size:16px">Interpretation</h2><ul id="read"></ul>
@@ -183,6 +184,33 @@ load('world').catch(()=>{document.getElementById('err').textContent='Could not l
   ch.$set(M,kind);$('tMap').textContent=`${kind==='temp'?'Sea-surface temperature (°C)':'Sea-surface temperature compared with normal (°C vs 1991–2020)'}, ${M.label}`});
  const seg=(id,attr,set)=>document.querySelectorAll(`#${id} .nb`).forEach(b=>b.onclick=()=>{document.querySelectorAll(`#${id} .nb`).forEach(x=>x.classList.toggle('on',x===b));set(b.dataset[attr]);show().catch(e=>console.warn('SST map',e))});
  seg('swhen','w',v=>when=v);seg('skind','k',v=>kind=v);
+
+ // ---- note under the map while the eastern Pacific is beyond anything in the record (written for the El Niño of 2026)
+ // Shown only when the latest day has points more than 6 °C above normal (where the map's coding used to stop) or the
+ // Niño 1+2 region is warmer than its highest daily anomaly in any earlier year; every number is worked out here from the data files.
+ // Written in English and Dutch here (data-i18n="off"), because its place names, dates and signs change from day to day.
+ const NL=window.EI_LANG==='nl',MN=NL?['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december']:ML;
+ const dLab=s=>`${+s.slice(8)} ${MN[+s.slice(5,7)-1]} ${s.slice(0,4)}`,f1=v=>{const t=(v>=0?'+':'−')+Math.abs(v).toFixed(1);return NL?t.replace('.',','):t};
+ const ll=(B,L)=>{const a=SSTMap.latLab(Math.round(B)),o=SSTMap.lonLab(L);return NL?(a+' '+o).replace(/°S/,'°Z').replace(/°E\b/,'°O').replace(/^Eq/,'evenaar'):a+' '+o};
+ Promise.all([get('day'),SSTMap.json(src.day),fetch('data/nino12_daily_sst.csv').then(r=>{if(!r.ok)throw 0;return r.text()})]).then(([M,D,csv])=>{
+  const G=M.grid;let n=0,mx=-99,mi=-1;M.anom.forEach((v,i)=>{if(v>6.05)n++;if(v>mx){mx=v;mi=i}});
+  // Niño 1+2 (0–10°S, 90–80°W): daily anomaly against the 1991–2020 average for the same day of the year (29 February uses 28 February)
+  const R=csv.trim().split('\n').slice(1).map(l=>l.split(',')).filter(r=>r[1]!=='').map(r=>[r[0],+r[1]]);
+  const k=d=>d.slice(5,7)==='02'&&d.slice(8)==='29'?'02-28':d.slice(5),C={};
+  R.forEach(([d,v])=>{const y=+d.slice(0,4);if(y>=1991&&y<=2020)(C[k(d)]=C[k(d)]||[]).push(v)});
+  const A=R.filter(([d])=>C[k(d)]).map(([d,v])=>[d,v-C[k(d)].reduce((a,b)=>a+b,0)/C[k(d)].length]);
+  const last=A[A.length-1],yr=last[0].slice(0,4),top=a=>a.reduce((b,x)=>x[1]>b[1]?x:b,['',-99]);
+  const before=top(A.filter(x=>x[0].slice(0,4)!==yr)),now=top(A.filter(x=>x[0].slice(0,4)===yr)),y97=top(A.filter(x=>x[0]>='1997-06'&&x[0]<'1998-07'));
+  if(!(n>0||now[1]>before[1]))return;
+  const at=ll(G.lat0+Math.floor(mi/G.nlon)*G.step,G.lon0+(mi%G.nlon)*G.step),first=A[0][0].slice(0,4),more=mx>10.9?(NL?' of meer':' or more'):'',P=[];
+  if(n>0)P.push(NL?`<b>Waarom deze schaal zo ver doorloopt.</b> Op ${dLab(D.date)} waren ${n} punten op deze kaart meer dan 6 °C warmer dan normaal voor de datum; het warmste, op ${at}, was ${f1(mx)} °C${more}. De schaal van de kaart hield vroeger op bij +6 °C; nu loopt ze tot +11 °C, en boven +7 °C worden de kleuren roze.`
+   :`<b>Why this scale goes so high.</b> On ${dLab(D.date)}, ${n} points on this map were more than 6 °C warmer than normal for the date; the warmest, at ${at}, was ${f1(mx)} °C${more}. The map's scale used to end at +6 °C; it now runs to +11 °C, and above +7 °C the colors turn pink.`);
+  if(now[1]>before[1])P.push(NL?`<b>Hoe uitzonderlijk dit is.</b> Het gebied Niño 1+2 (0–10°Z, 90–80°W, voor de kust van Ecuador en het noorden van Peru) was op ${dLab(last[0])} ${f1(last[1])} °C vergeleken met zijn gemiddelde van 1991–2020, met een piek van ${f1(now[1])} °C op ${dLab(now[0])}. Vóór dit jaar was de hoogste dagwaarde sinds ${first} ${f1(before[1])} °C (${dLab(before[0])}). Tijdens El Niño van 1997–98 was de piek ${f1(y97[1])} °C (${dLab(y97[0])}).`
+   :`<b>How unusual this is.</b> The Niño 1+2 region (0–10°S, 90–80°W, off Ecuador and northern Peru) was ${f1(last[1])} °C compared with its 1991–2020 average on ${dLab(last[0])}, and peaked at ${f1(now[1])} °C on ${dLab(now[0])}. Before this year, its highest daily value since ${first} was ${f1(before[1])} °C (${dLab(before[0])}). In the 1997–98 El Niño it peaked at ${f1(y97[1])} °C (${dLab(y97[0])}).`);
+  P.push(NL?'De nieuwste dagen zijn voorlopig: NOAA herziet ze in ongeveer twee weken. Losse rasterpunten schommelen meer dan regionale gemiddelden, dus één punt ruim boven +6 °C is niet hetzelfde als een heel gebied dat zo warm is.'
+   :'The newest days are preliminary: NOAA revises them over about two weeks. Single grid points vary more than regional averages, so a point well above +6 °C is not the same as a region that warm.');
+  const el=$('mapNote');el.innerHTML=P.map(t=>`<p style="margin:0 0 6px">${t}</p>`).join('');el.hidden=false;
+ }).catch(e=>console.warn('map note',e));
  // no daily map yet (first run): start with the month
  show().catch(()=>{when='month';document.querySelectorAll('#swhen .nb').forEach(x=>x.classList.toggle('on',x.dataset.w==='month'));return show()}).catch(e=>console.warn('SST map not shown',e));
 })();
