@@ -38,7 +38,7 @@ Each page shows one of Earth's vital signs, updated automatically from the agenc
 
 ## Translations
 
-Pages are written in English. `i18n.js` swaps the text for another language in the browser, using a dictionary per language (`i18n/nl.js`): every paragraph, heading, button, chart label and tooltip is looked up whole, with numbers, dates and month names as placeholders, so a translation keeps working when the numbers change. Numbers get the local decimal comma. Anything without a translation stays English; open a page with `?lang=nl&i18n=missing` and check `EI_MISSING` in the browser console for what is still missing. The language is chosen with the button in the header or `?lang=nl` in a link. Dutch covers the overview, air temperature and CO₂ pages so far.
+Pages are written in English. `i18n.js` swaps the text for another language in the browser, using a dictionary per language (`i18n/nl.js`): every paragraph, heading, button, chart label and tooltip is looked up whole, with numbers, dates and month names as placeholders, so a translation keeps working when the numbers change. Numbers get the local decimal comma. Anything without a translation stays English; open a page with `?lang=nl&i18n=missing` and check `EI_MISSING` in the browser console for what is still missing. The language is chosen with the button in the header or `?lang=nl` in a link. Dutch covers every page; the preview images for social media stay English.
 
 ## Where the numbers come from
 
