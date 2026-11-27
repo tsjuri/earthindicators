@@ -20,7 +20,7 @@
   const LANGS = { en: 'English', nl: 'Nederlands', es: 'Español' };
   // Languages everyone can see. A language not listed here works only through a ?lang=xx link (while it is being
   // translated): it is never picked from the browser setting and only appears on the button for whoever opened it.
-  const READY = ['en', 'nl'];
+  const READY = ['en', 'nl', 'es'];
   // false: the language button only shows for readers who opened a page with ?lang=xx once (used while building a
   // translation). true: everyone sees it (Dutch went live on 26 Nov 2026).
   const PUBLIC = true;
