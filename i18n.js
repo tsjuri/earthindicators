@@ -17,7 +17,10 @@
 //  - Anything without a translation stays in English. ?i18n=missing lists those in the browser console
 //    (window.EI_MISSING), so new text can be added to the dictionary.
 (function () {
-  const LANGS = { en: 'English', nl: 'Nederlands' };
+  const LANGS = { en: 'English', nl: 'Nederlands', es: 'Español' };
+  // Languages everyone can see. A language not listed here works only through a ?lang=xx link (while it is being
+  // translated): it is never picked from the browser setting and only appears on the button for whoever opened it.
+  const READY = ['en', 'nl'];
   // false: the language button only shows for readers who opened a page with ?lang=xx once (used while building a
   // translation). true: everyone sees it (Dutch went live on 26 Nov 2026).
   const PUBLIC = true;
@@ -28,11 +31,11 @@
   // No link or earlier choice: the browser's own language list, first match (a Dutch browser gets Dutch). A choice of
   // English is stored too, so the button always wins over the browser setting.
   if (!LANGS[lang]) lang = ((navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''])
-    .map(l => String(l).toLowerCase().split('-')[0]).find(l => LANGS[l])) || 'en';
+    .map(l => String(l).toLowerCase().split('-')[0]).find(l => READY.includes(l))) || 'en';
   window.EI_LANG = lang;
   window.EI_LANG_BUTTON = PUBLIC || lang !== 'en' || QS.has('lang') || (() => { try { return localStorage.getItem('ei-lang-seen') === '1'; } catch (e) { return false; } })();
   if (window.EI_LANG_BUTTON && !PUBLIC) { try { localStorage.setItem('ei-lang-seen', '1'); } catch (e) {} }
-  window.EI_LANGS = LANGS;
+  window.EI_LANGS = Object.fromEntries(Object.keys(LANGS).filter(l => READY.includes(l) || l === lang).map(l => [l, LANGS[l]]));
   window.EI_T = s => s;                           // pages may call EI_T(text); identity in English
   window.EI_SETLANG = l => {                      // used by the language button in the site header
     try { localStorage.setItem('ei-lang', l); } catch (e) {}
@@ -51,6 +54,11 @@
           mon: 'jan feb mrt apr mei jun jul aug sep okt nov dec'.split(' '),
           days: 'maandag dinsdag woensdag donderdag vrijdag zaterdag zondag'.split(' '),
           dec: ',', thou: '.', ord: 'e' },
+    es: { months: 'enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre'.split(' '),
+          mon: 'ene feb mar abr may jun jul ago sep oct nov dic'.split(' '),
+          days: 'lunes martes miércoles jueves viernes sábado domingo'.split(' '),
+          dec: '.', thou: ',', ord: '.º',              // decimal point, as in Mexico and the US (chosen Nov 2026)
+          date: (d, m, y, full) => full ? d + ' de ' + m + (y ? ' de ' + y : '') : d + ' ' + m + (y ? ' ' + y : '') },
   }[lang];
 
   // tokens: numbers (with optional sign; 1,234.5 style), month and weekday names
@@ -72,7 +80,8 @@
     const m = s.match(/^(\p{L}+) (\d{1,2})(?:, (\d{4}))?$/u); if (!m) return s;
     const full = MONTHS.indexOf(m[1]) >= 0 && m[1].length > 4;
     const i = MONTHS.findIndex(x => x.slice(0, 3) === m[1].slice(0, 3));
-    return m[2] + ' ' + (full ? LOCAL.months[i] : LOCAL.mon[i]) + (m[3] ? ' ' + m[3] : '');
+    const mo = full ? LOCAL.months[i] : LOCAL.mon[i];
+    return LOCAL.date ? LOCAL.date(m[2], mo, m[3], full) : m[2] + ' ' + mo + (m[3] ? ' ' + m[3] : '');
   };
   const fmtOrd = s => s.replace(/(st|nd|rd|th)$/, LOCAL.ord);
   const fmtWord = s => {
