@@ -24,15 +24,18 @@
   const QS = new URLSearchParams(location.search);
   let lang = (QS.get('lang') || '').toLowerCase();
   if (!LANGS[lang]) { try { lang = localStorage.getItem('ei-lang') || ''; } catch (e) { lang = ''; } }
-  else if (!QS.has('embed')) { try { lang === 'en' ? localStorage.removeItem('ei-lang') : localStorage.setItem('ei-lang', lang); } catch (e) {} }
-  if (!LANGS[lang]) lang = 'en';
+  else if (!QS.has('embed')) { try { localStorage.setItem('ei-lang', lang); } catch (e) {} }
+  // No link or earlier choice: the browser's own language list, first match (a Dutch browser gets Dutch). A choice of
+  // English is stored too, so the button always wins over the browser setting.
+  if (!LANGS[lang]) lang = ((navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''])
+    .map(l => String(l).toLowerCase().split('-')[0]).find(l => LANGS[l])) || 'en';
   window.EI_LANG = lang;
   window.EI_LANG_BUTTON = PUBLIC || lang !== 'en' || QS.has('lang') || (() => { try { return localStorage.getItem('ei-lang-seen') === '1'; } catch (e) { return false; } })();
   if (window.EI_LANG_BUTTON && !PUBLIC) { try { localStorage.setItem('ei-lang-seen', '1'); } catch (e) {} }
   window.EI_LANGS = LANGS;
   window.EI_T = s => s;                           // pages may call EI_T(text); identity in English
   window.EI_SETLANG = l => {                      // used by the language button in the site header
-    try { l === 'en' ? localStorage.removeItem('ei-lang') : localStorage.setItem('ei-lang', l); } catch (e) {}
+    try { localStorage.setItem('ei-lang', l); } catch (e) {}
     const u = new URL(location.href); u.searchParams.delete('lang'); location.href = u.toString();
   };
   if (lang === 'en') return;
